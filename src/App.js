@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import logo from './logo.svg';
-import './App.css';
+import './Reset.scss'
+import './App.scss';
 import { withRouter } from "react-router-dom";
 // import AdminRoutes from './routes/AdminRoutes'
 import { Switch, Route } from 'react-router-dom'

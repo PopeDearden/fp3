@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+.App{
+ font-family: 'Raleway';
+}
+.Landing-Page {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('https://images.pexels.com/photos/97076/pexels-photo-97076.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  input{
+    width: 250px;
+    height: 30px;
+    font-size:1rem;
+    margin-top:5px;
+  }
+}
+
+
+#Main-Title {
+  font-size: 4rem;
+  color: white;
+  font-family: 'Pacifico', ;
+
+  padding-top: 70px;
+  border-bottom: solid white;
+  max-width: 600px;
+}
+
+#Sub-Title {
+  color: white;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+h2{
+ font-family: 'Raleway', ;
+ color: black;
+ font-size: 1.5rem;
+}
+
+#Fancy-Title {
+  font-family: 'Pacifico';
+  font-size: 3rem;
+  border-bottom: solid;
+}
+.Landing-Left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width:35vw
+  
+}
+.Landing-Right {
+  width:65vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+button {
+  outline:none;
+  transition: .25s;
+}
+button:hover {
+  transform: scale(1.05);
+}
+
+.Login-Box {
+  width: 400px;
+  height: 425px;
+  background-color: rgba(255, 255, 255, 0.856);
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#big{
+width: 300px;
+height: 80px;
+font-size: 1.5rem;
+padding: 15px;
+border-radius: 10px;
+border: solid black;
+background-color: transparent;
+color: black;
+}

@@ -6,6 +6,7 @@ import Interested from '../components/Admin/InterestedTab'
 import PlacedOrders from '../components/Admin/PlacedOrders'
 import ViewAndConfirm from'../components/Admin/ViewAndConfirmOrder'
 import SchoolProgress from '../components/Admin/ViewScoolProgress'
+import CreateAdmin from '../components/Admin/CraeteAdmin'
 
 export default ( 
     <Switch>
@@ -15,5 +16,7 @@ export default (
         <Route path='/admin/placed-orders' component={PlacedOrders} />
         <Route path='/admin/view-and-confirm' component={ViewAndConfirm} />
         <Route path='/admin/school-progress' component={SchoolProgress} />
+        <Route path='/admin/create-admin' component={CreateAdmin} />
+
     </Switch>
 )
