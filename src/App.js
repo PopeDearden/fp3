@@ -7,7 +7,8 @@ import { withRouter } from "react-router-dom";
 import { Switch, Route } from 'react-router-dom'
 import AdminLogin from './components/Admin/AdminLogin'
 import Landing from './components/Landing/Landing'
-
+import DirectorLogin from './components/Director/DirectorLogin'
+import UserLogin from './components/User/UserLogin'
 class App extends Component {
   constructor(s) {
     super()
@@ -21,6 +22,8 @@ class App extends Component {
         <Switch>
           <Route exact path='/' component={Landing} />
           <Route path='/admin' component={AdminLogin} />
+          <Route path='/user' component={UserLogin} />
+          <Route path='/director' component={DirectorLogin} />
         </Switch>
       </div>
     )

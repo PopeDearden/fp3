@@ -25,10 +25,10 @@ class Landing extends Component {
           <div class="Landing-Right">
             <div class="Login-Box">
               <h1 id="Fancy-Title">Welcome!</h1>
-              <button id="big">
+              <button id="big" onClick={()=>this.props.history.push('/director')}>
                 Login as Director
               </button>
-              <button id="big">
+              <button id="big" onClick={()=>this.props.history.push('/user')}>
                 Login as Student
               </button>
             </div>
