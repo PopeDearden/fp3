@@ -31,9 +31,13 @@ class AdminLogin extends Component {
         alert('no manager logged in')
         }
         else{
-          console.log(res)
-          alert(res)
-        }
+          console.log(res.data[0])
+          alert(res.data[0].email + ' is logged in')
+          this.setState({
+            approved: true,
+          })
+          }
+        
       }
     )
   }
@@ -46,36 +50,45 @@ class AdminLogin extends Component {
     })
     
   }
-
+  
   render() {
-    return (
+    if(this.state.approved === true){
+      return(
+        <div>
+          {AdminRoutes}
 
-      <div class="Landing-Page">
-        <div class="Landing-Left">
-          <h1 id="Main-Title">Fundraiser Portal</h1>
-          <h1 id="Sub-Title">A Good Always Product</h1>
         </div>
-        <div class="Landing-Right">
-          <div class="Login-Box">
+      )
+    }else {
 
-            <h1 id="Fancy-Title">Admin Login</h1>
-            <div>
-              <h2>Email:</h2>
-              <input value={this.state.email} onChange={e => this.setState({ email: e.target.value })} />
-            </div>
-            <div>
-              <h2>Password:</h2>
-              <input type="password" value={this.state.password} onChange={e => this.setState({ password: e.target.value })} />
-            </div>
-            <button onClick={()=>this.loginManager()} id="big">
-                Login
-              </button>
+      return (
+  
+        <div class="Landing-Page">
+          <div class="Landing-Left">
+            <h1 id="Main-Title">Fundraiser Portal</h1>
+            <h1 id="Sub-Title">A Good Always Product</h1>
           </div>
-
+          <div class="Landing-Right">
+            <div class="Login-Box">
+  
+              <h1 id="Fancy-Title">Admin Login</h1>
+              <div>
+                <h2>Email:</h2>
+                <input value={this.state.email} onChange={e => this.setState({ email: e.target.value })} />
+              </div>
+              <div>
+                <h2>Password:</h2>
+                <input type="password" value={this.state.password} onChange={e => this.setState({ password: e.target.value })} />
+              </div>
+              <button onClick={()=>this.loginManager()} id="big">
+                  Login
+                </button>
+            </div>
+  
+          </div>
         </div>
-        {AdminRoutes}
-      </div>
-    )
+      )
+    }
 
   }
 }

@@ -33,4 +33,5 @@ massive({
 app.put('/api/manager/', managerController.getManager)
 app.get('/api/check-manager', managerController.checkManager)
 app.get('/api/logout', managerController.logout)
+app.post('/api/create-manager', managerController.createManager)
 // app.listen(SERVER_PORT, ()=> console.log(`${SERVER_PORT} wild chickens laying eggs`))

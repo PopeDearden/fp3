@@ -8,17 +8,17 @@ module.exports = {
       console.log('looking for ' + password)
       const managerInfo = await db.find_manager([email, password])
       
-      await res.status(200).send(managerInfo[0])
-        console.log(managerInfo)
-      req.session.manager = {managerInfo}
-      console.log(req.session.manager.managerInfo)
+      console.log(managerInfo)
+      req.session.manager = managerInfo
+      console.log(req.session.manager)
+      await res.status(200).send(req.session.manager)
   },
 //   Check if manager is logged in
-  checkManager: (req,res) => {
+  checkManager: (req, res) => {
       console.log('checking for manager')
       console.log(req.session.manager)
-      if(req.session.manager.managerInfo){
-          res.status(200).send(req.session.manager.managerInfo)
+      if(req.session.manager){
+          res.status(200).send(req.session.manager)
       }
       else{
           res.status(200).send('no manager')
@@ -28,5 +28,13 @@ module.exports = {
       req.session.destroy()
       res.status(200).send('logged out')
   },
+  createManager: (req, res) => {
+    console.log('creating manager')
+    const db = req.app.get('db')
+    const {first_name, last_name, email, phone, password} = req.body
+    db.create_manager([first_name, last_name, email, phone, password])
+   
+    res.status(200).send('created Manager')
+  }
 
 }
