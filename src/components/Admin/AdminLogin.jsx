@@ -20,7 +20,11 @@ class AdminLogin extends Component {
   }
 
   componentDidMount(){
+    this.checkManager()
     
+  }
+
+  checkManager=()=> {
     axios.get('/api/check-manager')
     .then(res=> {
       console.log(res.data[0])
@@ -46,7 +50,8 @@ class AdminLogin extends Component {
     console.log(this.state)
     axios.put('/api/manager', this.state)
     .then(res=> {
-      console.log(res.data)
+      console.log(res.data[0])
+      this.checkManager()
     })
     
   }
