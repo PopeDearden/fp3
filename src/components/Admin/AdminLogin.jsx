@@ -6,16 +6,47 @@ import { withRouter } from "react-router-dom";
 import { Switch, Route } from 'react-router-dom'
 import AdminRoutes from '../../routes/AdminRoutes'
 import AdminHeader from '../Admin/Adminheader'
+import axios from "axios";
 
-
+// This component acts as the parent of all of Admin's components. The login screen displays if session.manager is blank.
 class AdminLogin extends Component {
   constructor(s) {
     super()
     this.state = {
-      email: 'test',
-      password: ''
+      email: '',
+      password: '',
+      approved: false,
     }
   }
+
+  componentDidMount(){
+    
+    axios.get('/api/check-manager')
+    .then(res=> {
+      console.log(res.data[0])
+      if(res.data === 'no manager'){
+        this.setState({
+          approved:false
+        })
+        alert('no manager logged in')
+        }
+        else{
+          console.log(res)
+          alert(res)
+        }
+      }
+    )
+  }
+
+  loginManager=()=>{
+    console.log(this.state)
+    axios.put('/api/manager', this.state)
+    .then(res=> {
+      console.log(res.data)
+    })
+    
+  }
+
   render() {
     return (
 
@@ -36,7 +67,7 @@ class AdminLogin extends Component {
               <h2>Password:</h2>
               <input type="password" value={this.state.password} onChange={e => this.setState({ password: e.target.value })} />
             </div>
-            <button onClick={()=>console.log(this.state)} id="big">
+            <button onClick={()=>this.loginManager()} id="big">
                 Login
               </button>
           </div>
