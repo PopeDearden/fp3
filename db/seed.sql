@@ -3,7 +3,7 @@ CREATE TABLE "admin" (
 	"email" int NOT NULL,
 	"first_name" TEXT NOT NULL,
 	"last_name" TEXT NOT NULL,
-	"password" bigint NOT NULL,
+	"password" int NOT NULL,
 	CONSTRAINT "admin_pk" PRIMARY KEY ("admin_id")
 ) WITH (
   OIDS=FALSE
@@ -17,7 +17,7 @@ CREATE TABLE "manager" (
 	"last_name" TEXT NOT NULL,
 	"email" TEXT NOT NULL,
 	"phone" TEXT NOT NULL,
-	"password" bigint NOT NULL,
+	"password" int NOT NULL,
 	CONSTRAINT "manager_pk" PRIMARY KEY ("manager_id")
 ) WITH (
   OIDS=FALSE

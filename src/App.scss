@@ -1,7 +1,25 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nanum+Pen+Script&display=swap');
 .App{
  font-family: 'Raleway';
+}
+.Header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100vw;
+  height: 200px;
+  background-color: black;
+  background-image: url('https://images.pexels.com/photos/301378/pexels-photo-301378.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  background-size: cover;
+  border-bottom: solid black;
+  border-top: solid black;
+  // box-shadow: 0px 5px 15px gray;
+}
+.page-title {
+  width: 100vw;
+  
 }
 .Landing-Page {
   display: flex;
@@ -42,7 +60,14 @@ h2{
 #Fancy-Title {
   font-family: 'Pacifico';
   font-size: 3rem;
-  border-bottom: solid;
+  // border-bottom: solid;
+
+}
+#Fancy-Title-2 {
+  font-family: 'Pacifico';
+  font-size: 2rem;
+  // border-bottom: solid;
+
 }
 .Landing-Left {
   display: flex;
@@ -86,4 +111,42 @@ border-radius: 10px;
 border: solid black;
 background-color: transparent;
 color: black;
+}
+
+.Note-Purple {
+  width: 150px;
+  height: 150px;
+  background-image: url('https://cdn.shopify.com/s/files/1/0040/3786/9638/files/Sticky-Note-04-Purple.png?v=1583217398');
+  background-size: cover;
+  margin: 10px;
+  transition: .25s;
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.Note-Purple:hover {
+  transform: scale(1.05);
+ 
+}
+.Note-Yellow {
+  width: 150px;
+  height: 150px;
+  background-image: url('https://cdn.shopify.com/s/files/1/0040/3786/9638/files/Sticky-Note-01-Yellow.png?v=1583217398');
+  background-size: cover;
+  margin: 10px;
+  transition: .25s;
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.Note-Yellow:hover {
+  transform: scale(1.05);
 }

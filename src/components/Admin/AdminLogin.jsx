@@ -15,7 +15,7 @@ class AdminLogin extends Component {
     this.state = {
       email: '',
       password: '',
-      approved: false,
+      approved:false,
     }
   }
 
@@ -40,6 +40,7 @@ class AdminLogin extends Component {
           this.setState({
             approved: true,
           })
+          // this.props.history.push('/admin')
           }
         
       }
