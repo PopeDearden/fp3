@@ -34,7 +34,7 @@ class DirectorLogin extends Component {
         this.setState({
           approved:false
         })
-        alert('no director logged in')
+        // alert('no director logged in')
         }
         else{
           this.setState({
@@ -44,7 +44,7 @@ class DirectorLogin extends Component {
 
           })
           console.log(res.data[0])
-          alert(res.data[0].email + ' is logged in with tag '+ res.data[0].tag )
+          // alert(res.data[0].email + ' is logged in with tag '+ res.data[0].tag )
           // this.props.history.push('/admin')
           }
         

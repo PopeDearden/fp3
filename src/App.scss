@@ -9,17 +9,32 @@
   justify-content: flex-start;
   align-items: center;
   width: 100vw;
-  height: 200px;
-  background-color: black;
+  height: 150px;
+  background-color:   #5a2828;
   background-image: url('https://images.pexels.com/photos/301378/pexels-photo-301378.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
   background-size: cover;
-  border-bottom: solid black;
+  border-bottom: solid black 5px;
   border-top: solid black;
-  // box-shadow: 0px 5px 15px gray;
+  box-shadow: 0px 5px 15px gray;
+}
+.page-bar-blue{
+  background-color: #addfee;
+  height: 40px;
+  width: 100vw;
+  border-bottom: solid 3px #495f66;
+}
+.page-bar-yellow{
+  background-color: #ffff8f;
+  height: 40px;
+  width: 100vw;
+  border-bottom: solid 3px #808047;
 }
 .page-title {
   width: 100vw;
   
+}
+.Rainbow {
+  width:100vw;
 }
 .Landing-Page {
   display: flex;
@@ -69,6 +84,16 @@ h2{
   // border-bottom: solid;
 
 }
+#Fancy-Title-2-white {
+
+  color: white;
+  font-family: 'Pacifico';
+  font-size: 2.25rem;
+
+
+  // border-bottom: solid;
+
+}
 .Landing-Left {
   display: flex;
   flex-direction: column;
@@ -114,18 +139,23 @@ color: black;
 }
 
 .Note-Purple {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   background-image: url('https://cdn.shopify.com/s/files/1/0040/3786/9638/files/Sticky-Note-04-Purple.png?v=1583217398');
   background-size: cover;
   margin: 10px;
   transition: .25s;
   font-family: 'Nanum Pen Script', cursive;
-  font-size: 2rem;
+  font-size: 1.5rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  i {
+    margin: 4px;
+    color: rgba(0, 0, 0, 0.637);
+  }
 }
 
 .Note-Purple:hover {
@@ -133,20 +163,196 @@ color: black;
  
 }
 .Note-Yellow {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   background-image: url('https://cdn.shopify.com/s/files/1/0040/3786/9638/files/Sticky-Note-01-Yellow.png?v=1583217398');
+  background-size: cover;
+  margin: 10px;
+  transition: .25s;
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  i {
+    color: rgba(0, 0, 0, 0.637);
+    margin: 4px;
+  }
+}
+
+.Note-Yellow:hover {
+  transform: scale(1.05);
+}
+.Note-Pink {
+  width: 100px;
+  height: 100px;
+  background-image: url('https://cdn.shopify.com/s/files/1/0040/3786/9638/files/Sticky-Note-02-Pink.png?v=1583217398');
+  background-size: cover;
+  margin: 10px;
+  transition: .25s;
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  i {
+    color: rgba(0, 0, 0, 0.637);
+    margin: 4px;
+  }
+}
+
+.Note-Pink:hover {
+  transform: scale(1.05);
+}
+.Note-Green {
+  width: 100px;
+  height: 100px;
+  background-image: url('https://cdn.shopify.com/s/files/1/0040/3786/9638/files/post_it_note_green.png?v=1583217398');
+  background-size: cover;
+  margin: 10px;
+  transition: .25s;
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  i {
+    color: rgba(0, 0, 0, 0.637);
+    margin: 4px;
+  }
+}
+
+.Note-Green:hover {
+  transform: scale(1.05);
+}
+.Note-Orange {
+  width: 100px;
+  height: 100px;
+  background-image: url('https://cdn.shopify.com/s/files/1/0040/3786/9638/files/Sticky-Note-03-Orange.png?v=1583217398');
   background-size: cover;
   margin: 10px;
   transition: .25s;
   font-family: 'Nanum Pen Script', cursive;
   font-size: 2rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  i {
+    color: rgba(0, 0, 0, 0.637);
+    margin: 4px;
+  }
 }
 
-.Note-Yellow:hover {
+.Note-Orange:hover {
+  transform: scale(1.05);
+}
+.Envelope {
+  text-align: center;
+  margin: 10px;
+  background-color: rgb(238, 210, 173);
+  box-shadow: black 5px 5px 15px;
+  border: white solid 3px;
+  // background-position: center;
+  width: 150px;
+  height: 100px;
+  // background-image: url('https://publicdomainvectors.org/photos/simplemail.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 1.5rem;
+  transition: .25s;
+  i {
+    margin: 5px;
+    color: rgba(0, 0, 0, 0.637);
+  }
+}
+.Envelope:hover {
+  transform: scale(1.05);
+}
+.Welcome {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid white 3px;
+  margin: 10px;
+  width: 200px;
+  height: 125px;
+  background-color: transparent;
+}
+.Divider {
+  width: 4px;
+  height: 175px;
+  background-color: rgba(255, 255, 255, 0.61);
+  box-shadow: white 0px 0px 10px;
+
+}
+.New-User {
+  text-align: center;
+  margin: 10px;
+  background-color: rgb(173, 223, 238);
+  box-shadow: black 5px 5px 15px;
+  border: white solid 3px;
+  // background-position: center;
+  width: 150px;
+  height: 100px;
+  // background-image: url('https://publicdomainvectors.org/photos/simplemail.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 1.5rem;
+  transition: .25s;
+  // border-radius: 20px;
+  i {
+    margin: 5px;
+    color: rgba(0, 0, 0, 0.637);
+  }
+}
+
+.New-User:hover {
+  transform: scale(1.05);
+}
+.All-Users {
+  text-align: center;
+  margin: 10px;
+  background-color: rgb(238, 173, 173);
+  box-shadow: black 5px 5px 15px;
+  border: white solid 3px;
+  // background-position: center;
+  width: 150px;
+  height: 100px;
+  // background-image: url('https://publicdomainvectors.org/photos/simplemail.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 1.5rem;
+  transition: .25s;
+  // border-radius: 20px;
+  i {
+    margin: 5px;
+    color: rgba(0, 0, 0, 0.637);
+  }
+}
+.All-Users:hover {
   transform: scale(1.05);
 }
