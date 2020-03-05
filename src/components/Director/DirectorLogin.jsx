@@ -7,6 +7,7 @@ import { Switch, Route } from 'react-router-dom'
 import axios from 'axios'
 import DirectorRoutes from '../../routes/DirectorRoutes'
 import DirectorHeader from'./DirectorHeader'
+import swal from 'sweetalert';
 
 
 class DirectorLogin extends Component {
@@ -30,7 +31,7 @@ class DirectorLogin extends Component {
     axios.get('/api/check-director')
     .then(res=> {
       console.log(res.data[0])
-      if(res.data === 'no director'){
+      if(res.data[0] === undefined){
         this.setState({
           approved:false
         })
@@ -56,6 +57,9 @@ class DirectorLogin extends Component {
     console.log(this.state)
     axios.put('/api/director', this.state)
     .then(res=> {
+      if(res.data[0]===undefined){
+        swal('wrong login info')
+      }
       console.log(res.data[0])
       this.checkDirector()
     })

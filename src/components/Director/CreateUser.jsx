@@ -8,9 +8,8 @@ class CreateUser extends Component {
   constructor(s) {
     super()
     this.state = {
-      fisrt_name: '',
+      first_name: '',
       last_name: '',
-      director_tag: '',
       password: '',
       sample_light_black: 0,
       sample_light_yellow: 0,
@@ -32,6 +31,7 @@ class CreateUser extends Component {
   }
   CreateUser=()=> {
     console.log(this.state)
+    axios.post('/api/director/create-user', this.state)
   }
 
   render() {
@@ -46,7 +46,7 @@ class CreateUser extends Component {
               <h2>Create new<br></br> student account</h2>
               <br></br>
               <h3>First Name:</h3>
-              <input value={this.state.fisrt_name} onChange={e => this.setState({ fisrt_name: e.target.value })} />
+              <input value={this.state.fisrt_name} onChange={e => this.setState({ first_name: e.target.value })} />
               <h3>Last Name Initial:</h3>
               <input maxlength="1" value={this.state.last_name} onChange={e => this.setState({ last_name: e.target.value })} />
               <button id="Small" onClick={() => this.generatePassword()}>Generate Password</button>

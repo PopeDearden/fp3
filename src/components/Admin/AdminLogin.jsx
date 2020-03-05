@@ -30,7 +30,7 @@ class AdminLogin extends Component {
       console.log(res.data[0])
       if(res.data === 'no manager'){
         this.setState({
-          approved:false
+          approved: false
         })
         alert('no manager logged in')
         }
