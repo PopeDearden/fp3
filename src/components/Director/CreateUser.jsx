@@ -30,6 +30,9 @@ class CreateUser extends Component {
       password: retVal
     })
   }
+  CreateUser=()=> {
+    console.log(this.state)
+  }
 
   render() {
     return (
@@ -56,16 +59,16 @@ class CreateUser extends Component {
               <div class="Form-Split">
                 <div>
                   <h3>FlashLights</h3>
-                  <input type="number" value={this.state.sample_light_black} onChange={e => this.setState({ sample_light_black: e.target.value })} />
+                  <input type="number" value={this.state.sample_light_black} onChange={e => this.setState({ sample_light_black: +e.target.value })} />
                 </div>
                 <div>
                   <h3>Lanterns</h3>
-                  <input type="number" value={this.state.sample_light_yellow} onChange={e => this.setState({ sample_light_yellow: e.target.value })} />
+                  <input type="number" value={this.state.sample_light_yellow} onChange={e => this.setState({ sample_light_yellow: +e.target.value })} />
                 </div>
               </div>
               <br></br>
               <br></br>
-              <button id="medium">Create Student Account</button>
+              <button onClick={()=>this.CreateUser()} id="medium">Create Student Account</button>
             </div>
           </div>
         </div>
