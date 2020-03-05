@@ -65,7 +65,7 @@ class DirectorLogin extends Component {
   render() {
     if(this.state.approved === true){
       return(
-        <div>
+        <div class="Admin-Page">
           <DirectorHeader 
           first_name = {this.state.first_name}
           last_name= {this.state.last_name}/>

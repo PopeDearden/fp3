@@ -15,10 +15,10 @@ class OrdersInProgress extends Component {
   render(){
     return(
       <div className = "App" >
-          <div class="page-bar-yellow">
-
-          </div>
-        <h1>Create User</h1>
+      
+          <h2>Orders In Progress</h2>
+ 
+  
       </div>
     )
 

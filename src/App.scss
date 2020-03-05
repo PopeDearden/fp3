@@ -3,33 +3,89 @@
 @import url('https://fonts.googleapis.com/css?family=Nanum+Pen+Script&display=swap');
 .App{
  font-family: 'Raleway';
+//  background-color: rgb(23, 23, 48);
+background-color:#f9f9f9;
+width: auto;
+ height: 100vh;
+ h2{
+   font-size:2rem;
+ }
+ h3{
+   font-size: 1.5rem;
+ }
+ input{
+  width: 150px;
+  height: 30px;
+  font-size:1rem;
+  margin-top:5px;
+  margin-bottom:5px;
+}
+button {
+  width: 150px;
+  height: 30px;
+  border: solid black 1px;
+  background-color: transparent;
+  border-radius: 5px;
+  font-size: .75rem;
+}
 }
 .Header {
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  width: 100vw;
-  height: 150px;
-  background-color:   #5a2828;
-  background-image: url('https://images.pexels.com/photos/301378/pexels-photo-301378.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
-  background-size: cover;
-  border-bottom: solid black 5px;
-  border-top: solid black;
-  box-shadow: 0px 5px 15px gray;
+  width: 13vw;
+  height: 100vh;
+  background-color:  #555555;
+  // background-image: linear-gradient(to right,#5555 , black);
+  // background-image: url('https://images.pexels.com/photos/301378/pexels-photo-301378.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  // background-size: cover;
+  // border-bottom: solid black 5px;
+  // border-top: solid black;
+  // box-shadow: 0px 5px 15px gray;
 }
+
+.Header-Link {
+  position: relative;
+  height: 40px;
+  margin: 10px;
+  padding: 3px;
+  width: 11vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-size: 1 rem;
+  transition: .25s;
+  border-bottom: 1px solid transparent;
+
+  
+}
+.Header-Link:hover {
+  border-bottom: 1px solid turquoise;
+  width: 11vw;
+  border-bottom: solid turquoise -1px;
+  color: turquoise;
+  transform: scale(1.05);
+  cursor: pointer;
+  background-color: #5e5e5e;
+ 
+}
+
 .page-bar-blue{
+  display: flex;
+  align-items: center;
   background-color: #addfee;
   height: 40px;
-  width: 100vw;
+  // width: 100vw;
   border-bottom: solid 3px #495f66;
+  h2{
+    margin-left: 10px;
+  }
 }
-.page-bar-yellow{
-  background-color: #ffff8f;
-  height: 40px;
-  width: 100vw;
-  border-bottom: solid 3px #808047;
-}
+
 .page-title {
+  display: none;
   width: 100vw;
   
 }
@@ -55,7 +111,6 @@
   font-size: 4rem;
   color: white;
   font-family: 'Pacifico', ;
-
   padding-top: 70px;
   border-bottom: solid white;
   max-width: 600px;
@@ -88,7 +143,7 @@ h2{
 
   color: white;
   font-family: 'Pacifico';
-  font-size: 2.25rem;
+  font-size: 2.0rem;
 
 
   // border-bottom: solid;
@@ -113,7 +168,8 @@ button {
   transition: .25s;
 }
 button:hover {
-  transform: scale(1.05);
+  cursor: pointer;
+  transform: scale(1.02);
 }
 
 .Login-Box {
@@ -137,8 +193,37 @@ border: solid black;
 background-color: transparent;
 color: black;
 }
+#medium{
+width: 250px;
+height: 60px;
+font-size: 1.2rem;
+padding: 15px;
+border-radius: 10px;
+border: solid black;
+background-color: transparent;
+color: black;
+}
+#medium:hover{
+  background-color: rgba(64, 224, 208, 0.219);
+}
+#Small {
+  margin-top:10px;
+  margin-bottom:10px;
+  width: 200px;
+height: 35px;
+font-size: 1rem;
+padding: 5px;
+border-radius: 10px;
+border: solid black;
+background-color: transparent;
+color: black;
+}
+#Small:hover{
+  background-color: rgba(64, 224, 208, 0.219);
+}
 
 .Note-Purple {
+  cursor: pointer;
   width: 100px;
   height: 100px;
   background-image: url('https://cdn.shopify.com/s/files/1/0040/3786/9638/files/Sticky-Note-04-Purple.png?v=1583217398');
@@ -163,6 +248,7 @@ color: black;
  
 }
 .Note-Yellow {
+  cursor: pointer;
   width: 100px;
   height: 100px;
   background-image: url('https://cdn.shopify.com/s/files/1/0040/3786/9638/files/Sticky-Note-01-Yellow.png?v=1583217398');
@@ -186,6 +272,7 @@ color: black;
   transform: scale(1.05);
 }
 .Note-Pink {
+  cursor: pointer;
   width: 100px;
   height: 100px;
   background-image: url('https://cdn.shopify.com/s/files/1/0040/3786/9638/files/Sticky-Note-02-Pink.png?v=1583217398');
@@ -209,6 +296,7 @@ color: black;
   transform: scale(1.05);
 }
 .Note-Green {
+  cursor: pointer;
   width: 100px;
   height: 100px;
   background-image: url('https://cdn.shopify.com/s/files/1/0040/3786/9638/files/post_it_note_green.png?v=1583217398');
@@ -232,6 +320,7 @@ color: black;
   transform: scale(1.05);
 }
 .Note-Orange {
+  cursor: pointer;
   width: 100px;
   height: 100px;
   background-image: url('https://cdn.shopify.com/s/files/1/0040/3786/9638/files/Sticky-Note-03-Orange.png?v=1583217398');
@@ -255,6 +344,7 @@ color: black;
   transform: scale(1.05);
 }
 .Envelope {
+  cursor: pointer;
   text-align: center;
   margin: 10px;
   background-color: rgb(238, 210, 173);
@@ -286,11 +376,11 @@ color: black;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: solid white 3px;
-  margin: 10px;
-  width: 200px;
+  border-bottom: solid white 3px;
+  // margin: 10px;
+  width: 10vw;
   height: 125px;
-  background-color: transparent;
+  // background-color: white;
 }
 .Divider {
   width: 4px;
@@ -300,6 +390,7 @@ color: black;
 
 }
 .New-User {
+  cursor: pointer;
   text-align: center;
   margin: 10px;
   background-color: rgb(173, 223, 238);
@@ -329,6 +420,7 @@ color: black;
   transform: scale(1.05);
 }
 .All-Users {
+  cursor: pointer;
   text-align: center;
   margin: 10px;
   background-color: rgb(238, 173, 173);
@@ -355,4 +447,133 @@ color: black;
 }
 .All-Users:hover {
   transform: scale(1.05);
+}
+.General-Page {
+  display: flex;
+  flex-direction: row;
+}
+.Form-Box {
+  border: solid 10px #555555;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  background-color: #f3f3f3;
+  width: auto;
+  height:auto;
+  border-radius: 0px;
+  h2{
+    border-bottom: solid 5px #555555;
+  }
+  input{
+    background-color: #f9f9f9;
+    width: inherit;
+  }
+.Form-Split {
+  display: flex;
+  justify-content: space-between;
+}
+}
+.Form-Box-Left {
+  margin: 5px;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+}
+.Form-Box-Right {
+  margin: 5px;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+}
+.General-Content {
+  margin: 20px;
+}
+.Admin-Page{
+  // background-color: red;
+  display: flex;
+  flex-direction: row;
+}
+
+
+.Animate-Lines {
+  margin-top:15px;
+  margin-bottom:15px;
+  width:100px;
+  --offset: 10px;
+  --border-size: 2px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  // display: block;
+  position: relative;
+  padding: 1.5em 3em;
+  // appearance: none;
+  border: 0;
+  background: transparent;
+  color: turquoise;
+  // letter-spacing: .25em;
+  outline: none;
+  cursor: pointer;
+  // font-weight: bold;
+  border-radius: 0;
+  box-shadow: inset 0 0 0 var(--border-size) currentcolor;
+  transition: background .8s ease;
+  
+  &:hover {
+      background: rgba(100, 0, 0, .03);
+  }
+  
+  &__horizontal,
+  &__vertical {
+      position: absolute;
+      top: var(--horizontal-offset, 0);
+      right: var(--vertical-offset, 0);
+      bottom: var(--horizontal-offset, 0);
+      left: var(--vertical-offset, 0);
+      transition: transform .8s ease;
+      will-change: transform;
+      
+      &::before {
+          content: '';
+          position: absolute;
+          border: inherit;
+      }
+  }
+  
+  &__horizontal {
+      --vertical-offset: calc(var(--offset) * -1);
+      border-top: var(--border-size) solid currentcolor;
+      border-bottom: var(--border-size) solid currentcolor;
+      
+      &::before {
+          top: calc(var(--vertical-offset) - var(--border-size));
+          bottom: calc(var(--vertical-offset) - var(--border-size));
+          left: calc(var(--vertical-offset) * -1);
+          right: calc(var(--vertical-offset) * -1);
+      }
+  }
+  
+  &:hover &__horizontal {
+      transform: scaleX(0);
+  }
+  
+  &__vertical {
+      --horizontal-offset: calc(var(--offset) * -1);
+      border-left: var(--border-size) solid currentcolor;
+      border-right: var(--border-size) solid currentcolor;
+      
+      &::before {
+          top: calc(var(--horizontal-offset) * -1);
+          bottom: calc(var(--horizontal-offset) * -1);
+          left: calc(var(--horizontal-offset) - var(--border-size));
+          right: calc(var(--horizontal-offset) - var(--border-size));
+      }
+  }
+  
+  &:hover &__vertical {
+      transform: scaleY(0);
+  }
+  
 }

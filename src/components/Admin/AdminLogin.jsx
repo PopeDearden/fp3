@@ -60,9 +60,8 @@ class AdminLogin extends Component {
   render() {
     if(this.state.approved === true){
       return(
-        <div>
+        <div class="Admin-Page">
           {AdminRoutes}
-
         </div>
       )
     }else {
