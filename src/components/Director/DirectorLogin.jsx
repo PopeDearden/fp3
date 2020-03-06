@@ -30,8 +30,8 @@ class DirectorLogin extends Component {
   checkDirector = () => {
     axios.get('/api/check-director')
       .then(res => {
-        console.log(res.data[0])
-        if (res.data[0] === undefined) {
+        console.log(res.data)
+        if (res.data === 'no director') {
           this.setState({
             approved: false
           })

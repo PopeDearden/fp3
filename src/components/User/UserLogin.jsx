@@ -27,7 +27,6 @@ class UserLogin extends Component {
   checkStudent = () => {
     axios.get('/api/check-student')
       .then(res => {
-        console.log(res.data[0])
         if (res.data === 'no student'|| res.data[0] === undefined){
           this.setState({
             approved: false
@@ -51,6 +50,7 @@ class UserLogin extends Component {
     console.log(this.state)
     axios.put('/api/student', this.state)
       .then(res => {
+        console.log(res.data[0])
         if (res.data[0] === undefined) {
           Swal.fire({
             icon: 'error',

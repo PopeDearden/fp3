@@ -5,7 +5,7 @@ import { withRouter } from "react-router-dom";
 // import AdminRoutes from './routes/AdminRoutes'
 import { Switch, Route } from 'react-router-dom'
 import axios from 'axios'
-
+import Swal from 'sweetalert2'
 
 
 
@@ -19,6 +19,12 @@ class StudentHeader extends Component {
     componentDidMount() {
     }
 
+    logout = () => {
+        axios.get('/api/logout').then(res=> {
+            Swal.fire('Logged Out')
+            this.props.history.push('/')
+        })
+    }
 
 
 
@@ -58,7 +64,10 @@ class StudentHeader extends Component {
 
                     <i class="fas fa-comments-dollar"></i>
                 </div>
-
+                <div class="Header-Link" onClick={()=>this.logout()}>
+                    <p>Logout</p>
+                    <i class="fas fa-sign-out-alt"></i>
+                </div>
             </div>
         )
     }

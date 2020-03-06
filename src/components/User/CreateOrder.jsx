@@ -29,10 +29,10 @@ class CreateOrder extends Component {
    )
     
     console.log(this.state)
-    axios.post('/api/director/create-order', this.state)
+    axios.post('/api/user/create-order', this.state)
       .then(res => {
         console.log(res.data)
-        if (res.data === 'Created Student Account') {
+        if (res.data === 'Created ORder') {
           Swal.fire('Successfully Created Order')
           this.setState({
             first_name_cust: '',

@@ -8,10 +8,10 @@ background-color:#f9f9f9;
 width: auto;
  height: 100vh;
  h2{
-   font-size:2rem;
+   font-size:1.5rem;
  }
  h3{
-   font-size: 1.5rem;
+   font-size: 1rem;
  }
  input{
   width: 150px;
@@ -30,12 +30,14 @@ button {
 }
 }
 .Header {
+  position:sticky;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   width: 13vw;
-  height: 100vh;
+  min-height: 100vh;
+  max-height:150vh;
   background-color:  #555555;
   // background-image: linear-gradient(to right,#5555 , black);
   // background-image: url('https://images.pexels.com/photos/301378/pexels-photo-301378.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
@@ -453,6 +455,7 @@ color: black;
   flex-direction: row;
 }
 .Form-Box {
+  font-size: 1rem;
   border: solid 10px #555555;
   padding: 20px;
   display: flex;
@@ -465,6 +468,7 @@ color: black;
   border-radius: 0px;
   // box-shadow: 5px 5px 5px rgba(64, 224, 208, 0.185);
   h2{
+    font-size:1.3rem;
     border-bottom: solid 5px #555555;
   }
   p{
@@ -475,7 +479,7 @@ color: black;
     min-height: 80px;
     border: solid 5px #555555;
     padding: 5px;
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin: 10px;
     // box-shadow: 5px 5px 5px rgba(64, 224, 208, 0.185);
     // border-bottom:solid 0px white;
@@ -514,7 +518,7 @@ color: black;
 .Animate-Lines {
   margin-top:15px;
   margin-bottom:15px;
-  width:100px;
+  width:70px;
   --offset: 10px;
   --border-size: 2px;
   text-align: center;

@@ -50,5 +50,11 @@ module.exports = {
             sample_puc_black,
             req.session.director[0].tag, username])
         res.status(200).send('Created Student Account')
+    },
+    logOut: (req, res) => {
+        req.session.destroy()
+        // console.log(req.session.director)
+        console.log('destroying session')
+        res.status(200).send('Logged out')
     }
 }

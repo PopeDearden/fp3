@@ -5,6 +5,7 @@ import { withRouter } from "react-router-dom";
 // import AdminRoutes from './routes/AdminRoutes'
 import { Switch, Route } from 'react-router-dom'
 import axios from 'axios'
+import Swal from 'sweetalert2'
 
 
 
@@ -19,7 +20,12 @@ class DirectorHeader extends Component {
     componentDidMount() {
     }
 
-
+logout = () => {
+    axios.get('/api/logout').then(res=> {
+        Swal.fire('Logged Out')
+        this.props.history.push('/')
+    })
+}
 
 
     render() {
@@ -66,6 +72,10 @@ class DirectorHeader extends Component {
                 <div class="Header-Link" onClick={()=>this.props.history.push('/director/user-info-list')}>
                     <p>All student<br></br>account info</p>
                     <i class="fas fa-users"></i>
+                </div>
+                <div class="Header-Link" onClick={()=>this.logout()}>
+                    <p>Logout</p>
+                    <i class="fas fa-sign-out-alt"></i>
                 </div>
             </div>
         )
