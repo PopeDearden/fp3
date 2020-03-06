@@ -21,7 +21,6 @@ module.exports = {
     },
     checkDirector: (req, res) => {
         console.log('checking for director')
-        console.log(req.session.director[0] !== undefined)
         if (req.session.director) {
             res.status(200).send(req.session.director)
         }
@@ -39,7 +38,9 @@ module.exports = {
             sample_light_black,
             sample_light_yellow,
             sample_puc_yellow,
-            sample_puc_black } = req.body
+            sample_puc_black} = req.body
+
+        const username = first_name + last_name
         db.create_user([first_name,
             last_name,
             password,
@@ -47,7 +48,7 @@ module.exports = {
             sample_light_yellow,
             sample_puc_yellow,
             sample_puc_black,
-            req.session.director[0].tag])
+            req.session.director[0].tag, username])
         res.status(200).send('Created Student Account')
     }
 }

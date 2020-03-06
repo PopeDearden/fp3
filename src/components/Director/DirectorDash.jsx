@@ -15,7 +15,7 @@ class DirectorDash extends Component {
   render(){
     return(
       <div className = "App" >
-        <h1>Director Dash</h1>
+        <h2>Director Dash</h2>
       </div>
     )
 

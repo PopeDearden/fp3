@@ -7,6 +7,7 @@ const session = require('express-session')
 const app = express()
 const managerController = require('./managerController')
 const directorController = require('./directorController')
+const studentController = require('./studentController')
 
 
 app.use(express.json())
@@ -31,11 +32,15 @@ massive({
 })
 
 
+app.put('/api/student', studentController.getStudent)
 app.put('/api/manager/', managerController.getManager)
 app.put('/api/director/', directorController.getDirector)
+
 app.get('/api/check-director', directorController.checkDirector)
+app.get('/api/check-student', studentController.checkStudent)
 app.get('/api/check-manager', managerController.checkManager)
 app.get('/api/logout', managerController.logout)
+
 app.post('/api/create-manager', managerController.createManager)
 app.post('/api/create-director', directorController.createDirector)
 app.post('/api/director/create-user', directorController.createUser)

@@ -92,7 +92,7 @@ CREATE TABLE "order_sent" (
 
 
 
-CREATE TABLE "order" (
+CREATE TABLE "ordertable" (
 	"order_id" serial NOT NULL,
 	"user_id" serial NOT NULL,
 	"director_tag" TEXT NOT NULL,
@@ -111,7 +111,7 @@ CREATE TABLE "order" (
 	"archived" BOOLEAN NOT NULL,
 	"archived_date" timestamp with time zone NOT NULL,
 	"delivered" BOOLEAN NOT NULL,
-	CONSTRAINT "order_pk" PRIMARY KEY ("order_id")
+	CONSTRAINT "ordertable_pk" PRIMARY KEY ("order_id")
 ) WITH (
   OIDS=FALSE
 );
