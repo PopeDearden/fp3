@@ -69,15 +69,15 @@ class InProgress extends Component {
                     {this.state.orders.map(orders => (
                         
                             <tr key={orders.order_id}>
-                                <th>{orders.first_name_cust}</th>
-                                <th>{orders.last_name_cust}</th>
-                                <th>{orders.address_cust}</th>
-                                <th>{orders.phone_cust}</th>
-                                <th>{orders.email_cust}</th>
-                                <th>{orders.date}</th>
-                                <th>{orders.flashlights}</th>
-                                <th>{orders.pucs}</th>
-                                <th>{'$'+(orders.flashlights*30 + orders.pucs*35)}</th>
+                                <td>{orders.first_name_cust}</td>
+                                <td>{orders.last_name_cust}</td>
+                                <td>{orders.address_cust}</td>
+                                <td>{orders.phone_cust}</td>
+                                <td>{orders.email_cust}</td>
+                                <td>{orders.date}</td>
+                                <td>{orders.flashlights}</td>
+                                <td>{orders.pucs}</td>
+                                <td>{'$'+(orders.flashlights*30 + orders.pucs*35)}</td>
                             </tr>
                     ))
 
