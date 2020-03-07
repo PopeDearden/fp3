@@ -50,7 +50,7 @@ class StudentHeader extends Component {
                     <p>Create Student<br></br> Account</p>
                 </div> */}
 
-                <div class="Header-Link" onClick={() => this.props.history.push('/director/in-progress')}>
+                <div class="Header-Link" onClick={() => this.props.history.push('/user/in-progress')}>
                     <p>Orders in Progress</p>
                     <i class="fas fa-user-edit"></i>
                 </div>

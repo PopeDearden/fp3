@@ -454,6 +454,15 @@ color: black;
   display: flex;
   flex-direction: row;
 }
+
+#Drop {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 200px;
+  height: 30px;
+  padding: 4px;
+  font-size: 1rem;
+}
 .Form-Box {
   font-size: 1rem;
   border: solid 10px #555555;
@@ -594,4 +603,11 @@ color: black;
       transform: scaleY(0);
   }
   
+}
+.InProgressTable {
+  font-size: 1.5rem;
+  width: 80vw;
+tr{
+  border-bottom: solid 1px black;
+}
 }

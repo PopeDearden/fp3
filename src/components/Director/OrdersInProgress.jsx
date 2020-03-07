@@ -12,6 +12,7 @@ class OrdersInProgress extends Component {
     }
   }
 
+
   render(){
     return(
       <div className = "App" >

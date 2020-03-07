@@ -42,6 +42,8 @@ app.get('/api/check-director', directorController.checkDirector)
 app.get('/api/check-student', studentController.checkStudent)
 app.get('/api/check-manager', managerController.checkManager)
 app.get('/api/logout', managerController.logout)
+app.get('/api/student/in-progress', studentController.getStudentInProgressOrders)
+
 
 app.post('/api/create-manager', managerController.createManager)
 app.post('/api/create-director', directorController.createDirector)
