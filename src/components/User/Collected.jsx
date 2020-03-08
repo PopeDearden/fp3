@@ -4,7 +4,7 @@ import Moment from 'react-moment'
 
 
 
-class InProgress extends Component {
+class Collected extends Component {
     constructor(s) {
         super()
         this.state = {
@@ -16,7 +16,7 @@ class InProgress extends Component {
         }
     }
     async componentDidMount() {
-        await axios.get(`/api/student/in-progress`).then(res => {
+        await axios.get(`/api/student/collected`).then(res => {
             console.log(res.data)
             this.setState({
                 orders: res.data,
@@ -54,7 +54,7 @@ class InProgress extends Component {
         })
         return (
             <div className="App" >
-                <h2 class="Title-Bar-In-Progress"><i class="fas fa-user-edit"></i> Orders in progress:  </h2>
+                <h2 class="Title-Bar-Collected"><i class="fas fa-money-check-alt"></i>   Orders w/ money collected  </h2>
                 <div class="TopCards">
                 <div class="TopCard1">
                     <div class="TopCard1Bar">
@@ -74,7 +74,7 @@ class InProgress extends Component {
                 </div>
                 <div class="TopCard1">
                     <div class="TopCard1Bar">
-                        <h2>Potential Earnings </h2>
+                        <h2>Your projected earnings </h2>
                     </div>
                     <h3>
                         ${this.state.possible}
@@ -82,14 +82,14 @@ class InProgress extends Component {
                 </div>
                 <div class="TopCard1">
                     <div class="TopCard1Bar">
-                        <h2>Total $ to collect</h2>
+                        <h2>Total collected</h2>
                     </div>
                     <h3>
-                        <h4>${this.state.totalMoneyNeed}</h4>
+                        <h4 id="CollectedCard">${this.state.totalMoneyNeed}</h4>
                     </h3>
                 </div>
                 </div>
-                <input class="Search" placeholder={"Search by name"}  onChange={e => this.setState({ searchInput: e.target.value })}/>    <i class="fas fa-search"></i> Orders In Progress are considered "draft" and are not valid until you have collected the funds and updated the order!
+                <input class="Search" placeholder={"Search by name"}  onChange={e => this.setState({ searchInput: e.target.value })}/>    <i class="fas fa-search"></i> Orders confirmed should represent orders that you have received payment for.
                 <div class="TableContainer">
                 <table class="InProgressTable">
                     <tr id="TableHeader">
@@ -99,7 +99,7 @@ class InProgress extends Component {
                         <th>Date Ordered</th>
                         <th>Flashlights</th>
                         <th>Lanterns</th>
-                        <th>Total Owed</th>
+                        <th>Total Collected</th>
                         <th>Edit</th>
                     </tr>
                     {orders.map(orders => (
@@ -111,7 +111,7 @@ class InProgress extends Component {
                             <td><Moment format="MM/DD/YYYY">{orders.date}</Moment></td>
                             <td>{orders.flashlights}</td>
                             <td>{orders.pucs}</td>
-                            <td id="TotalData">{'$' + (orders.flashlights * 30 + orders.pucs * 35)}   <i class="fas fa-exclamation-triangle"></i></td>
+                            <td id="TotalCollected">{'$' + (orders.flashlights * 30 + orders.pucs * 35)}   <i class="fas fa-hand-holding-usd"></i></td>
                             <td id="EditData"><i onClick={()=>this.props.history.push(`/user/edit-order/${orders.order_id}`)}class="fas fa-pencil-alt"></i></td>
                         </tr>
                     ))
@@ -127,4 +127,4 @@ class InProgress extends Component {
     }
 }
 
-export default InProgress;
+export default Collected;

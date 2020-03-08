@@ -36,5 +36,46 @@ getStudentInProgressOrders: async(req, res) => {
     const user_id = req.session.student[0].user_id
     const orders = await db.get_student_in_progress_orders([user_id])
     res.status(200).send(orders)
+},
+getStudentCollectedOrders: async(req, res) => {
+    console.log('looking for collected orders')
+    const db = req.app.get('db')
+    const user_id = req.session.student[0].user_id
+    const orders = await db.get_student_collected_orders([user_id])
+    res.status(200).send(orders)
+},
+getOneOrder: async (req, res)  => {
+    console.log('getting one order')
+    console.log(req.params.id)
+    const db = req.app.get('db')
+    const user_id = +req.session.student[0].user_id
+    const id = +req.params.id
+    const oneOrder = await db.get_one_order([user_id, id])
+    res.status(200).send(oneOrder)
+},
+updateOrder: async (req, res) => {
+    console.log('updating order')
+    const db = req.app.get('db')
+    const {first_name_cust, 
+        last_name_cust, 
+        phone_cust, 
+        email_cust, 
+        address_cust, 
+        flashlights, 
+        pucs, 
+        collected, 
+        confirmed, order_id} =req.body
+    const user_id = req.session.student[0].user_id
+       
+        db.edit_order([order_id, first_name_cust, 
+            last_name_cust, 
+            phone_cust, 
+            email_cust, 
+            address_cust, 
+            flashlights, 
+            pucs, 
+            collected, 
+            user_id])
+            res.status(200).send('Updated order')
 }
 }

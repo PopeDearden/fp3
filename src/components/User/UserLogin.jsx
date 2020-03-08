@@ -56,7 +56,7 @@ class UserLogin extends Component {
             icon: 'error',
             title: 'Oops...',
             text: 'Wrong Login Information!',
-            footer: 'Make sure your email and password are correct'
+            footer: 'Make sure your username and password are correct'
           })
         }
         console.log(res.data)
@@ -80,7 +80,8 @@ class UserLogin extends Component {
   
         <div class="Landing-Page">
           <div class="Landing-Left">
-            <h1 id="Main-Title">Fundraiser Portal</h1>
+            <h1 id="Main-Title">Fundraiser <br></br>Portal</h1>
+           
             <h1 id="Sub-Title">A Good Always Product</h1>
           </div>
           <div class="Landing-Right">

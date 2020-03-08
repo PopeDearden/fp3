@@ -35,6 +35,7 @@ massive({
 app.put('/api/student', studentController.getStudent)
 app.put('/api/manager/', managerController.getManager)
 app.put('/api/director/', directorController.getDirector)
+app.put('/api/user/update-order', studentController.updateOrder)
 app.get('/api/logout', directorController.logOut)
 
 
@@ -43,8 +44,9 @@ app.get('/api/check-student', studentController.checkStudent)
 app.get('/api/check-manager', managerController.checkManager)
 app.get('/api/logout', managerController.logout)
 app.get('/api/student/in-progress', studentController.getStudentInProgressOrders)
+app.get('/api/student/collected', studentController.getStudentCollectedOrders)
 
-
+app.put('/api/get-one-order/:id', studentController.getOneOrder)
 app.post('/api/create-manager', managerController.createManager)
 app.post('/api/create-director', directorController.createDirector)
 app.post('/api/director/create-user', directorController.createUser)

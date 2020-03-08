@@ -60,18 +60,28 @@ class CreateOrder extends Component {
     }
 
     render() {
+        function Icon(collected) {
+            const collectedIcon = <i id="IsCollected" class="fas fa-check-circle">Marked as: money collected</i>
+            const notCollectedIcon = <i id="NotCollected" class="fas fa-exclamation-circle">Marked as: money not Collected</i>
+            if (collected === false || collected === "false") {
+                return notCollectedIcon
+            }
+            else if (collected === true || collected === "true")
+                return collectedIcon
+
+        }
         return (
             <div class="General-Page" >
                 {/* <div class="page-bar-blue">
           <h2>Create Student Account</h2>
         </div> */}
                 <div class="General-Content">
+                <div class="Title-Bar">
+               <h2> <i class="fas fa-user-plus"></i>   Create New Order</h2>
+                    </div>
                     <div class="Form-Box">
                         <div class="Form-Box-Left">
-                            <h2>--Create new order--
-                  <br></br>
-                                <br>
-                                </br>Customer Information</h2>
+                            <h2>Customer Information {Icon(this.state.collected)}</h2>
                             <br></br>
                             <div class="Form-Split">
                                 <div>
@@ -96,15 +106,15 @@ class CreateOrder extends Component {
                             <br></br>
                             <div class="Form-Split">
                                 <div>
-                                    <h3>FlashLights</h3>
+                                    <h3>FlashLights ($30)</h3>
                                     <input type="number" min="0" value={this.state.flashlights} onChange={e => this.setState({ flashlights: +e.target.value })} />
                                 </div>
                                 <div>
-                                    <h3>Lanterns</h3>
+                                    <h3>Lanterns ($35)</h3>
                                     <input type="number" min="0" value={this.state.pucs} onChange={e => this.setState({ pucs: +e.target.value })} />
                                 </div>
                             </div>
-                            <h2>Have you collected their payment?</h2>
+                            <h2>Have you collected their <br></br> payment of ${this.state.flashlights*30+this.state.pucs*35}?</h2>
                             <select id="Drop" onChange={e => this.setState({collected: e.target.value})}>
                                 <option value="false">No</option>
                                 <option value="true">Yes</option>
