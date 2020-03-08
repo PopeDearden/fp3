@@ -88,6 +88,7 @@ class UserLogin extends Component {
             <div class="Login-Box">
   
               <h1 id="Fancy-Title">Student Login</h1>
+              <div class="GradientLine"></div>
               <div>
                 <h2>Username:</h2>
                 <input value={this.state.username} onChange={e => this.setState({ username: e.target.value })} />

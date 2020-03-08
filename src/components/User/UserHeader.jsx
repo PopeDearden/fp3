@@ -59,7 +59,7 @@ class StudentHeader extends Component {
 
                     <i class="fas fa-money-check-alt"></i>
                 </div>
-                <div class="Header-Link" onClick={() => this.props.history.push('/director/confirmed')}>
+                <div class="Header-Link" onClick={() => this.props.history.push('/user/confirmed')}>
                     <p>Orders Confirmed by<br></br>your director</p>
 
                     <i class="fas fa-comments-dollar"></i>

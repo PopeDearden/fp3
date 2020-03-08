@@ -94,6 +94,7 @@ class DirectorLogin extends Component {
             <div class="Login-Box">
 
               <h1 id="Fancy-Title">Director Login</h1>
+              <div class="GradientLine"></div>
               <div>
                 <h2>Email:</h2>
                 <input value={this.state.email} onChange={e => this.setState({ email: e.target.value.toLowerCase() })} />
