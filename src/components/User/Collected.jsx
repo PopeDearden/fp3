@@ -45,7 +45,6 @@ class Collected extends Component {
             totalMoneyNeed: totalMoneyNeed.toFixed(2),
             possible: possible.toFixed(2),
         })
-
     }
 
     render() {

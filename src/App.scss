@@ -720,6 +720,13 @@ td{
   h4 {
     color: Orange;
   }
+  h1{
+    text-align: center;
+    padding-top: 3px;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: white;
+    font-size: 1.2rem;
+  }
 }
 #CollectedCard{
   color: rgb(43, 163, 43);
@@ -813,4 +820,16 @@ td{
 }
 #IsCollected{
   color: rgb(43, 163, 43)
+}
+#SampleInfo{
+  width: auto;
+  color: white;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 2rem;
+  margin-left: 50px;
+  padding: 50px;
+  background-color: #555555;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.603);
+  // background-color: black;
+  border: solid 2px #addfee;
 }

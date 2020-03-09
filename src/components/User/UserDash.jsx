@@ -9,7 +9,14 @@ class UserDash extends Component {
     super()
     this.state = {
       totalOrdersInProgress: 0,
-      moneyCollected: 456
+      totalMoneyC: 0,
+      collectedOrdersTotal: 0,
+      possible: 0,
+      earnedC: 0,
+      possibleToEarn: 0,
+      sample_light_black: 0,
+      sample_puc_yellow: 0,
+      username: '',
 
     }
   }
@@ -21,9 +28,48 @@ class UserDash extends Component {
 
       })
     })
-    this.calculateTotal()
+    await axios.get(`/api/student/collected`).then(res => {
+      console.log(res.data)
+      this.setState({
+        collectedOrders: res.data,
+        searchInput: ''
+      })
+    })
+    await axios.get('/api/samples').then(res => {
+      this.setState({
+        sample_puc_yellow: res.data[0].sample_puc_yellow,
+        sample_light_black: res.data[0].sample_light_black,
+        username: res.data[0].username
+      })
+    }
+    )
+    //calculateTotal is for in progress
+    await this.calculateTotalCollected()
+    await this.calculateTotal()
   }
+  calculateTotalCollected() {
+    let totalFlash = 0
+    let collectedOrdersTotal = this.state.collectedOrders.length
+    for (let i = 0; i < this.state.collectedOrders.length; i++) {
+      totalFlash += this.state.collectedOrders[i].flashlights
+    }
+    this.setState({
+      totalFlash: totalFlash
+    })
+    let totalLantern = 0
+    for (let i = 0; i < this.state.collectedOrders.length; i++) {
+      totalLantern += this.state.collectedOrders[i].pucs
+    }
+    let totalMoney = totalLantern * 35 + totalFlash * 30
+    let earned = totalMoney / 2
+    this.setState({
+      totalLanternC: totalLantern,
+      totalMoneyC: totalMoney.toFixed(2),
+      earnedC: earned.toFixed(2),
+      collectedOrdersTotal: collectedOrdersTotal
+    })
 
+  }
   calculateTotal = () => {
     let totalFlash = 0
     let totalOrdersInProgress = this.state.inProgressOrders.length
@@ -39,21 +85,26 @@ class UserDash extends Component {
     }
     let totalMoneyNeed = totalLantern * 35 + totalFlash * 30
     let possible = totalMoneyNeed / 2
+    let earnedPotential = +this.state.earnedC + possible 
     this.setState({
       totalLantern: totalLantern,
       totalMoneyNeed: totalMoneyNeed.toFixed(2),
       possible: possible.toFixed(2),
       totalOrdersInProgress: +totalOrdersInProgress,
+      possibleToEarn: earnedPotential.toFixed(2)
     })
-
   }
 
 
 
   render() {
+    function sampleTotal(light, puc) {
+      let total = light*30 + puc*35
+      return total.toFixed(2)
+    }
     return (
       <div className="App" >
-        <div className="Title-Bar-Dash"><h2>Student Dashboard</h2></div>
+        <div className="Title-Bar-Dash"><h2>Student Dashboard: Welcome {this.state.username}!</h2></div>
         <div className="TopCards">
           <div class="TopCard1">
             <div class="TopCard1Bar">
@@ -65,31 +116,61 @@ class UserDash extends Component {
           </div>
           <div class="TopCard1">
             <div class="TopCard1Bar">
-              <h2 >Total $ to be collected</h2>
+              <h2>Total Orders w/ Money Collected</h2>
             </div>
             <h3>
-              <h4>
-                ${this.state.totalMoneyNeed}
-              </h4>
+              {this.state.collectedOrdersTotal}
             </h3>
           </div>
           <div class="TopCard1">
             <div class="TopCard1Bar">
-              <h2>Total orders collected</h2>
+              <h2>Current Earnings</h2>
+            </div>
+            <h3 id="CollectedCard">
+              ${this.state.earnedC}
+            </h3>
+          </div>
+        </div>
+        <div class="TopCards">
+        <div class="TopCard1">
+            <div class="TopCard1Bar">
+              <h2 >Total $ to be collected</h2>
             </div>
             <h3>
-              1234
-          </h3>
+              <h4>
+                ${this.state.totalMoneyNeed}<i class="fas fa-exclamation-triangle"></i>
+              </h4>
+            </h3>
           </div>
           <div class="TopCard1">
             <div class="TopCard1Bar">
               <h2>Total money collected </h2>
             </div>
             <h3 id="CollectedCard">
-              $1234.00
-          </h3>
+              ${this.state.totalMoneyC}
+            </h3>
+          </div>
+          <div class="TopCard1">
+            <div class="TopCard1Bar">
+              <h1> Possible total earnings after "In progress" $ collected</h1>
+            </div>
+            <h3 id="CollectedCard">
+              <h4>
+                ${this.state.possibleToEarn}
+              </h4>
+            </h3>
           </div>
         </div>
+        <div class="Title-Bar-Collected">Samples information</div>
+        <h2 id="SampleInfo">Our records show that you have been given 
+        <br></br><br></br>
+        {this.state.sample_light_black} sample 
+        flashlights ($30 each)
+        <br></br>
+        {this.state.sample_puc_yellow} lanterns ($35 each)
+        <br></br>
+        <br></br>
+        You are responsible for payment of ${sampleTotal(this.state.sample_light_black, this.state.sample_puc_yellow)} at the end of the fundraiser deadline.</h2>
       </div>
     )
 

@@ -19,6 +19,13 @@ module.exports = {
         console.log(req.session.student)
         await res.status(200).send(req.session.student)
 },
+    getSamples: async(req, res) => {
+        const db= req.app.get('db')
+        console.log('looking for samples ' + req.session.student[0])
+        const {user_id} = req.session.student[0]
+        const samples = await db.get_samples([user_id])
+        res.status(200).send(samples)
+    },
 createOrder: (req,res) => {
     const db = req.app.get('db')
     const date = new Date()
