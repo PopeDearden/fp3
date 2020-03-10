@@ -19,6 +19,10 @@ class CreateOrder extends Component {
             confirmed: false,
             order_placed: false,
             order_sent: false,
+            flashlight_yellow: 0,
+            puc_black: 0,
+            good_flash: 0,
+            good_puc: 0,
         }
     }
     createOrder = async () =>  {
@@ -43,8 +47,12 @@ class CreateOrder extends Component {
                         phone_cust: '',
                         email_cust: '',
                         address_cust: '',
-                        flashlights: '',
-                        pucs: '',
+                        flashlights: 0,
+                        pucs: 0,
+                        flashlight_yellow: 0,
+                        puc_black: 0,
+                        good_flash: 0,
+                        good_puc: 0,
                     })
                 }
                 else {
@@ -106,15 +114,33 @@ class CreateOrder extends Component {
                             <br></br>
                             <div class="Form-Split">
                                 <div>
-                                    <h3>FlashLights ($30)</h3>
+                                    <h3>Black FlashLights ($30)</h3>
                                     <input type="number" min="0" value={this.state.flashlights} onChange={e => this.setState({ flashlights: +e.target.value })} />
+                                </div>
+                                <div>
+                                    <h3>Yellow FlashLights ($30)</h3>
+                                    <input type="number" min="0" value={this.state.flashlight_yellow} onChange={e => this.setState({ flashlight_yellow: +e.target.value })} />
                                 </div>
                                 <div>
                                     <h3>Lanterns ($35)</h3>
                                     <input type="number" min="0" value={this.state.pucs} onChange={e => this.setState({ pucs: +e.target.value })} />
                                 </div>
                             </div>
-                            <h2>Have you collected their <br></br> payment of ${this.state.flashlights*30+this.state.pucs*35}?</h2>
+                            <div class="Form-Split">
+                                {/* <div>
+                                    <h3>Black Lantern ($35)</h3>
+                                    <input type="number" min="0" value={this.state.puc_black} onChange={e => this.setState({ puc_black: +e.target.value })} />
+                                </div> */}
+                                {/* <div>
+                                    <h3>Good Always Flashlight ($30)</h3>
+                                    <input type="number" min="0" value={this.state.good_flash} onChange={e => this.setState({ good_flash: +e.target.value })} />
+                                </div>
+                                <div>
+                                    <h3>Good Always Lantern ($35)</h3>
+                                    <input type="number" min="0" value={this.state.good_puc} onChange={e => this.setState({ good_puc: +e.target.value })} />
+                                </div> */}
+                            </div>
+                            <h2>Have you collected their <br></br> payment of ${this.state.flashlights*30+this.state.flashlight_yellow*30+this.state.pucs*35+this.state.puc_black*35+this.state.good_flash*30+this.state.good_puc*35}?</h2>
                             <select id="Drop" onChange={e => this.setState({collected: e.target.value})}>
                                 <option value="false">No</option>
                                 <option value="true">Yes</option>

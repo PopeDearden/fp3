@@ -10,6 +10,8 @@ class InProgress extends Component {
         this.state = {
             totalFlash: 0,
             totalLantern: 0,
+            totalYellowFlash: 0,
+            totalBlackPuc: 0,
             orders: [],
             totalMoneyNeed: 0,
             possible: 0
@@ -31,21 +33,28 @@ class InProgress extends Component {
         for (let i = 0; i < this.state.orders.length; i++) {
             totalFlash += this.state.orders[i].flashlights
         }
-        this.setState({
-            totalFlash: totalFlash
-        })
         let totalLantern = 0
         for (let i = 0; i < this.state.orders.length; i++) {
             totalLantern += this.state.orders[i].pucs
         }
-        let totalMoneyNeed = totalLantern * 35 + totalFlash * 30
+        let totalYellowFlash = 0
+        for (let i = 0; i < this.state.orders.length; i++) {
+            totalYellowFlash += this.state.orders[i].flashlight_yellow
+        }
+        let totalBlackPuc = 0
+        for (let i = 0; i < this.state.orders.length; i++) {
+            totalBlackPuc += this.state.orders[i].puc_black
+        }
+        let totalMoneyNeed = totalLantern * 35 + totalFlash * 30 + totalYellowFlash * 30 +totalBlackPuc*35
         let possible = totalMoneyNeed / 2
         this.setState({
+            totalFlash: totalFlash,
             totalLantern: totalLantern,
+            totalYellowFlash: totalYellowFlash,
+            totalBlackPuc: totalBlackPuc,
             totalMoneyNeed: totalMoneyNeed.toFixed(2),
             possible: possible.toFixed(2),
         })
-
     }
 
     render() {
@@ -56,22 +65,38 @@ class InProgress extends Component {
             <div className="App" >
                 <h2 class="Title-Bar-In-Progress"><i class="fas fa-user-edit"></i> Orders in progress:  </h2>
                 <div class="TopCards">
-                <div class="TopCard1">
+                <div class="TopCard2">
                     <div class="TopCard1Bar">
-                        <h2>Total Flashlights: </h2>
+                        <h2>Total Black <br></br> Flashlights: </h2>
                     </div>
                     <h3>
                         {this.state.totalFlash}
                     </h3>
                 </div>
-                <div class="TopCard1">
+                <div class="TopCard2">
                     <div class="TopCard1Bar">
-                        <h2>Total Lanterns: </h2>
+                        <h2>Total Yellow <br></br>Flashlights: </h2>
+                    </div>
+                    <h3>
+                        {this.state.totalYellowFlash}
+                    </h3>
+                </div>
+                <div class="TopCard2">
+                    <div class="TopCard1Bar">
+                        <h2>Total Yellow <br></br> Lanterns: </h2>
                     </div>
                     <h3>
                         {this.state.totalLantern}
                     </h3>
                 </div>
+                  {/* <div class="TopCard2">
+                    <div class="TopCard1Bar">
+                        <h2>Total Black <br></br> Lanterns: </h2>
+                    </div>
+                    <h3>
+                        {this.state.totalBlackPuc}
+                    </h3>
+                </div> */}
                 <div class="TopCard1">
                     <div class="TopCard1Bar">
                         <h2>Potential Earnings </h2>
@@ -93,25 +118,29 @@ class InProgress extends Component {
                 <div class="TableContainer">
                 <table class="InProgressTable">
                     <tr id="TableHeader">
-                        <th>Name</th>
+                    <th>Name</th>
                         <th>Address</th>
                         <th>Contact</th>
                         <th>Date Ordered</th>
-                        <th>Flashlights</th>
-                        <th>Lanterns</th>
+                        <th>Flashlights<br></br>(Black)</th>
+                        <th>Flashlights<br></br>(Yellow)</th>
+                        <th>Lanterns<br></br>(Yellow)</th>
+                        {/* <th>Lanterns<br></br>(Black)</th> */}
                         <th>Total Owed</th>
                         <th>Edit</th>
                     </tr>
                     {orders.map(orders => (
 
                         <tr id="DataRow" key={orders.order_id}>
-                            <td>{orders.first_name_cust}  {orders.last_name_cust}</td>
+                          <td>{orders.first_name_cust}  {orders.last_name_cust}</td>
                             <td>{orders.address_cust}</td>
                             <td id="ContactData">{orders.phone_cust}<br></br>{orders.email_cust}</td>
                             <td><Moment format="MM/DD/YYYY">{orders.date}</Moment></td>
                             <td>{orders.flashlights}</td>
+                            <td>{orders.flashlight_yellow}</td>
                             <td>{orders.pucs}</td>
-                            <td id="TotalData">{'$' + (orders.flashlights * 30 + orders.pucs * 35)}   <i class="fas fa-exclamation-triangle"></i></td>
+                             {/* <td>{orders.puc_black}</td> */}
+                            <td id="TotalData">{'$' + (orders.flashlights * 30 + orders.flashlight_yellow * 30 + orders.pucs * 35 + orders.puc_black *35)}   <i class="fas fa-exclamation-triangle"></i></td>
                             <td id="EditData"><i onClick={()=>this.props.history.push(`/user/edit-order/${orders.order_id}`)}class="fas fa-pencil-alt"></i></td>
                         </tr>
                     ))

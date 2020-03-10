@@ -10,6 +10,8 @@ class Collected extends Component {
         this.state = {
             totalFlash: 0,
             totalLantern: 0,
+            totalBlackPuc: 0,
+            totalYellowFlash: 0,
             orders: [],
             totalMoneyNeed: 0,
             possible: 0
@@ -31,17 +33,25 @@ class Collected extends Component {
         for (let i = 0; i < this.state.orders.length; i++) {
             totalFlash += this.state.orders[i].flashlights
         }
-        this.setState({
-            totalFlash: totalFlash
-        })
         let totalLantern = 0
         for (let i = 0; i < this.state.orders.length; i++) {
             totalLantern += this.state.orders[i].pucs
         }
-        let totalMoneyNeed = totalLantern * 35 + totalFlash * 30
+        let totalYellowFlash = 0
+        for (let i = 0; i < this.state.orders.length; i++) {
+            totalYellowFlash += this.state.orders[i].flashlight_yellow
+        }
+        let totalBlackPuc = 0
+        for (let i = 0; i < this.state.orders.length; i++) {
+            totalBlackPuc += this.state.orders[i].puc_black
+        }
+        let totalMoneyNeed = totalLantern * 35 + totalFlash * 30 + totalYellowFlash * 30 +totalBlackPuc*35
         let possible = totalMoneyNeed / 2
         this.setState({
+            totalFlash: totalFlash,
             totalLantern: totalLantern,
+            totalYellowFlash: totalYellowFlash,
+            totalBlackPuc: totalBlackPuc,
             totalMoneyNeed: totalMoneyNeed.toFixed(2),
             possible: possible.toFixed(2),
         })
@@ -55,22 +65,38 @@ class Collected extends Component {
             <div className="App" >
                 <h2 class="Title-Bar-Collected"><i class="fas fa-money-check-alt"></i>   Orders w/ money collected  </h2>
                 <div class="TopCards">
-                <div class="TopCard1">
+                <div class="TopCard2">
                     <div class="TopCard1Bar">
-                        <h2>Total Flashlights: </h2>
+                        <h2>Total Black <br></br> Flashlights: </h2>
                     </div>
                     <h3>
                         {this.state.totalFlash}
                     </h3>
                 </div>
-                <div class="TopCard1">
+                <div class="TopCard2">
                     <div class="TopCard1Bar">
-                        <h2>Total Lanterns: </h2>
+                        <h2>Total Yellow <br></br>Flashlights: </h2>
+                    </div>
+                    <h3>
+                        {this.state.totalYellowFlash}
+                    </h3>
+                </div>
+                <div class="TopCard2">
+                    <div class="TopCard1Bar">
+                        <h2>Total Yellow <br></br> Lanterns: </h2>
                     </div>
                     <h3>
                         {this.state.totalLantern}
                     </h3>
                 </div>
+                {/* <div class="TopCard2">
+                    <div class="TopCard1Bar">
+                        <h2>Total Black <br></br> Lanterns: </h2>
+                    </div>
+                    <h3>
+                        {this.state.totalBlackPuc}
+                    </h3>
+                </div> */}
                 <div class="TopCard1">
                     <div class="TopCard1Bar">
                         <h2>Your projected earnings </h2>
@@ -96,8 +122,10 @@ class Collected extends Component {
                         <th>Address</th>
                         <th>Contact</th>
                         <th>Date Ordered</th>
-                        <th>Flashlights</th>
-                        <th>Lanterns</th>
+                        <th>Flashlights<br></br>(Black)</th>
+                        <th>Flashlights<br></br>(Yellow)</th>
+                        <th>Lanterns<br></br>(Yellow)</th>
+                        {/* <th>Lanterns<br></br>(Black)</th> */}
                         <th>Total Collected</th>
                         <th>Edit</th>
                     </tr>
@@ -109,8 +137,10 @@ class Collected extends Component {
                             <td id="ContactData">{orders.phone_cust}<br></br>{orders.email_cust}</td>
                             <td><Moment format="MM/DD/YYYY">{orders.date}</Moment></td>
                             <td>{orders.flashlights}</td>
+                            <td>{orders.flashlight_yellow}</td>
                             <td>{orders.pucs}</td>
-                            <td id="TotalCollected">{'$' + (orders.flashlights * 30 + orders.pucs * 35)}   <i class="fas fa-hand-holding-usd"></i></td>
+                            {/* <td>{orders.puc_black}</td> */}
+                            <td id="TotalCollected">{'$' + (orders.flashlights * 30 + orders.pucs * 35 +orders.flashlight_yellow*30 + orders.puc_black*35)}   <i class="fas fa-hand-holding-usd"></i></td>
                             <td id="EditData"><i onClick={()=>this.props.history.push(`/user/edit-order/${orders.order_id}`)}class="fas fa-pencil-alt"></i></td>
                         </tr>
                     ))

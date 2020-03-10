@@ -106,7 +106,7 @@ class UserDash extends Component {
       <div className="App" >
         <div className="Title-Bar-Dash"><h2>Student Dashboard: Welcome {this.state.username}!</h2></div>
         <div className="TopCards">
-          <div class="TopCard1">
+          <div class="TopCard3">
             <div class="TopCard1Bar">
               <h2>Total orders in progress: </h2>
             </div>
@@ -114,7 +114,7 @@ class UserDash extends Component {
               {this.state.totalOrdersInProgress}
             </h3>
           </div>
-          <div class="TopCard1">
+          <div class="TopCard3">
             <div class="TopCard1Bar">
               <h2>Total Orders w/ Money Collected</h2>
             </div>
@@ -122,7 +122,7 @@ class UserDash extends Component {
               {this.state.collectedOrdersTotal}
             </h3>
           </div>
-          <div class="TopCard1">
+          <div class="TopCard3">
             <div class="TopCard1Bar">
               <h2>Current Earnings</h2>
             </div>
@@ -132,7 +132,7 @@ class UserDash extends Component {
           </div>
         </div>
         <div class="TopCards">
-        <div class="TopCard1">
+        <div class="TopCard3">
             <div class="TopCard1Bar">
               <h2 >Total $ to be collected</h2>
             </div>
@@ -142,7 +142,7 @@ class UserDash extends Component {
               </h4>
             </h3>
           </div>
-          <div class="TopCard1">
+          <div class="TopCard3">
             <div class="TopCard1Bar">
               <h2>Total money collected </h2>
             </div>
@@ -150,7 +150,7 @@ class UserDash extends Component {
               ${this.state.totalMoneyC}
             </h3>
           </div>
-          <div class="TopCard1">
+          <div class="TopCard3">
             <div class="TopCard1Bar">
               <h1> Possible total earnings after "In progress" $ collected</h1>
             </div>

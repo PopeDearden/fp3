@@ -33,8 +33,9 @@ createOrder: (req,res) => {
     const user_id = req.session.student[0].user_id
     const director_tag = req.session.student[0].director_tag
     const archived = false
-    const {first_name_cust, last_name_cust, phone_cust, email_cust, address_cust, flashlights, pucs, collected, confirmed, order_placed, order_sent} =req.body
-    db.create_order([first_name_cust, last_name_cust, phone_cust, email_cust, address_cust, flashlights, pucs, director_tag, date, user_id,collected, confirmed, order_placed, order_sent, archived, delivered])
+    const {first_name_cust, last_name_cust, phone_cust, email_cust, address_cust, flashlights, pucs, collected, confirmed, order_placed, order_sent, flashlight_yellow, puc_black, good_flash, good_puc} =req.body
+    console.log(flashlight_yellow, puc_black)
+    db.create_order([first_name_cust, last_name_cust, phone_cust, email_cust, address_cust, flashlights, pucs, director_tag, date, user_id,collected, confirmed, order_placed, order_sent, archived, delivered, flashlight_yellow, puc_black, good_flash, good_puc])
     res.status(200).send('Created Order')
 },
 getStudentInProgressOrders: async(req, res) => {

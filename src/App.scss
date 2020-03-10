@@ -651,6 +651,7 @@ color: black;
     position: sticky;
     top:0;
     padding-left: 10px;
+    padding-right: 10px;
     border-bottom: solid black 5px;;
   }
 }
@@ -693,7 +694,9 @@ td{
 
 }
 #ContactData{
-  width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 200px;
 }
 #TotalData{
   font-size:1.5rem;
@@ -705,7 +708,7 @@ td{
 }
 .TopCard1{
   margin-left:50px;
-  width: 17vw;
+  width: 12vw;
   height:130px;
   background-color: #555555;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.603);
@@ -713,7 +716,7 @@ td{
   h3{
     color: white;
     text-align: center;
-    font-size: 3rem;
+    font-size: 2.5rem;
     padding-top:5px;
     font-family: 'Roboto Condensed', sans-serif;
   }
@@ -722,7 +725,7 @@ td{
   }
   h1{
     text-align: center;
-    padding-top: 3px;
+    padding-top: 2.5px;
     font-family: 'Roboto Condensed', sans-serif;
     color: white;
     font-size: 1.2rem;
@@ -746,8 +749,60 @@ td{
 .TopCards{
   display: flex;
   justify-content: space-between;
+  // max-width: 60vw;
   margin-bottom: 20px;
 }
+.TopCard2{
+  margin-left:50px;
+  width: 10vw;
+  height:130px;
+  background-color: #555555;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.603);
+  
+  h3{
+    color: white;
+    text-align: center;
+    font-size: 3rem;
+    padding-top:5px;
+    font-family: 'Roboto Condensed', sans-serif;
+  }
+  h4 {
+    color: Orange;
+  }
+  h1{
+    text-align: center;
+    padding-top: 3px;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: white;
+    font-size: 1.2rem;
+  }
+}
+.TopCard3{
+  margin-left:50px;
+  width: 17vw;
+  height:130px;
+  background-color: #555555;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.603);
+  
+  h3{
+    color: white;
+    text-align: center;
+    font-size: 2.5rem;
+    padding-top:5px;
+    font-family: 'Roboto Condensed', sans-serif;
+  }
+  h4 {
+    color: Orange;
+  }
+  h1{
+    text-align: center;
+    padding-top: 2.5px;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: white;
+    font-size: 1.2rem;
+  }
+}
+
 .TableContainer{
   max-height: 65vh;
   overflow: auto;
