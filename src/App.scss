@@ -655,9 +655,28 @@ color: black;
     border-bottom: solid black 5px;;
   }
 }
+#TableHeader2{
+  border-bottom: solid black 5x;
+  text-align: left;;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  font-size:1.5rem;
+  th{
+    // position: sticky;
+    top:0;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-bottom: solid black 5px;;
+  }
+}
 #restrictTable{
-  min-width: 50px;
-  max-width: 50px;
+  text-align: left;
+  min-width: 60px;
+  max-width: 60px;
+  // border-right: solid 1px red;
+  // overflow: hidden;
+  // text-overflow: ellipsis;
+  
 }
 #DataRow{
     padding: 20px;
@@ -665,6 +684,17 @@ color: black;
     border-bottom: solid 1px black;
   }
   #DataRow:hover{
+    background-color: #5e5e5e; 
+    color: turquoise;
+    border-bottom: solid 1px turquoise;
+  }
+#DataRowTotal{
+    background-color: orange;
+    padding: 20px;
+    width:200px;
+    border-bottom: solid 1px black;
+  }
+  #DataRowTotal:hover{
     background-color: #5e5e5e; 
     color: turquoise;
     border-bottom: solid 1px turquoise;
