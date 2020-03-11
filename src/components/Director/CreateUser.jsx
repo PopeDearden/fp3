@@ -53,6 +53,8 @@ class CreateUser extends Component {
             sample_light_yellow: 0,
             sample_puc_yellow: 0,
             sample_puc_black: 0,
+            sample_good_flash: 0,
+            sample_good_puc: 0,
           })
         }
         else {
@@ -111,12 +113,22 @@ class CreateUser extends Component {
               <br></br>
               <div class="Form-Split">
                 <div>
-                  <h3>FlashLights</h3>
+                  <h3>(Black) FlashLights</h3>
                   <input type="number" min="0" value={this.state.sample_light_black} onChange={e => this.setState({ sample_light_black: +e.target.value })} />
                 </div>
                 <div>
-                  <h3>Lanterns</h3>
+                  <h3>(Yellow) FlashLights</h3>
+                  <input type="number" min="0" value={this.state.sample_light_yellow} onChange={e => this.setState({ sample_light_yellow: +e.target.value })} />
+                </div>
+              </div>
+              <div class="Form-Split">
+              <div>
+                  <h3>(Yellow) Lanterns</h3>
                   <input type="number" min="0" value={this.state.sample_puc_yellow} onChange={e => this.setState({ sample_puc_yellow: +e.target.value })} />
+                </div>
+                <div>
+                  {/* <h3>(Black) Lanterns</h3>
+                  <input type="number" min="0" value={this.state.sample_puc_black} onChange={e => this.setState({ sample_puc_black: +e.target.value })} /> */}
                 </div>
               </div>
               <br></br>

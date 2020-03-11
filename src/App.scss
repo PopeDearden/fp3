@@ -878,13 +878,18 @@ td{
 }
 #SampleInfo{
   width: auto;
+  line-height: 1.6;
   color: white;
   font-family: 'Roboto Condensed', sans-serif;
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-left: 50px;
-  padding: 50px;
+  padding: 20px;
   background-color: #555555;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.603);
   // background-color: black;
   border: solid 2px #addfee;
+  ln{
+    color: white;
+    height: 1px;
+  }
 }

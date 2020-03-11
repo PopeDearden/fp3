@@ -51,6 +51,21 @@ module.exports = {
             req.session.director[0].tag, username])
         res.status(200).send('Created Student Account')
     },
+    getInProgress: async (req, res) => {
+        console.log('hit director in progress')
+        const db= req.app.get('db')
+        const director_tag = req.session.director[0].tag
+        const inProgress = await db.get_director_in_progress([director_tag])
+        console.log('I found ' + inProgress)
+        res.status(200).send(inProgress)
+    },
+    getStudents: async (req, res) => {
+        console.log('getting students')
+        const db = req.app.get('db')
+        const director_tag = req.session.director[0].tag
+        const students = await db.get_students([director_tag])
+        res.status(200).send(students)
+    },
     logOut: (req, res) => {
         req.session.destroy()
         // console.log(req.session.director)

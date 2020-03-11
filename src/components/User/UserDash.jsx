@@ -15,7 +15,9 @@ class UserDash extends Component {
       earnedC: 0,
       possibleToEarn: 0,
       sample_light_black: 0,
+      sample_light_yellow: 0,
       sample_puc_yellow: 0,
+      sample_puc_black: 0,
       username: '',
 
     }
@@ -38,7 +40,9 @@ class UserDash extends Component {
     await axios.get('/api/samples').then(res => {
       this.setState({
         sample_puc_yellow: res.data[0].sample_puc_yellow,
+        sample_puc_black: res.data[0].sample_puc_black,
         sample_light_black: res.data[0].sample_light_black,
+        sample_light_yellow: res.data[0].sample_light_yellow,
         username: res.data[0].username
       })
     }
@@ -60,7 +64,11 @@ class UserDash extends Component {
     for (let i = 0; i < this.state.collectedOrders.length; i++) {
       totalLantern += this.state.collectedOrders[i].pucs
     }
-    let totalMoney = totalLantern * 35 + totalFlash * 30
+    let totalYellowFlash = 0
+    for (let i = 0; i < this.state.collectedOrders.length; i++) {
+      totalYellowFlash += this.state.collectedOrders[i].flashlight_yellow
+    }
+    let totalMoney = totalLantern * 35 + totalFlash * 30 + totalYellowFlash * 30
     let earned = totalMoney / 2
     this.setState({
       totalLanternC: totalLantern,
@@ -83,7 +91,11 @@ class UserDash extends Component {
     for (let i = 0; i < this.state.inProgressOrders.length; i++) {
       totalLantern += this.state.inProgressOrders[i].pucs
     }
-    let totalMoneyNeed = totalLantern * 35 + totalFlash * 30
+    let totalYellowFlash = 0
+    for (let i = 0; i < this.state.inProgressOrders.length; i++) {
+      totalYellowFlash += this.state.inProgressOrders[i].flashlight_yellow
+    }
+    let totalMoneyNeed = totalLantern * 35 + totalFlash * 30 + totalYellowFlash * 30
     let possible = totalMoneyNeed / 2
     let earnedPotential = +this.state.earnedC + possible 
     this.setState({
@@ -162,14 +174,17 @@ class UserDash extends Component {
           </div>
         </div>
         <div class="Title-Bar-Collected">Samples information</div>
-        <h2 id="SampleInfo">Our records show that you have been given 
-        <br></br><br></br>
-        {this.state.sample_light_black} sample 
-        flashlights ($30 each)
+        <h2 id="SampleInfo">Our records show that you have been given: 
         <br></br>
-        {this.state.sample_puc_yellow} lanterns ($35 each)
+        {this.state.sample_light_black} sample (black) flashlights ($30 each)
         <br></br>
+        {this.state.sample_light_yellow} sample (yellow) flashlights ($30 each)
         <br></br>
+        {this.state.sample_puc_yellow} sample (yellow) lanterns ($35 each)
+        <br></br>
+        {/* {this.state.sample_puc_black} sample (black) lanterns ($35 each) */}
+        <br></br>
+      
         You are responsible for payment of ${sampleTotal(this.state.sample_light_black, this.state.sample_puc_yellow)} at the end of the fundraiser deadline.</h2>
       </div>
     )
