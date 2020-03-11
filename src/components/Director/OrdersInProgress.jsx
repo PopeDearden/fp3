@@ -143,39 +143,50 @@ class OrdersInProgress extends Component {
         <div class="TableContainer">
           <table class="InProgressTable">
             <tr id="TableHeader">
-              <th>Student<br></br>Name</th>
-              <th>Customer<br></br></th>
-              <th>Contact</th>
-              <th>Date Ordered</th>
-              <th>Flashlights<br></br>(Black)</th>
-              <th>Flashlights<br></br>(Yellow)</th>
-              <th>Lanterns<br></br>(Yellow)</th>
+              <th id="restrictTable">Student<br></br>Name</th>
+              <th id="restrictTable">Customer<br></br></th>
+              <th id="restrictTable">Contact</th>
+              <th id="restrictTable">Date Ordered</th>
+              <th id="restrictTable">Flashlights<br></br>(Black)</th>
+              <th id="restrictTable">Flashlights<br></br>(Yellow)</th>
+              <th id="restrictTable">Lanterns<br></br>(Yellow)</th>
               {/* <th>Lanterns<br></br>(Black)</th> */}
-              <th>Total Owed</th>
+              <th id="restrictTable">Total Owed</th>
             </tr>
-            {/* {this.state.students.map(student =>(
-              <tr>
-                <td id="DataRow">{student.first_name}</td>
+            </table>
+            {this.state.students.map(student =>(
+              <table class="InProgressTable">
+              <tr id="TableHeader">
+              <th id="restrictTable">{student.first_name} {student.last_name}</th>
+              <th id="restrictTable"></th>
+              <th id="restrictTable"></th>
+              <th id="restrictTable"></th>
+              <th id="restrictTable"></th>
+              <th id="restrictTable"></th>
+              <th id="restrictTable"></th>
+              <th id="restrictTable"></th>
               </tr>
-            ))} */}
+              {orders.filter((element)=> { return element.user_id === student.user_id}).map(orders=> (
+                <tr id="DataRow" key={orders.order_id}>
+                   
+                 <td id="restrictTable"></td>
+                 <td id="restrictTable">{orders.first_name_cust}  {orders.last_name_cust}</td>
+                 <td id="restrictTable">{orders.phone_cust}<br></br>{orders.email_cust}</td>
+                 <td id="restrictTable"><Moment format="MM/DD/YYYY">{orders.date}</Moment></td>
+                 <td id="restrictTable">{orders.flashlights}</td>
+                 <td id="restrictTable">{orders.flashlight_yellow}</td>
+                 <td id="restrictTable">{orders.pucs}</td>
+                 {/* <td>{orders.puc_black}</td> */}
+                 <td id="TotalData">{'$' + (orders.flashlights * 30 + orders.flashlight_yellow * 30 + orders.pucs * 35 + orders.puc_black * 35)}   <i class="fas fa-exclamation-triangle"></i></td>
+ 
+               </tr>
+              ))}
+              </table>
+            ))}
 
-
-            {orders.map(orders => (
-              <tr id="DataRow" key={orders.order_id}>
-                <td>{orders.first_name} {orders.last_name}.</td>
-                <td>{orders.first_name_cust}  {orders.last_name_cust}</td>
-                <td id="ContactData">{orders.phone_cust}<br></br>{orders.email_cust}</td>
-                <td><Moment format="MM/DD/YYYY">{orders.date}</Moment></td>
-                <td>{orders.flashlights}</td>
-                <td>{orders.flashlight_yellow}</td>
-                <td>{orders.pucs}</td>
-                {/* <td>{orders.puc_black}</td> */}
-                <td id="TotalData">{'$' + (orders.flashlights * 30 + orders.flashlight_yellow * 30 + orders.pucs * 35 + orders.puc_black * 35)}   <i class="fas fa-exclamation-triangle"></i></td>
-
-              </tr>
-            ))
-            }
-          </table>
+    
+           
+          
         </div>
 
 

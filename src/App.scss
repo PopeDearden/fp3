@@ -655,13 +655,29 @@ color: black;
     border-bottom: solid black 5px;;
   }
 }
+#restrictTable{
+  min-width: 50px;
+  max-width: 50px;
+}
 #DataRow{
+    padding: 20px;
+    width:200px;
+    border-bottom: solid 1px black;
+  }
+  #DataRow:hover{
+    background-color: #5e5e5e; 
+    color: turquoise;
+    border-bottom: solid 1px turquoise;
+  }
+#DataRowTitle{
+    text-align: left;
+    background-color: rgb(138, 211, 204);
     padding: 20px;
     width:200px;
     border-bottom: solid 1px black;
     // transition: .1s;
 }
-#DataRow:hover{
+#DataRowTitle:hover{
   background-color: #5e5e5e; 
   color: turquoise;
   border-bottom: solid 1px turquoise;
