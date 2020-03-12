@@ -689,17 +689,23 @@ color: black;
     border-bottom: solid 1px turquoise;
   }
 #DataRowTotal{
-    background-color: orange;
+    background-color: rgba(0, 255, 221, 0.123);
     padding: 20px;
     width:200px;
-    border-bottom: solid 1px black;
+    // border: solid 2px #555555;
+    border-top: solid 4px #555555;
+    font-weight: bold;
+    // border-bottom: solid 1px black;
+    // font-size: 3rem;
   }
   #DataRowTotal:hover{
+    // border: solid 2px turquoise;
+    border-top: solid 4px #555555;
     background-color: #5e5e5e; 
     color: turquoise;
-    border-bottom: solid 1px turquoise;
+    // border-bottom: solid 1px turquoise;
   }
-#DataRowTitle{
+  #DataRowTitle{
     text-align: left;
     background-color: rgb(138, 211, 204);
     padding: 20px;

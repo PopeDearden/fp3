@@ -160,7 +160,7 @@ class EditOrder extends Component {
                             </div> */}
                         </div>
                         <h2>Have you collected their <br></br> payment of ${this.state.flashlights*30+this.state.flashlight_yellow*30+this.state.pucs*35+this.state.puc_black*35+this.state.good_flash*30+this.state.good_puc*35}?</h2>
-                        <select id="Drop" onChange={e => this.setState({collected: e.target.value})}>
+                        <select id="Drop" value={this.state.collected} onChange={e => this.setState({collected: e.target.value})}>
                             <option value="false">No</option>
                             <option value="true">Yes</option>
                         </select>

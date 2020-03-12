@@ -59,6 +59,14 @@ module.exports = {
         console.log('I found ' + inProgress)
         res.status(200).send(inProgress)
     },
+    getConfirmed: async (req, res) => {
+        console.log('hit director orders confirmed')
+        const db= req.app.get('db')
+        const director_tag = req.session.director[0].tag
+        const confirmed = await db.get_director_confirmed([director_tag])
+        console.log('I found ' + confirmed)
+        res.status(200).send(confirmed)
+    },
     getStudents: async (req, res) => {
         console.log('getting students')
         const db = req.app.get('db')

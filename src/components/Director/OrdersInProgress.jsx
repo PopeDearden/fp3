@@ -205,7 +205,7 @@ class OrdersInProgress extends Component {
                 <td id="restrictTable">{this.calculate(orders, student).totalFlashBlack}</td>
                 <td id="restrictTable">{this.calculate(orders, student).totalFlashYellow}</td>
                 <td id="restrictTable">{this.calculate(orders, student).totalLanternYellow}</td>
-                <td id="restrictTable">${this.calculate(orders, student).totalPrice.toFixed(2)}</td>
+                <td id="TotalData">${this.calculate(orders, student).totalPrice.toFixed(2)}</td>
               </tr>
             </table>
           ))}
