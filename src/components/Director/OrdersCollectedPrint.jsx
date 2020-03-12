@@ -110,23 +110,27 @@ class OrdersCollectedPrint extends Component {
     })
     return (
       <div className="App" >
-        <button id="GeneratePrint" onClick={()=>window.print()}>Generate PDF for Collected Orders</button>
+        <button id="GeneratePrint" onClick={() => window.print()}>Generate PDF for Collected Orders</button>
         <div className="Printing">
 
           <h1>Orders w/ money collected for your school:</h1>
-
           <h2>Total Black Flashlights: {this.state.totalFlash}</h2>
           <h2>Total Yellow Flashlights: {this.state.totalYellowFlash}</h2>
           <h2>Total Yellow Flashlights:     {this.state.totalLantern}</h2>
           {/* <h2>Total Black Lanterns:     {this.state.totalBlackPuc}</h2> */}
           <h2>Total Potential Earnings: ${this.state.possible}</h2>
           <h2>Total $ Collected: ${this.state.totalMoneyNeed}</h2>
-          <div class="">
+          <div class="Printing">
             {student.map(student => (
-              <div class="PrintOrderList">
+              <div id="Individual">
 
-                <p id="StudentName">{student.first_name} {student.last_name} CUSTOMER ORDERS</p>
-
+                <p id="StudentName">{student.first_name} {student.last_name}</p>
+                <div class="TotalCollectedPrint" >
+                  <p>Total Black Flashlights: {this.calculate(orders, student).totalFlashBlack}</p>
+                  <p>Total Yellow Flashlights: {this.calculate(orders, student).totalFlashYellow}</p>
+                  <p>Total Yellow Lanterns: {this.calculate(orders, student).totalLanternYellow}</p>
+                  <p>Total $ collected: ${this.calculate(orders, student).totalPrice.toFixed(2)}</p>
+                </div>
                 {orders.filter((element) => { return element.user_id === student.user_id }).map(orders => (
                   <div className="OneOrder" key={orders.order_id}>
                     <div class="Box1">
@@ -141,11 +145,51 @@ class OrdersCollectedPrint extends Component {
                       <p><Moment format="MM/DD/YYYY">{orders.date}</Moment></p>
                     </div>
                     <div class="Box3">
-                      <p>Black Flashlights: {orders.flashlights}</p>
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Total</th>
+                          </tr>
+                        </thead>
+                        <tr>
+                          <td>Black Flashlights</td>
+                          <td>{orders.flashlights}</td>
+                          <td>$30.00</td>
+                          <td>${30*+orders.flashlights}.00</td>
+                        </tr>
+                        <tr>
+                          <td>Yellow Flashlights</td>
+                          <td>{orders.flashlight_yellow}</td>
+                          <td>$30.00</td>
+                          <td>${30*+orders.flashlight_yellow}.00</td>
+                        </tr>
+                        <tr>
+                          <td>Yellow Lanterns</td>
+                          <td>{orders.pucs}</td>
+                          <td>$35.00</td>
+                          <td>${35*+orders.pucs}.00</td>
+                        </tr>
+                        {/* <tr>
+                          <td>Black Lanterns</td>
+                          <td>{orders.pucs}</td>
+                          <td>$35.00</td>
+                          <td>${35*+orders.puc_black}.00</td>
+                        </tr> */}
+                        <tr>
+                          <td>Totals</td>
+                          <td></td>
+                          <td></td>
+                          <td>{'$' + (orders.flashlights * 30 + orders.flashlight_yellow * 30 + orders.pucs * 35 + orders.puc_black * 35)}</td>
+                        </tr>
+                      </table>
+                      {/* <p>Black Flashlights: {orders.flashlights}</p>
                       <p>Yellow Flashlights: {orders.flashlight_yellow}</p>
                       <p>Yellow Lanterns: {orders.pucs}</p>
                       <p>Black Lanters: {orders.puc_black}</p>
-                      <p>TOTAL COST: {'$' + (orders.flashlights * 30 + orders.flashlight_yellow * 30 + orders.pucs * 35 + orders.puc_black * 35)} </p>
+                      <p>TOTAL COST: {'$' + (orders.flashlights * 30 + orders.flashlight_yellow * 30 + orders.pucs * 35 + orders.puc_black * 35)} </p> */}
                     </div>
                     {/* <td id="TotalCollected">{'$' + (orders.flashlights * 30 + orders.flashlight_yellow * 30 + orders.pucs * 35 + orders.puc_black * 35)}   <i class="fas fa-hand-holding-usd"></i></td> */}
                   </div>
@@ -158,14 +202,7 @@ class OrdersCollectedPrint extends Component {
                   }
                 }
                 }
-                <div >
 
-
-                  <p>Total Black Flashlights{this.calculate(orders, student).totalFlashBlack}</p>
-                  <p>Total Yellow Flashlights{this.calculate(orders, student).totalFlashYellow}</p>
-                  <p>Total Yellow Lanterns{this.calculate(orders, student).totalLanternYellow}</p>
-                  <p>Total $ collected ${this.calculate(orders, student).totalPrice.toFixed(2)}</p>
-                </div>
               </div>
             ))}
 

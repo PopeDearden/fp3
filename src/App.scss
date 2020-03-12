@@ -948,25 +948,40 @@ td{
 .Printing{
   display: none;
   font-family: 'Roboto Condensed', sans-serif;
+  table{
+    margin-top:10px;
+  }
+  th{
+    font-weight: bold;
+    border:solid 1px;
+    text-align: left;
+    padding: 5px;
+  }
+  td{
+    padding: 5px;
+    border:solid 1px;
+    width: 100px;
+    text-align: left;
+  }
 }
 
 .PrintOrderList{
   margin-bottom: 50px;
 }
 #StudentName {
-  border-bottom: solid 4px black;
+  border: solid 4px black;
   max-width: 30vw;
   margin-bottom: 20px;
-  margin-top: 20px;
+  // margin-top: 20px;
 }
 .OneOrder{
   display: flex;
-  width: 80vw;
+  width: 100vw;
   flex-direction: row;
   justify-content: space-between;
   margin-top: 50px;
   margin-bottom: 50px;
-  border-bottom: dotted 1px black;
+  border-top: dotted 1px black;
   padding-bottom: 10px;
 }
 #GeneratePrint{
@@ -978,6 +993,11 @@ td{
   background-color: turquoise;
 }
 @media print {
+
+  #Individual {
+    border: solid black 1px;
+    margin-bottom: 10px;
+  }
   #GeneratePrint{
     display:none;
   }
@@ -990,6 +1010,9 @@ td{
 }
 .PrintOrderList{
   color: black;
+}
+p{
+  line-height: 1.6;
 }
 .Header {
   display: none;
