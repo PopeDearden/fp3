@@ -945,3 +945,65 @@ td{
     height: 1px;
   }
 }
+.Printing{
+  display: none;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.PrintOrderList{
+  margin-bottom: 50px;
+}
+#StudentName {
+  border-bottom: solid 4px black;
+  max-width: 30vw;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.OneOrder{
+  display: flex;
+  width: 80vw;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-bottom: dotted 1px black;
+  padding-bottom: 10px;
+}
+#GeneratePrint{
+  height: 50px;
+  padding: 15px;
+  font-size: 1rem;
+  margin: 50px;
+  width: 350px;
+  background-color: turquoise;
+}
+@media print {
+  #GeneratePrint{
+    display:none;
+  }
+.Printing {
+  display: flex;
+  flex-direction: column;
+}
+.App {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+.PrintOrderList{
+  color: black;
+}
+.Header {
+  display: none;
+}
+h1{
+  font-size: 2rem;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+h2{
+  font-size:1.5rem;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+h3{
+  font-size: 1rem;
+}
+
+}
