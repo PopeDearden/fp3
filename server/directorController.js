@@ -74,6 +74,29 @@ module.exports = {
         const students = await db.get_students([director_tag])
         res.status(200).send(students)
     },
+    getStudentTotals: async(req, res) => {
+        console.log('getting student totals')
+        const db = req.app.get('db')
+        const user_id = req.params.id
+        const totals = await db.get_student_totals([user_id])
+        res.status(200).send(totals)
+    },
+    updateStudentOrderConfirm: async (req, res) => {
+        console.log('updating confirmed status')
+        const db = req.app.get('db')
+        const user_id = req.params.id
+        await db.update_order_student_confirmed([user_id])
+        res.status(200).send('updated records')
+        
+    },
+    updateStudentOrderUnConfirm: async (req, res) => {
+        console.log('updating confirmed status')
+        const db = req.app.get('db')
+        const user_id = req.params.id
+        await db.update_order_student_unconfirmed([user_id])
+        res.status(200).send('updated records')
+        
+    },
     logOut: (req, res) => {
         req.session.destroy()
         // console.log(req.session.director)

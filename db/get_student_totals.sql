@@ -1,0 +1,2 @@
+select SUM(flashlights) as flashlights, SUM(flashlight_yellow) as flashlight_yellow, SUM(pucs) as pucs, SUM(puc_black) as puc_black, SUM(flashlights*30 + flashlight_yellow*30 + pucs*35 + puc_black*35) as total from ordertable
+where user_id = $1 AND collected = true;

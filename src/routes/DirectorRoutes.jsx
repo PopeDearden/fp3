@@ -8,6 +8,7 @@ import OrdersConfirmed from '../components/Director/OrdersConfirmed'
 import PlaceOrder from '../components/Director/PlaceOrder'
 import UserInfoList from '../components/Director/UserInfoList'
 import OrdersCollectedPrint from '../components/Director/OrdersCollectedPrint'
+import ConfirmOptions from '../components/Director/ConfirmOptions'
 
 export default ( 
     <Switch>
@@ -19,6 +20,7 @@ export default (
         <Route path='/director/confirmed' component={OrdersConfirmed}/>
         <Route path='/director/place-order' component={PlaceOrder}/>
         <Route path='/director/user-info-list' component={UserInfoList}/>
+        <Route path='/director/confirm-options' component={ConfirmOptions}/>
 
     </Switch>
 )

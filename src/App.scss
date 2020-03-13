@@ -552,7 +552,9 @@ color: black;
   flex-direction: column;
 }
 .General-Content {
+  font-family: sans-serif;
   margin: 20px;
+
 }
 .Admin-Page{
   // background-color: Orange;
@@ -694,6 +696,7 @@ color: black;
     width:200px;
     // border: solid 2px #555555;
     border-top: solid 4px #555555;
+    border-bottom: solid 4px #555555;
     font-weight: bold;
     // border-bottom: solid 1px black;
     // font-size: 3rem;
@@ -701,6 +704,7 @@ color: black;
   #DataRowTotal:hover{
     // border: solid 2px turquoise;
     border-top: solid 4px #555555;
+    border-bottom: solid 4px #555555;
     background-color: #5e5e5e; 
     color: turquoise;
     // border-bottom: solid 1px turquoise;
@@ -742,6 +746,32 @@ td{
   padding-bottom:5px;
   padding-left: 10px;
   // height: 40px;
+}
+
+}
+.ConfirmTable {
+  font-family: 'Roboto Condensed', sans-serif;
+  width: 80vw;
+  background-color: white;
+  color: black;
+
+  th{
+    background-color: turquoise;
+    border-bottom: solid black 5x;
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size:1.5rem;
+    // max-width: 50px;
+  }
+
+td{
+  font-size: 1.5rem;
+  // max-width: 150px;
+  padding-top:5px;
+  padding-bottom:5px;
+  padding-left: 10px;
+  height: 30px;
 }
 
 }
@@ -881,7 +911,17 @@ td{
   padding: 10px;
   border-bottom: solid 5px black;
   margin-bottom: 10px;
- 
+}
+.Title-Bar-Confirm {
+  // margin-left: 50px;
+  background-image: linear-gradient(to right, turquoise, purple);
+  color: black;
+  font-weight: bold;
+  // width: 80vw;
+  height: 20px;
+  padding: 10px;
+  border-bottom: solid 5px black;
+  margin-bottom: 10px;
 }
 .Title-Bar-In-Progress {
   background-image: linear-gradient(to right, turquoise, orange);
@@ -1029,4 +1069,10 @@ h3{
   font-size: 1rem;
 }
 
+}
+#bad {
+  color: red;
+}
+#good {
+  color: green;
 }

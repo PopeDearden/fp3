@@ -59,8 +59,8 @@ logout = () => {
 
                     <i class="fas fa-money-check-alt"></i>
                 </div>
-                <div class="Header-Link" onClick={()=>this.props.history.push('/director/confirmed')}>
-                    <p>Orders Confirmed</p>
+                <div class="Header-Link" onClick={()=>this.props.history.push('/director/confirm-options')}>
+                    <p>Confirm Orders</p>
 
                     <i class="fas fa-comments-dollar"></i>
                 </div>
