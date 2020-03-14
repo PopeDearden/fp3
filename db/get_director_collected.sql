@@ -4,6 +4,6 @@ FROM
     ordertable
 inner join userinfo ON userinfo.user_id = ordertable.user_id
 
-where ordertable.director_tag = $1 AND collected = TRUE AND ordertable.confirmed = TRUE
+where ordertable.director_tag = $1 AND collected = TRUE AND ordertable.confirmed = FALSE
 Order by
     user_id;

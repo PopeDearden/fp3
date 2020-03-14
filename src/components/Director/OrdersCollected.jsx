@@ -28,7 +28,7 @@ class OrdersCollected extends Component{
         students: res.data
       })
     })
-    await axios.get(`/api/director/confirmed`).then(res => {
+    await axios.get(`/api/director/collected`).then(res => {
       console.log(res.data)
       this.setState({
         orders: res.data,
@@ -110,7 +110,7 @@ class OrdersCollected extends Component{
     })
     return (
       <div className="App" >
-       <h2 class="Title-Bar-Collected"><i class="fas fa-money-check-alt"></i>   Orders w/ money collected for your school : </h2>
+       <h2 class="Title-Bar-Collected"><i class="fas fa-money-check-alt"></i>   Orders w/ money collected by students: </h2>
         <div class="TopCards">
           <div class="TopCard2">
             <div class="TopCard1Bar">

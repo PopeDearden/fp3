@@ -77,19 +77,21 @@ class CreateUser extends Component {
         <div class="General-Content">
           <div class="Form-Box">
             <div class="Form-Box-Left">
-              <h2>Create new<br></br> student account</h2>
+              <h2>Create new student account</h2>
               <br></br>
               <div class="Form-Split">
                 <div>
                   <h3>First Name:</h3>
                   <input value={this.state.first_name} onChange={e => this.setState({ first_name: e.target.value })} />
-                  <h3>Last Name Initial:</h3>
-                  <input maxlength="1" value={this.state.last_name} onChange={e => this.setState({ last_name: e.target.value.toUpperCase() })} />
+                  <h3>Last Name</h3>
+                  <input value={this.state.last_name} onChange={e => this.setState({ last_name: e.target.value })} />
                 </div>
                 <div>
                   <p>*Username will be: <br>
                   </br><br></br>
                     {this.state.first_name}{this.state.last_name}
+                    <br></br>
+                    *will be case sensitive
                   </p>
                 </div>
               </div>

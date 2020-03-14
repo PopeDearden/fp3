@@ -1,0 +1,1 @@
+select * from director where tag = $1;

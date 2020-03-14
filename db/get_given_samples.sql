@@ -1,0 +1,1 @@
+select sample_light_black,	sample_light_yellow,	sample_puc_yellow,	sample_puc_black) from userinfo where director_tag = $1;

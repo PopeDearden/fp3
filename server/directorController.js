@@ -59,6 +59,14 @@ module.exports = {
         console.log('I found ' + inProgress)
         res.status(200).send(inProgress)
     },
+    getCollected: async (req, res) => {
+        console.log('hit director orders collected')
+        const db= req.app.get('db')
+        const director_tag = req.session.director[0].tag
+        const collected= await db.get_director_collected([director_tag])
+        console.log('I found ' + collected)
+        res.status(200).send(collected)
+    },
     getConfirmed: async (req, res) => {
         console.log('hit director orders confirmed')
         const db= req.app.get('db')
@@ -96,6 +104,14 @@ module.exports = {
         await db.update_order_student_unconfirmed([user_id])
         res.status(200).send('updated records')
         
+    },
+    getDirectorSamples: async (req, res) => {
+        console.log('getting director samples')
+        const db = req.app.get('db')
+        const tag = req.session.director[0].tag
+        const samples = await db.get_director_samples([tag])
+        const given = await db.get_given_samples([tag])
+        res.status(200).send({samples, given})
     },
     logOut: (req, res) => {
         req.session.destroy()

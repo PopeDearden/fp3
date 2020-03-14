@@ -1004,6 +1004,22 @@ td{
     text-align: left;
   }
 }
+.Finalize {
+  font-size: 1.5rem;
+  font-family: 'Roboto Condensed', sans-serif;
+  text-align: left;
+  width: 600px;
+  border: solid 1px;
+  th{
+    padding: 5px;
+    background-color: #555555;
+    color: white;
+  }
+  td{
+    color: black;
+    padding: 5px;
+  }
+}
 
 .PrintOrderList{
   margin-bottom: 50px;
@@ -1032,6 +1048,20 @@ td{
   width: 350px;
   background-color: turquoise;
 }
+.Invoice-Style {
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+  // border: solid 5px;
+  width: inherit;
+  line-height: 1.6;
+  h1{
+    font-size: 2rem;
+    border-bottom: 1px solid;
+  }
+}
+
+
 @media print {
 
   #Individual {
