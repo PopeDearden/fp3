@@ -47,7 +47,7 @@ class UserLogin extends Component {
       )
   }
   loginStudent = () => {
-    console.log(this.state)
+    // console.log(this.state)
     axios.put('/api/student', this.state)
       .then(res => {
         console.log(res.data[0])

@@ -17,12 +17,7 @@ module.exports = {
   checkManager: (req, res) => {
       console.log('checking for manager')
       console.log(req.session.manager)
-      if(req.session.manager){
-          res.status(200).send(req.session.manager)
-      }
-      else{
-          res.status(200).send('no manager')
-      }
+      res.status(200).send(req.session.manager)
   },
   logout: (req, res) => {
       req.session.destroy()
@@ -34,7 +29,7 @@ module.exports = {
     const {first_name, last_name, email, phone, password} = req.body
     db.create_manager([first_name, last_name, email, phone, password])
    
-    res.status(200).send('created Manager')
+    res.status(200).send('Created Manager')
   }
 
 }

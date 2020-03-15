@@ -8,6 +8,7 @@ const app = express()
 const managerController = require('./managerController')
 const directorController = require('./directorController')
 const studentController = require('./studentController')
+const hybridController = require('./hybridController')
 
 
 app.use(express.json())
@@ -50,6 +51,7 @@ app.get('/api/director/confirmed', directorController.getConfirmed)
 app.get('/api/director/students', directorController.getStudents)
 app.get('/api/director/samples', directorController.getDirectorSamples)
 app.get('/api/student/collected', studentController.getStudentCollectedOrders)
+app.get('/api/hybrid/sample-order', hybridController.getSampleOrders)
 
 app.put('/api/get-one-order/:id', studentController.getOneOrder)
 app.put('/api/director/student-totals/:id', directorController.getStudentTotals)

@@ -9,6 +9,8 @@ import AdminLogin from './components/Admin/AdminLogin'
 import Landing from './components/Landing/Landing'
 import DirectorLogin from './components/Director/DirectorLogin'
 import UserLogin from './components/User/UserLogin'
+import Hybrid from './components/Hybrid/HybridLogin'
+
 class App extends Component {
   constructor(s) {
     super()
@@ -24,6 +26,7 @@ class App extends Component {
           <Route path='/admin' component={AdminLogin} />
           <Route path='/user' component={UserLogin} />
           <Route path='/director' component={DirectorLogin} />
+          <Route path='/hybridlight' component={Hybrid} />
         </Switch>
       </div>
     )

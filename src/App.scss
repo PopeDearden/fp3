@@ -1005,10 +1005,10 @@ td{
   }
 }
 .Finalize {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-family: 'Roboto Condensed', sans-serif;
   text-align: left;
-  width: 600px;
+  width: inherit;
   border: solid 1px;
   th{
     padding: 5px;
@@ -1049,12 +1049,15 @@ td{
   background-color: turquoise;
 }
 .Invoice-Style {
+  padding-left: 2px;
   display: flex;
   flex-direction: column;
   margin-left: 50px;
   // border: solid 5px;
   width: inherit;
   line-height: 1.6;
+  max-height: 100vh;
+  overflow: auto;
   h1{
     font-size: 2rem;
     border-bottom: 1px solid;
