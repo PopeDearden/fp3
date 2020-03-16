@@ -13,7 +13,7 @@ module.exports = {
         console.log('looking for ' + email)
         console.log('looking for ' + password)
         const directorInfo = await db.find_director([email, password])
-
+        
         console.log(directorInfo)
         req.session.director = directorInfo
         console.log(req.session.director)

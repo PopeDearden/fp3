@@ -1044,7 +1044,7 @@ td{
   height: 50px;
   padding: 15px;
   font-size: 1rem;
-  margin: 50px;
+  margin: 30px;
   width: 350px;
   background-color: turquoise;
 }
@@ -1064,9 +1064,40 @@ td{
   }
 }
 
+.Best-Print {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto Condensed', sans-serif;
+  width: 80vw;
+  margin: 50px;
+  font-size: 1rem;
+  b{
+    font-weight: bold;
+  }
+  h2 {
+    font-size: 1.5rem;
+    border-bottom: solid 1px;
+  }
+  table {
+    text-align: right;
+    margin-top: 50px;
+    width: 600px;
+    border: solid 1px;
+  th {
+    padding: 20px;
+    border-bottom: solid 1px;
+  }
+  td{
+    padding: 20px;
+  }
+  }
+}
+
 
 @media print {
-
+#medium{
+  display: none;
+}
   #Individual {
     border: solid black 1px;
     margin-bottom: 10px;

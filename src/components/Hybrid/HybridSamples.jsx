@@ -52,7 +52,8 @@ class HybridSamples extends Component {
                         <tr id="DataRow">
                             <td>{samples.school_name}</td>
                             <td>{samples.first_name} {samples.last_name}</td>
-                            <td id="EditData"><i class="far fa-edit"></i></td>
+ 
+                            <td id="EditData" onClick={()=> this.props.history.push(`/hybridlight/samples-update/${samples.tag}`)}><i class="far fa-edit"></i></td>
                         </tr>
                     ))}
                     </table>

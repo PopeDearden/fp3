@@ -52,7 +52,11 @@ app.get('/api/director/students', directorController.getStudents)
 app.get('/api/director/samples', directorController.getDirectorSamples)
 app.get('/api/student/collected', studentController.getStudentCollectedOrders)
 app.get('/api/hybrid/sample-order', hybridController.getSampleOrders)
+app.get('/api/hybrid/invoices', hybridController.getInvoices)
 
+app.put('/api/hybrid/invoice', hybridController.updateInvoice)
+
+app.put('/api/hybrid/get-one-sample/:id', hybridController.getOneSample)
 app.put('/api/get-one-order/:id', studentController.getOneOrder)
 app.put('/api/director/student-totals/:id', directorController.getStudentTotals)
 app.put('/api/director/student-confirm/:id', directorController.updateStudentOrderConfirm)
