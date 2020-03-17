@@ -19,6 +19,7 @@ export default (
         <Route path='/admin/school-progress' component={SchoolProgress} />
         <Route path='/admin/create-admin' component={CreateAdmin} />
         <Route path='/admin/create-director' component={CreateDirector} />
+        <Route path='/admin/invoice' component={CreateDirector} />
 
     </Switch>
 )

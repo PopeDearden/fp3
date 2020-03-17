@@ -113,6 +113,14 @@ module.exports = {
         const given = await db.get_given_samples([tag])
         res.status(200).send({samples, given})
     },
+    createFinal: async (req,res) => {
+        const db = req.app.get('db')
+        const tag = req.session.director[0].tag
+        const {black_flashlights, yellow_flashlights, yellow_pucs} = req.body
+        console.log(black_flashlights, yellow_flashlights, yellow_pucs, tag)
+        await db.create_final_order([black_flashlights, yellow_flashlights, yellow_pucs, tag,])
+        res.status(200).send('created order')
+    },
     logOut: (req, res) => {
         req.session.destroy()
         // console.log(req.session.director)

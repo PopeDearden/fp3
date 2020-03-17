@@ -63,7 +63,7 @@ class PlaceOrder extends Component {
       possible: possible.toFixed(2),
     })
   }
-  placeOrder = (GrandTotal) => {
+  placeOrder = (GrandTotal, black_flashlights, yellow_flashlights, yellow_pucs) => {
     Swal.fire({
       title: 'Place Order',
       icon: 'warning',
@@ -74,6 +74,8 @@ class PlaceOrder extends Component {
       html: `<p style="font-size: 2rem;" >By clicking 'finalize' you are agreeing to pay in full $${GrandTotal} upon receiving the delivery of your ordered products and returning any unused samples.`
     }).then(async (result) => {
       if (result.value) {
+        console.log(black_flashlights + " " + yellow_flashlights + " " + yellow_pucs)
+        await axios.put('/api/director/final', {black_flashlights, yellow_flashlights, yellow_pucs})
         Swal.fire({
           icon: 'success',
           title: 'Thank You! Your order has been placed.',
@@ -257,7 +259,7 @@ class PlaceOrder extends Component {
           </table>
           <br></br>
      
-          <button id="medium" onClick={() => this.placeOrder(GrandTotal)}>Place Order</button>
+          <button id="medium" onClick={() => this.placeOrder(GrandTotal, BlackFlashNeed, YellowFlashNeed, YellowLanternNeed)}>Place Order</button>
         </div>
 
 
