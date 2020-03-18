@@ -18,7 +18,8 @@ class UpdateSample extends Component {
     }
     getInfo = () => {
         axios.put(`/api/hybrid/get-one-sample/${this.props.match.params.id}`)
-            .then(res => {
+        .then(res => {
+            console.log(res.data)
                 this.setState({
                     order: res.data[0]
                 })
@@ -64,7 +65,6 @@ class UpdateSample extends Component {
                     <br></br>
                     <p>{order.phone}</p>
                     <p>{order.email}</p>
-                 
                     <table>
                         <thead>
                             <tr>

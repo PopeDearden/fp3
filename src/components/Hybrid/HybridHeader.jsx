@@ -42,8 +42,11 @@ class HybridHeader extends Component {
                 </div>
                 <div class="Header-Link" onClick={() => this.props.history.push('/hybridlight/samples-request')}>
                     <p>Requested Samples</p>
-                    <i class="fas fa-chalkboard-teacher"></i>
-
+                    <i class="fas fa-people-carry"></i>
+                </div>
+                <div class="Header-Link" onClick={() => this.props.history.push('/hybridlight/orders/final')}>
+                    <p>Final Orders</p>
+                    <i class="fas fa-cart-plus"></i>
                 </div>
                 <div class="Header-Link" onClick={() => this.props.history.push('/hybridlight/invoice/history')}>
                     <p>Invoices Sent</p>

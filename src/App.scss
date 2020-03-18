@@ -1085,6 +1085,7 @@ td{
     border: solid 1px;
   th {
     padding: 20px;
+    border-top: solid 1px;
     border-bottom: solid 1px;
   }
   td{
@@ -1092,7 +1093,9 @@ td{
   }
   }
 }
-
+#bold{
+  font-weight: bold;
+}
 
 @media print {
 #medium{

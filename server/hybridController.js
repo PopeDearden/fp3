@@ -24,5 +24,18 @@ module.exports = {
         db = req.app.get('db')
         const invoices = await db.get_invoice()
         res.status(200).send(invoices)
+    },
+    getFinal: async (req, res) => {
+        db = req.app.get('db')
+        const orders = await db.get_new_finals()
+        res.status(200).send(orders)
+    },
+    getOneFinal: async (req, res) => {
+        console.log('hit get one final order')
+        console.log(req.params.id)
+        db = req.app.get('db')
+        const order = await db.get_one_final([req.params.id])
+        console.log(order)
+        res.status(200).send(order)
     }
 }

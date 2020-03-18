@@ -235,7 +235,7 @@ class PlaceOrder extends Component {
               <td>{this.state.totalLantern - (this.state.samples.yellow_puc_sample - this.state.given.sample_puc_yellow)}</td>
               <td>$17.50</td>
               <td></td>
-              <td>${((this.state.totalLantern - (this.state.samples.yellow_puc_sample - this.state.given.sample_puc_yellow))* (35/2)).toFixed(2)}</td>
+              <td>${((this.state.totalLantern - (this.state.samples.yellow_puc_sample - this.state.given.sample_puc_yellow))*(35/2)).toFixed(2)}</td>
             </tr>
             <tr>
               <th></th>
