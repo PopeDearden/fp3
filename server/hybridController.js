@@ -37,5 +37,13 @@ module.exports = {
         const order = await db.get_one_final([req.params.id])
         console.log(order)
         res.status(200).send(order)
+    },
+    updateOrderSent: async(req, res) => {
+        db = req.app.get('db')
+        console.log(req.body)
+        const url = req.body[0]
+        const date = new Date()
+        await db.update_order_sent([req.params.id, url, date])
+        res.status(200).send('updated order')
     }
 }

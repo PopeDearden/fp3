@@ -7,21 +7,28 @@ module.exports = {
         await db.create_director([first_name, last_name, email, phone, school_name, school_street, school_city, school_state, school_zip, tag, stage, password, black_flash_sample, yellow_flash_sample, yellow_puc_sample, black_puc_sample, sample_processed])
         res.status(200).send('Created Director')
     },
+    getStage: (req, res) => {
+        console.log(req.session.director)
+        res.status(200).send(req.session.director)
+    },
     getDirector: async (req, res) => {
         const db = req.app.get('db')
         const { email, password } = req.body
         console.log('looking for ' + email)
         console.log('looking for ' + password)
         const directorInfo = await db.find_director([email, password])
-        
         console.log(directorInfo)
         req.session.director = directorInfo
         console.log(req.session.director)
         await res.status(200).send(req.session.director)
     },
-    checkDirector: (req, res) => {
+    checkDirector: async (req, res) => {
+        const db = req.app.get('db')
         console.log('checking for director')
         if (req.session.director) {
+            console.log('found director, now updating stage')
+            const stageInfo = await db.get_stage([req.session.director[0].tag])
+            req.session.director[0].stage = stageInfo[0].stage
             res.status(200).send(req.session.director)
         }
         else {
@@ -117,9 +124,11 @@ module.exports = {
         const db = req.app.get('db')
         const tag = req.session.director[0].tag
         const {black_flashlights, yellow_flashlights, yellow_pucs} = req.body
+        const date = new Date()
         console.log(black_flashlights, yellow_flashlights, yellow_pucs, tag)
-        await db.create_final_order([black_flashlights, yellow_flashlights, yellow_pucs, tag,])
+        await db.create_final_order([black_flashlights, yellow_flashlights, yellow_pucs, tag, date])
         res.status(200).send('created order')
+        // await req.session.destroy()
     },
     logOut: (req, res) => {
         req.session.destroy()

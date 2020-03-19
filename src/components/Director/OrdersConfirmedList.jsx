@@ -110,7 +110,7 @@ class OrdersConfirmedList extends Component {
     })
     return (
       <div className="App" >
-        <button id="GeneratePrint" onClick={() => window.print()}>Generate PDF for Collected Orders</button>
+        <button id="GeneratePrint" onClick={() => window.print()}>Generate PDF for Confirmed Orders</button>
         <div className="Printing">
 
           <h1>Orders confirmed and ready to be placed for your school:</h1>

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Swal from 'sweetalert2'
+import swal from "sweetalert";
 
 
 
@@ -17,6 +18,10 @@ class PlaceOrder extends Component {
     }
   }
   async componentDidMount() {
+    swal.fire({
+      icon: 'warning',
+      title: 'Please only visit this page'
+    })
     await axios.get(`/api/director/confirmed`).then(res => {
       console.log(res.data)
       this.setState({
@@ -76,12 +81,20 @@ class PlaceOrder extends Component {
       if (result.value) {
         console.log(black_flashlights + " " + yellow_flashlights + " " + yellow_pucs)
         await axios.put('/api/director/final', {black_flashlights, yellow_flashlights, yellow_pucs})
-        Swal.fire({
+        await Swal.fire({
           icon: 'success',
           title: 'Thank You! Your order has been placed.',
           showConfirmButton: false,
-          timer: 3000
+          timer: 2500
         })
+        Swal.fire({
+          icon: 'warning',
+          title:'You will now be asked to login again, because your features will be updated to reflect a placed order.',
+          showconfirmButton: true,
+          confirmButtonText: 'Okay'
+        }).then(
+          this.props.history.push('/')
+        )
       }
     })
   }

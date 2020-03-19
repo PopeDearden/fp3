@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-
+import Swal from 'sweetalert2'
 
 
 
@@ -9,6 +9,7 @@ class HybridFinalUpdate extends Component {
         super()
         this.state = {
             order: [],
+            url: '',
         }
     }
 
@@ -21,6 +22,33 @@ class HybridFinalUpdate extends Component {
             this.setState({
                 order: res.data[0]
             })
+        })
+    }
+
+    updateFinal = () => {
+        Swal.fire({
+            html: `<h2>To mark this order as fulfilled, paste a url to your invoice document, this will replace the previous invoice link for the samples:</h2>`,
+            input: 'url',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Mark as fulfilled',
+            inputValidator: (value) => {
+                if (!value) {
+                    return 'You need to add a link to your invoice!'
+                }
+                else {
+                    this.setState({
+                        url: value
+                    })
+                    axios.put(`/api/final/update/${this.props.match.params.id}`, [this.state.url]).then(res => {
+                        Swal.fire('The order was updated and marked as fulfilled.')
+                        this.props.history.push('/hybridlight/invoice/history')
+                    })
+
+                }
+            }
+
         })
     }
 
@@ -56,15 +84,25 @@ class HybridFinalUpdate extends Component {
         const { order } = this.state
         return (
             <div className="App" >
+
                 <div class="Best-Print">
-                    <h2>Final order for <b> {order.school_name}</b></h2>
-                    <br></br>
-                    <p>{order.first_name} {order.last_name}</p>
-                    <p>{order.school_street}</p>
-                    <p>{order.school_city}, {order.school_state}</p>
-                    <br></br>
-                    <p>{order.phone}</p>
-                    <p>{order.email}</p>
+                    <div class="Form-Split">
+                    <div class="Print-Split">
+                        <div>
+                            <h2>Final order for <b> {order.school_name}</b> </h2>
+                            <br></br>
+                            <p>{order.first_name} {order.last_name}</p>
+                            <p>{order.school_street}</p>
+                            <p>{order.school_city}, {order.school_state}</p>
+                            <br></br>
+                            <p>{order.phone}</p>
+                            <p>{order.email}</p>
+                        </div>
+                        <button  onClick={() => window.print()} id="GeneratePrint">Print</button>
+                    </div>
+              
+                    </div>
+
 
                     <table>
                         <thead>
@@ -102,15 +140,19 @@ class HybridFinalUpdate extends Component {
                             <td id="bold">${((order.yellow_puc_sample + order.yellow_pucs) * (35 / 2)).toFixed(2)}</td>
                         </tr>
                         <tr>
-                        
+
                             <th></th>
                             <th></th>
                             <th></th>
                             <th></th>
                             <th>GRAND TOTAL</th>
-                            <th id="bold">${(((order.yellow_puc_sample + order.yellow_pucs)*(35/2)) + (order.yellow_flash_sample * 15 + order.yellow_flashlights * 15)+ (order.black_flash_sample * 15 + order.black_flashlights * 15)).toFixed(2)}</th>
+                            <th id="bold">${(((order.yellow_puc_sample + order.yellow_pucs) * (35 / 2)) + (order.yellow_flash_sample * 15 + order.yellow_flashlights * 15) + (order.black_flash_sample * 15 + order.black_flashlights * 15)).toFixed(2)}</th>
                         </tr>
                     </table>
+                    <br></br>
+              
+                        <button id="medium" onClick={() => this.updateFinal()}>Mark as fulfilled</button>
+                
                 </div>
             </div>
         )

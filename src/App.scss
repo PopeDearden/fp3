@@ -231,10 +231,10 @@ color: turquoise
   background-image: linear-gradient(to right, turquoise, green)
 }
 #medium{
-width: 250px;
+width: 200px;
 height: 60px;
-font-size: 1.2rem;
-padding: 15px;
+font-size: 1rem;
+padding: 10px;
 border-radius: 10px;
 border: solid black;
 background-color: transparent;
@@ -535,6 +535,7 @@ color: black;
     width: inherit;
   }
 .Form-Split {
+  min-width: 200px;
   display: flex;
   justify-content: space-between;
 }
@@ -554,6 +555,8 @@ color: black;
 .General-Content {
   font-family: sans-serif;
   margin: 20px;
+  // max-height: 90vh;
+  // overflow: auto;
 
 }
 .Admin-Page{
@@ -1071,6 +1074,9 @@ td{
   width: 80vw;
   margin: 50px;
   font-size: 1rem;
+  max-height:90vh;
+  overflow-y: auto;
+  overflow-x: visible;
   b{
     font-weight: bold;
   }
@@ -1096,8 +1102,18 @@ td{
 #bold{
   font-weight: bold;
 }
+.Print-Split {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 
 @media print {
+  .Best-Print {
+    max-height: none;
+    overflow: visible;
+  }
 #medium{
   display: none;
 }
@@ -1113,6 +1129,7 @@ td{
   flex-direction: column;
 }
 .App {
+
   font-family: 'Roboto Condensed', sans-serif;
 }
 .PrintOrderList{
