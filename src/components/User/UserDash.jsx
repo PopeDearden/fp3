@@ -111,7 +111,7 @@ class UserDash extends Component {
 
   render() {
     function sampleTotal(light, puc) {
-      let total = light*30 + puc*35
+      let total = light*15 + puc*(35/2)
       return total.toFixed(2)
     }
     return (
@@ -176,16 +176,16 @@ class UserDash extends Component {
         <div class="Title-Bar-Collected">Samples information</div>
         <h2 id="SampleInfo">Our records show that you have been given: 
         <br></br>
-        {this.state.sample_light_black} sample (black) flashlights ($30 each)
+        {this.state.sample_light_black} sample (black) flashlights ($15.00 each - student price)
         <br></br>
-        {this.state.sample_light_yellow} sample (yellow) flashlights ($30 each)
+        {this.state.sample_light_yellow} sample (yellow) flashlights ($15.00 each - student price )
         <br></br>
-        {this.state.sample_puc_yellow} sample (yellow) lanterns ($35 each)
+        {this.state.sample_puc_yellow} sample (yellow) lanterns ($17.50 each - student price)
         <br></br>
         {/* {this.state.sample_puc_black} sample (black) lanterns ($35 each) */}
         <br></br>
       
-        You are responsible for payment of ${sampleTotal(this.state.sample_light_black, this.state.sample_puc_yellow)} at the end of the fundraiser deadline.</h2>
+        You are responsible for payment of ${sampleTotal(this.state.sample_light_black, this.state.sample_puc_yellow)} at the end of the fundraiser deadline. This will be subtracted from your total earnings.</h2>
       </div>
     )
 

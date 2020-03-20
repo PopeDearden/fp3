@@ -1,13 +1,22 @@
 module.exports = {
-    checkStudent: (req, res) => {
+    checkStudent: async (req, res) => {
         console.log('checking for student')
+        const db = req.app.get('db')
         if (req.session.student) {
+            const user_id = req.session.student[0].user_id
+            const confirmed = await db.get_student_stage([user_id])
+            req.session.student[0].confirmed = confirmed[0].confirmed
             res.status(200).send(req.session.student)
         }
         else {
             res.status(200).send('no student')
             console.log('no student found')
         }
+    },
+    checkStudentStage: async (req,res) => {
+        console.log(req.session.student[0].confirmed)
+        confirmed =req.session.student[0].confirmed
+        res.status(200).send(confirmed)
     },
     getStudent: async (req, res) => {
         const db = req.app.get('db')
