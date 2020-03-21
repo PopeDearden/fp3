@@ -62,7 +62,7 @@ class UserInfoList extends Component {
                     <p>Yellow Flashlight {student.sample_light_yellow}</p>
                     <p>Yellow Lantern {student.sample_puc_yellow}</p>
                   </td>
-                  <td id="EditData"><i onClick={() =>this.props.history.push(`/director/student/edit/${student.user_id}`)} class="far fa-edit"></i></td>
+                  <td id="EditData"><i onClick={() =>this.props.history.push(`/director/update-user/${student.user_id}`)} class="far fa-edit"></i></td>
                 </tr>
               ))}
             </table>

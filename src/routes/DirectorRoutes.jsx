@@ -10,6 +10,7 @@ import UserInfoList from '../components/Director/UserInfoList'
 import OrdersCollectedPrint from '../components/Director/OrdersCollectedPrint'
 import ConfirmOptions from '../components/Director/ConfirmOptions'
 import ordersConfirmedList from '../components/Director/OrdersConfirmedList'
+import UpdateOrder from '../components/Director/UpdateUser'
 
 export default ( 
     <Switch>
@@ -23,6 +24,6 @@ export default (
         <Route path='/director/place-order' component={PlaceOrder}/>
         <Route path='/director/user-info-list' component={UserInfoList}/>
         <Route path='/director/confirm-options' component={ConfirmOptions}/>
-
+        <Route path='/director/update-user/:id' component={UpdateOrder}/>
     </Switch>
 )

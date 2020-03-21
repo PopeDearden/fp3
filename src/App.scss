@@ -489,7 +489,14 @@ color: black;
   display: flex;
   flex-direction: row;
 }
-
+.TestChart{
+  // filter: invert(100%);
+  background-color: white;
+  margin: 5px;
+  border: solid 1px black;
+  color: white;
+  width: 30vw;
+}
 #Drop {
   margin-top: 10px;
   margin-bottom: 10px;

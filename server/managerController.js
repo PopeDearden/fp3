@@ -30,6 +30,12 @@ module.exports = {
     db.create_manager([first_name, last_name, email, phone, password])
    
     res.status(200).send('Created Manager')
+  },
+  getCollectedTotals: async (req, res) => {
+    console.log('getting totals')
+    const db = req.app.get('db')
+    const collected = await db.get_scott_daily_total_collected()
+    res.status(200).send(collected)
   }
 
 }

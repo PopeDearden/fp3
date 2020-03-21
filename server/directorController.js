@@ -143,6 +143,34 @@ module.exports = {
         const students = await db.get_student_info([tag])
         res.status(200).send(students)
     },
+    getStudent: async (req, res) => {
+        console.log('getting student to update')
+        const db = req.app.get('db')
+        const id = req.params.id
+        const student = await db.get_student_by_id([id])
+        res.status(200).send(student)
+    },
+    updateStudent: async (req, res) => {
+        console.log('updating student')
+        const db = req.app.get('db')
+        const id = req.params.id
+        const { first_name,
+            last_name,
+            password,
+            sample_light_black,
+            sample_light_yellow,
+            sample_puc_yellow,
+            sample_puc_black} = req.body
+            const username = first_name + last_name
+        await db.update_student([first_name,
+            last_name,
+            password,
+            sample_light_black,
+            sample_light_yellow,
+            sample_puc_yellow,
+            sample_puc_black, username, id])
+            res.status(200).send('Updated Student')
+    },
 
     logOut: (req, res) => {
         req.session.destroy()

@@ -18,9 +18,9 @@ class PlaceOrder extends Component {
     }
   }
   async componentDidMount() {
-    swal.fire({
+    Swal.fire({
       icon: 'warning',
-      title: 'Please only visit this page'
+      title: 'Please only visit this page if you are ready to place your final order'
     })
     await axios.get(`/api/director/confirmed`).then(res => {
       console.log(res.data)
