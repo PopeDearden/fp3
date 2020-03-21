@@ -43,7 +43,9 @@ class InvoiceHistory extends Component {
                                 <td>{invoice.school_name}</td>
                                 <td><Moment format="MM/DD/YYY">{invoice.date}</Moment></td>
                                 <td id="EditData"><a target="_blank" href={invoice.url}><i class="fas fa-file-invoice-dollar">  Invoice</i></a></td>
+                                
                             </tr>
+                        
                         ))}
                     </table>
                     </div>

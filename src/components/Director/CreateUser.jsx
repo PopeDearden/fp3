@@ -29,15 +29,15 @@ class CreateUser extends Component {
     })
   }
   CreateUser = () => {
-   if (this.state.first_name === '' || this.state.last_name === '' || this.state.password === '') 
-   return(
-     Swal.fire({
-       icon: 'error',
-       title: 'Oops...',
-       text: 'First Name, Last Name Initial, and Password are required',
-     })
-   )
-    
+    if (this.state.first_name === '' || this.state.last_name === '' || this.state.password === '')
+      return (
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'First Name, Last Name, and Password are required',
+        })
+      )
+
     console.log(this.state)
     axios.post('/api/director/create-user', this.state)
       .then(res => {
@@ -56,15 +56,15 @@ class CreateUser extends Component {
             sample_good_puc: 0,
           })
         }
-        else {
+        if (res.data === 'User Already Exists'){
           Swal.fire({
             icon: 'error',
             title: 'There was an error',
-            text: 'We were unable to create your student account',
+            text: res.data,
           })
         }
       }
-
+      
       )
   }
 
@@ -89,7 +89,11 @@ class CreateUser extends Component {
                 <div>
                   <p>*Username will be: <br>
                   </br><br></br>
-                    {this.state.first_name}{this.state.last_name}
+                    <h3>
+                      <b id="bold">
+                        {this.state.first_name}{this.state.last_name}
+                        </b>
+                      </h3>
                     <br></br>
                     *will be case sensitive
                   </p>
@@ -111,25 +115,35 @@ class CreateUser extends Component {
             </div>
             <div class="Form-Box-Right">
               <h2>Samples Given to the Student</h2>
+              <h3 id="bad">Students should not be given more than one of each</h3>
               <br></br>
               <div class="Form-Split">
                 <div>
                   <h3>(Black) FlashLights</h3>
-                  <input type="number" min="0" value={this.state.sample_light_black} onChange={e => this.setState({ sample_light_black: +e.target.value })} />
+                  <select id="Drop" value={this.state.sample_light_black} onChange={e => this.setState({ sample_light_black: +e.target.value })}>
+                    <option value='0'>0</option>
+                    <option value='1'>1</option>
+                  </select>
                 </div>
                 <div>
                   <h3>(Yellow) FlashLights</h3>
-                  <input type="number" min="0" value={this.state.sample_light_yellow} onChange={e => this.setState({ sample_light_yellow: +e.target.value })} />
+                  <select id="Drop" value={this.state.sample_light_yellow} onChange={e => this.setState({ sample_light_yellow: +e.target.value })}>
+                    <option value='0'>0</option>
+                    <option value='1'>1</option>
+                  </select>
                 </div>
               </div>
               <div class="Form-Split">
-              <div>
+                <div>
                   <h3>(Yellow) Lanterns</h3>
-                  <input type="number" min="0" value={this.state.sample_puc_yellow} onChange={e => this.setState({ sample_puc_yellow: +e.target.value })} />
+                  <select id="Drop" value={this.state.sample_puc_yellow} onChange={e => this.setState({ sample_puc_yellow: +e.target.value })} >
+                    <option value='0'>0</option>
+                    <option value='1'>1</option>
+                  </select>
                 </div>
                 <div>
                   {/* <h3>(Black) Lanterns</h3>
-                  <input type="number" min="0" value={this.state.sample_puc_black} onChange={e => this.setState({ sample_puc_black: +e.target.value })} /> */}
+                  <input type="number" min="0" max="1" value={this.state.sample_puc_black} onChange={e => this.setState({ sample_puc_black: +e.target.value })} /> */}
                 </div>
               </div>
               <br></br>

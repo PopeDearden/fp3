@@ -35,7 +35,7 @@ module.exports = {
             res.status(200).send('no director')
         }
     },
-    createUser: (req, res) => {
+    createUser: async(req, res) => {
         console.log('adding tag' + req.session.director[0].tag
         )
         const db = req.app.get('db')
@@ -46,17 +46,24 @@ module.exports = {
             sample_light_yellow,
             sample_puc_yellow,
             sample_puc_black} = req.body
-
+        const checktag = req.session.director[0].tag
         const username = first_name + last_name
-        db.create_user([first_name,
-            last_name,
-            password,
-            sample_light_black,
-            sample_light_yellow,
-            sample_puc_yellow,
-            sample_puc_black,
-            req.session.director[0].tag, username])
-        res.status(200).send('Created Student Account')
+        const test = await db.check_if_user_exists([username, checktag])
+     
+        if(test[0] === undefined) {
+            await db.create_user([first_name,
+                last_name,
+                 password,
+                 sample_light_black,
+                 sample_light_yellow,
+                 sample_puc_yellow,
+                 sample_puc_black,
+                 req.session.director[0].tag, username])
+                 res.status(200).send('Created Student Account')
+                } else {
+                    res.status(200).send('User Already Exists')
+        }
+        
     },
     getInProgress: async (req, res) => {
         console.log('hit director in progress')
@@ -130,6 +137,13 @@ module.exports = {
         res.status(200).send('created order')
         // await req.session.destroy()
     },
+    getStudentInfo: async (req, res) => {
+        const db = req.app.get('db')
+        const tag = req.session.director[0]
+        const students = await db.get_student_info([tag])
+        res.status(200).send(students)
+    },
+
     logOut: (req, res) => {
         req.session.destroy()
         // console.log(req.session.director)

@@ -56,7 +56,7 @@ app.get('/api/hybrid/invoices', hybridController.getInvoices)
 app.get('/api/hybrid/finals', hybridController.getFinal)
 app.get('/api/director/info', directorController.getStage)
 app.get('/api/student/stage', studentController.checkStudentStage)
-
+app.get('/api/student-info', directorController.getStudents)
 
 app.put('/api/hybrid/invoice', hybridController.updateInvoice)
 app.put('/api/director/final', directorController.createFinal)
