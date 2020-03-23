@@ -60,8 +60,8 @@ class UserLogin extends Component {
           })
         }
         console.log(res.data)
-      await  this.checkStudent()
       })
+      await  this.checkStudent()
   }
   render() {
     if (this.state.approved === true) {

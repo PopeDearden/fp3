@@ -56,8 +56,8 @@ class AdminLogin extends Component {
           footer: 'Make sure your username and password are correct'
         })
       }
-     await this.checkManager()
     })
+   await this.checkManager()
     
   }
   

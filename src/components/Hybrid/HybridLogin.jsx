@@ -58,8 +58,8 @@ class DirectorLogin extends Component {
           footer: 'Make sure your password is correct'
         })
       }
-    await  this.checkManager()
     })
+    await  this.checkManager()
     
   }
 

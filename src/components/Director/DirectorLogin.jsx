@@ -65,8 +65,8 @@ class DirectorLogin extends Component {
           })
         }
          console.log(res.data[0])
-       await this.checkDirector()
-      })
+        })
+        await this.checkDirector()
   }
 
 
