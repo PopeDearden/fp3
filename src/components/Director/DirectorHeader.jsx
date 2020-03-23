@@ -81,6 +81,10 @@ class DirectorHeader extends Component {
                         <p>All student<br></br>account info</p>
                         <i class="fas fa-users"></i>
                     </div>
+                    <div class="Header-Link" onClick={() => this.props.history.push('/director/invoice')}>
+                        <p>Invoice</p>
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
                     <div class="Header-Link" onClick={() => this.logout()}>
                         <p>Logout</p>
                         <i class="fas fa-sign-out-alt"></i>
@@ -102,16 +106,20 @@ class DirectorHeader extends Component {
        <p>Create Student<br></br> Account</p>
    </div> */}
 
-                    <div class="Header-Link" onClick={() => this.props.history.push('/director/in-progress')}>
+                    <div class="Header-Link" onClick={() => this.props.history.push('/director/confirmed-list')}>
                         <p>Final Order Info</p>
                         <i class="fas fa-user-edit"></i>
                     </div>
              
              
                  
-                    <div class="Header-Link" onClick={() => this.props.history.push('/director/user-info-list')}>
+                    <div class="Header-Link" onClick={() => this.props.history.push('/director/user-info-listV2')}>
                         <p>All student<br></br>account info</p>
                         <i class="fas fa-users"></i>
+                    </div>
+                    <div class="Header-Link" onClick={() => this.props.history.push('/director/invoice')}>
+                        <p>Invoice</p>
+                        <i class="fas fa-file-invoice-dollar"></i>
                     </div>
                     <div class="Header-Link" onClick={() => this.logout()}>
                         <p>Logout</p>

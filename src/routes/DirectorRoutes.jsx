@@ -7,10 +7,12 @@ import OrdersCollected from '../components/Director/OrdersCollected'
 import OrdersConfirmed from '../components/Director/OrdersConfirmed'
 import PlaceOrder from '../components/Director/PlaceOrder'
 import UserInfoList from '../components/Director/UserInfoList'
+import UserInfoListV2 from '../components/Director/UserInfoListv2'
 import OrdersCollectedPrint from '../components/Director/OrdersCollectedPrint'
 import ConfirmOptions from '../components/Director/ConfirmOptions'
 import ordersConfirmedList from '../components/Director/OrdersConfirmedList'
 import UpdateOrder from '../components/Director/UpdateUser'
+import DirectorInvoice from '../components/Director/DirectorInvoice'
 
 export default ( 
     <Switch>
@@ -23,7 +25,9 @@ export default (
         <Route path='/director/confirmed' component={OrdersConfirmed}/>
         <Route path='/director/place-order' component={PlaceOrder}/>
         <Route path='/director/user-info-list' component={UserInfoList}/>
+        <Route path='/director/user-info-listV2' component={UserInfoListV2}/>
         <Route path='/director/confirm-options' component={ConfirmOptions}/>
         <Route path='/director/update-user/:id' component={UpdateOrder}/>
+        <Route path='/director/invoice' component={DirectorInvoice}/>
     </Switch>
 )

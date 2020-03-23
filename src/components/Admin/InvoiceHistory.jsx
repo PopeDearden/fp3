@@ -34,7 +34,7 @@ class InvoiceHistory extends Component {
                         <thead>
                             <tr>
                                 <th>School Name</th>
-                                <th>Date Sent</th>
+                                <th>Date Sent/Updated</th>
                                 <th>Invoice Url Link</th>
                             </tr>
                         </thead>

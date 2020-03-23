@@ -490,12 +490,12 @@ color: black;
   flex-direction: row;
 }
 .TestChart{
-  // filter: invert(100%);
+  filter: contrast(100%);
   background-color: white;
   margin: 5px;
   border: solid 1px black;
   color: white;
-  width: 30vw;
+  width: 35vw;
 }
 #Drop {
   margin-top: 10px;

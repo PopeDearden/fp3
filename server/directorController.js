@@ -171,7 +171,12 @@ module.exports = {
             sample_puc_black, username, id])
             res.status(200).send('Updated Student')
     },
-
+    getInvoice: async (req, res) => {
+        const db = req.app.get('db')
+        const tag = req.session.director[0].tag
+        const invoice = await db.get_director_invoice([tag])
+        res.status(200).send(invoice)
+    },
     logOut: (req, res) => {
         req.session.destroy()
         // console.log(req.session.director)

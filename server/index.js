@@ -64,7 +64,7 @@ app.put('/api/hybrid/invoice', hybridController.updateInvoice)
 app.put('/api/director/final', directorController.createFinal)
 app.put('/api/final/:id', hybridController.getOneFinal)
 app.put('/api/final/update/:id', hybridController.updateOrderSent)
-
+app.get('/api/director/invoice', directorController.getInvoice)
 app.put('/api/hybrid/get-one-sample/:id', hybridController.getOneSample)
 app.put('/api/get-one-order/:id', studentController.getOneOrder)
 app.put('/api/director/student-totals/:id', directorController.getStudentTotals)

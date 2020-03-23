@@ -4,7 +4,7 @@ import Moment from 'react-moment'
 
 
 
-class InvoiceHistory extends Component {
+class DirectorInvoice extends Component {
     constructor(s) {
         super()
         this.state = {
@@ -16,7 +16,7 @@ class InvoiceHistory extends Component {
     }
 
     getInvoices = async () => {
-        await axios.get('/api/hybrid/invoices').then(res => {
+        await axios.get('/api/director/invoice').then(res => {
             this.setState({
                 invoices: res.data
             })
@@ -29,18 +29,17 @@ class InvoiceHistory extends Component {
             <div className="App" >
                 <div class="General-Content">
                     <div class="TableContainer">
-                        <div class="Title-Bar"><h2>Invoices Sent</h2></div>
+                        <div class="Title-Bar"><h2>Invoice</h2></div>
                     <table class="ConfirmTable">
                         <thead>
                             <tr>
-                                <th>School Name</th>
+                        
                                 <th>Date Sent</th>
                                 <th>Invoice Url Link</th>
                             </tr>
                         </thead>
                         {this.state.invoices.map(invoice => (
                             <tr id="DataRow">
-                                <td>{invoice.school_name}</td>
                                 <td><Moment format="MM/DD/YYYY">{invoice.date}</Moment></td>
                                 <td id="EditData"><a target="_blank" href={invoice.url}><i class="fas fa-file-invoice-dollar">  Invoice</i></a></td>
                                 
@@ -56,4 +55,4 @@ class InvoiceHistory extends Component {
     }
 }
 
-export default InvoiceHistory;
+export default DirectorInvoice;

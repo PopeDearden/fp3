@@ -75,7 +75,7 @@ class UpdateUser extends Component {
                 <div class="General-Content">
                     <div class="Form-Box">
                         <div class="Form-Box-Left">
-                            <h2>Create new student account</h2>
+                            <h2>Update student account</h2>
                             <br></br>
                             <div class="Form-Split">
                                 <div>
