@@ -24,7 +24,6 @@ class DirectorLogin extends Component {
 
   componentDidMount() {
     this.checkDirector()
-
   }
 
   checkDirector = () => {
@@ -53,9 +52,9 @@ class DirectorLogin extends Component {
       )
   }
 
-  loginDirector = () => {
+  loginDirector = async () => {
     console.log(this.state)
-    axios.put('/api/director', this.state)
+    await axios.put('/api/director', this.state)
       .then(res => {
         if (res.data[0] === undefined) {
           Swal.fire({
@@ -65,8 +64,8 @@ class DirectorLogin extends Component {
             footer: 'Make sure your email and password are correct'
           })
         }
-        console.log(res.data[0])
-        this.checkDirector()
+         console.log(res.data[0])
+       await this.checkDirector()
       })
   }
 

@@ -10,6 +10,7 @@ const directorController = require('./directorController')
 const studentController = require('./studentController')
 const hybridController = require('./hybridController')
 
+app.use( express.static( `${__dirname}/../build` ) );
 
 app.use(express.json())
 app.use(

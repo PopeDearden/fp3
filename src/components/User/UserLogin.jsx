@@ -46,9 +46,9 @@ class UserLogin extends Component {
       }
       )
   }
-  loginStudent = () => {
+  loginStudent = async () => {
     // console.log(this.state)
-    axios.put('/api/student', this.state)
+    await axios.put('/api/student', this.state)
       .then(res => {
         console.log(res.data[0])
         if (res.data[0] === undefined) {
@@ -60,7 +60,7 @@ class UserLogin extends Component {
           })
         }
         console.log(res.data)
-        this.checkStudent()
+      await  this.checkStudent()
       })
   }
   render() {

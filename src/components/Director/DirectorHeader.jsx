@@ -74,7 +74,6 @@ class DirectorHeader extends Component {
                     </div>
                     <div class="Header-Link" onClick={() => this.props.history.push('/director/place-order')}>
                         <p> Finalize and send<br></br> complete order</p>
-
                         <i class="far fa-envelope"></i>
                     </div>
                     <div class="Header-Link" onClick={() => this.props.history.push('/director/user-info-list')}>

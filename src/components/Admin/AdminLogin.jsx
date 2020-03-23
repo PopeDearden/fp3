@@ -43,9 +43,9 @@ class AdminLogin extends Component {
     )
   }
 
-  loginManager=()=>{
+  loginManager= async ()=>{
     // console.log(this.state)
-    axios.put('/api/manager', this.state)
+   await  axios.put('/api/manager', this.state)
     .then(res=> {
       console.log()
       if (res.data[0] === undefined) {
@@ -56,7 +56,7 @@ class AdminLogin extends Component {
           footer: 'Make sure your username and password are correct'
         })
       }
-      this.checkManager()
+     await this.checkManager()
     })
     
   }
