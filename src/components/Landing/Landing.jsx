@@ -17,7 +17,7 @@ class Landing extends Component {
   render() {
     return (
       <div className="App" >
-        <div className="Landing-Bar"></div>
+        {/* <div className="Landing-Bar"></div> */}
         <div class="Landing-Page">
           <div class="Landing-Left">
           

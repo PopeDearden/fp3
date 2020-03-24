@@ -111,9 +111,10 @@ button {
   justify-content: center;
   width: 100vw;
   height: 100vh;
-  background-color: black;
+  // background-color: #f9f9f9;
   // background-image: url('https://images.pexels.com/photos/97076/pexels-photo-97076.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
-  // background-image: linear-gradient(to bottom left, turquoise, purple, orange, green);
+  background-image: linear-gradient(to bottom, #5555, #f9f9f9);
+
   input{
     width: 250px;
     height: 30px;
@@ -131,16 +132,17 @@ button {
 #Main-Title {
   text-align: center;
   font-size: 4rem;
-  color: white;
+  color: #555555;
   font-family: 'Pacifico', ;
   padding-bottom: 20px;
-  border-bottom: solid turquoise;
+  border-bottom: solid #555555;
   max-width: 600px;
+  // box-shadow: turquoise 5px 5px 15px;
   
 }
 
 #Sub-Title {
-  color: white;
+  color: #555555;
   font-size: 1rem;
   margin-top: 10px;
 }
@@ -153,6 +155,7 @@ h2{
 #Fancy-Title {
   font-family: 'Pacifico';
   font-size: 3rem;
+  color: #555555;
   // border-bottom: solid;
 
 }
@@ -174,6 +177,8 @@ h2{
   align-items: center;
   width:35vw;
   margin-bottom: 50px;
+  // background-image: radial-gradient( rgba(64, 224, 208, 0.658), transparent, transparent)
+  // background-color: #555555;
   
 }
 .Landing-Right {
@@ -191,7 +196,7 @@ button:hover {
   transform: scale(1.02);
 }
 .GradientLine {
-  background-image: linear-gradient(to right, turquoise, green);
+  background-image: linear-gradient(to right, turquoise, rgb(20, 100, 92));
   width: 375px;
   height: 5px;
   margin-top: 10px;
@@ -204,13 +209,14 @@ button:hover {
   height: 350px;
   max-height: 400px;
   color: white;
-  background-color: transparent;
+  background-color: #55555557;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  // border-left: solid 1px;
+  border: solid 2px #363636;
+  box-shadow:rgba(0, 0, 0, 0.596) 5px 5px 15px;
   h2{
     color: white;
   }
@@ -218,17 +224,18 @@ button:hover {
 
 #big{
 width: 300px;
-height: 80px;
-font-size: 1.5rem;
+height: 60px;
+font-size: 1.25rem;
 padding: 15px;
 border-radius: 10px;
 border: solid white;
-background-color: transparent;
-color: turquoise
+background-color: #363636;
+color: white;
 }
 #big:hover{
   color: white;
-  background-image: linear-gradient(to right, turquoise, green)
+  background-color: rgba(64, 224, 208, 0.514);
+  // background-image: radial-gradient(transparent, turquoise);
 }
 #medium{
 width: 200px;
@@ -917,7 +924,7 @@ td{
   }
 }
 .Title-Bar {
-  background-image: linear-gradient(to right, turquoise, purple, orange);
+  background-image: linear-gradient(to right, turquoise, rgb(3, 53, 82));
   color: black;
   font-weight: bold;
   width: 80vw;
