@@ -15,7 +15,16 @@ class CreateUser extends Component {
       sample_light_yellow: 0,
       sample_puc_yellow: 0,
       sample_puc_black: 0,
+      info: [],
     }
+  }
+  componentDidMount () {
+    axios.get('/api/check-director').then(res => {
+      console.log(res.data[0])
+      this.setState({
+        info: res.data[0]
+      })
+    })
   }
   generatePassword = () => {
     var length = 8,
@@ -91,7 +100,7 @@ class CreateUser extends Component {
                   </br><br></br>
                     <h3>
                       <b id="bold">
-                        {this.state.first_name}{this.state.last_name}
+                        {this.state.first_name}{this.state.last_name}{this.state.info.tag}
                         </b>
                       </h3>
                     <br></br>

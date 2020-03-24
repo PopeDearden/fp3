@@ -47,7 +47,7 @@ module.exports = {
             sample_puc_yellow,
             sample_puc_black} = req.body
         const checktag = req.session.director[0].tag
-        const username = first_name + last_name
+        const username = first_name + last_name + req.session.director[0].tag
         const test = await db.check_if_user_exists([username, checktag])
      
         if(test[0] === undefined) {
