@@ -105,7 +105,7 @@ class DirectorHeader extends Component {
        <p>Create Student<br></br> Account</p>
    </div> */}
 
-                    <div class="Header-Link" onClick={() => this.props.history.push('/director/confirmed-list')}>
+                    <div class="Header-Link" onClick={() => this.props.history.push('/director/placed-print')}>
                         <p>Final Order Info</p>
                         <i class="fas fa-user-edit"></i>
                     </div>

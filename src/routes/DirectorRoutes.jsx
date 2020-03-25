@@ -13,6 +13,7 @@ import ConfirmOptions from '../components/Director/ConfirmOptions'
 import ordersConfirmedList from '../components/Director/OrdersConfirmedList'
 import UpdateOrder from '../components/Director/UpdateUser'
 import DirectorInvoice from '../components/Director/DirectorInvoice'
+import OrdersPlacedPrint from '../components/Director/OrdersPlacedPrint'
 
 export default ( 
     <Switch>
@@ -21,6 +22,7 @@ export default (
         <Route path='/director/in-progress' component={OrdersInProgress}/>
         <Route path='/director/collected' component={OrdersCollected}/>
         <Route path='/director/collected-print' component={OrdersCollectedPrint}/>
+        <Route path='/director/placed-print' component={OrdersPlacedPrint}/>
         <Route path='/director/confirmed-list' component={ordersConfirmedList}/>
         <Route path='/director/confirmed' component={OrdersConfirmed}/>
         <Route path='/director/place-order' component={PlaceOrder}/>
