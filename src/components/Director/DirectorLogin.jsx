@@ -53,20 +53,23 @@ class DirectorLogin extends Component {
   }
 
   loginDirector = async () => {
-    console.log(this.state)
+
     await axios.put('/api/director', this.state)
       .then(res => {
         if (res.data[0] === undefined) {
-          Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Wrong Login Information!',
-            footer: 'Make sure your email and password are correct'
-          })
+          return (
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Wrong Login Information!',
+              footer: 'Make sure your email and password are correct'
+            })
+          )
+        } else {
+          this.checkDirector()
         }
-         console.log(res.data[0])
+
         })
-        await this.checkDirector()
   }
 
 
