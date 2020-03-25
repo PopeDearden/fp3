@@ -45,6 +45,11 @@ class AdminHeader extends Component {
                     <i class="fas fa-chalkboard-teacher"></i>
 
                 </div>
+                <div class="Header-Link" onClick={() => this.props.history.push('/admin/directors')}>
+                    <p>All Director<br></br> Account Info</p>
+                    <i class="fas fa-users"></i>
+
+                </div>
                 <div class="Header-Link" onClick={() => this.props.history.push('/admin/invoice')}>
                     <p>Invoice History</p>
                     <i class="fas fa-file-invoice-dollar"></i>

@@ -39,6 +39,7 @@ app.put('/api/manager/', managerController.getManager)
 app.put('/api/director/', directorController.getDirector)
 app.put('/api/user/update-order', studentController.updateOrder)
 app.get('/api/logout', directorController.logOut)
+app.get('/api/admin/get-directors', managerController.getDirectors)
 
 app.get('/api/samples', studentController.getSamples)
 app.get('/api/check-director', directorController.checkDirector)

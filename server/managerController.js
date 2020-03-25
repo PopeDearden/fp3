@@ -13,6 +13,13 @@ module.exports = {
       console.log(req.session.manager)
       await res.status(200).send(req.session.manager)
   },
+  getDirectors: async (req, res) => {
+    const db = req.app.get('db')
+    console.log('getting directors')
+    const directors = await db.get_all_directors()
+    res.status(200).send(directors)
+
+  },
 //   Check if manager is logged in
   checkManager: (req, res) => {
       console.log('checking for manager')
