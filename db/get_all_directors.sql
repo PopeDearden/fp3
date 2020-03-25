@@ -1,1 +1,2 @@
-select * from director;
+select * from director
+order by stage desc;

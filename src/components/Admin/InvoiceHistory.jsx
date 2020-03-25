@@ -29,7 +29,7 @@ class InvoiceHistory extends Component {
             <div className="App" >
                 <div class="General-Content">
                     <div class="TableContainer">
-                        <div class="Title-Bar"><h2>Invoices Sent</h2></div>
+                        <div class="Title-Bar"><h2>Invoices Sent by HybridLight</h2></div>
                     <table class="ConfirmTable">
                         <thead>
                             <tr>

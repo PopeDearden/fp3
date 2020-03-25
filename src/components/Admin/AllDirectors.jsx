@@ -37,21 +37,27 @@ class AllDirectors extends Component {
 
                     <div class="TableContainer2">
                         {/* <input class="Search" placeholder={"Search by director last name"} onChange={e => this.setState({ search: e.target.value })} />    <i class="fas fa-search"></i> */}
-                        <table class="ConfirmTable">
+                        <table class="ConfirmTable2">
                             <thead>
                                 <tr>
                                     <th>Director Name &<br></br>School</th>
-                                    <th>email</th>
+                                    <th>Stage</th>
+                                    <th>Address</th>
+                                    <th>Email/phone</th>
                                     <th>Password</th>
-                                    <th>Samples Ordered</th>
+                                    <th>Tag</th>
+                                    <th>Samples Ordered<br></br>(Initial Order)</th>
                                     {/* <th>Edit</th> */}
                                 </tr>
                             </thead>
                             {this.state.directors.map(director => (
                                 <tr id="DataRow">
                                     <td>{director.first_name} {director.last_name} <br></br>{director.school_name}</td>
-                                    <td>{director.email}</td>
+                                    <td>{director.stage}</td>
+                                    <td>{director.school_street}<br></br>{director.school_city}, {director.school_state}  {director.school_zip}</td>
+                                    <td>{director.email}<br></br>{director.phone}</td>
                                     <td>{director.password}</td>
+                                    <td>{director.tag}</td>
                                     <td>
                                         <p>Black Flashlight {director.black_flash_sample}</p>
                                         <p>Yellow Flashlight {director.yellow_flash_sample}</p>

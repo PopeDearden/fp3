@@ -199,10 +199,10 @@ class OrdersCollected extends Component{
               }
               }
               <tr id="DataRowTotal">
+                <td id="restrictTable"></td>
+                <td id="restrictTable"></td>
+                <td id="restrictTable"></td>
                 <td id="restrictTable">TOTALS</td>
-                <td id="restrictTable"></td>
-                <td id="restrictTable"></td>
-                <td id="restrictTable"></td>
                 <td id="restrictTable">{this.calculate(orders, student).totalFlashBlack}</td>
                 <td id="restrictTable">{this.calculate(orders, student).totalFlashYellow}</td>
                 <td id="restrictTable">{this.calculate(orders, student).totalLanternYellow}</td>

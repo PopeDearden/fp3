@@ -748,17 +748,19 @@ color: black;
   color: black;
 
   th{
-    background-color: turquoise;
+    // background-color: turquoise;
+    color: white;
+    background-color: rgb(3, 53, 82);
     border-bottom: solid black 5x;
     text-align: left;;
     padding-top: 10px;
     padding-bottom: 10px;
-    font-size:1.5rem;
+    font-size:1.2rem;
     // max-width: 50px;
   }
 
 td{
-  font-size: 1.2rem;
+  font-size: 1rem;
   max-width: 150px;
   padding-top:5px;
   padding-bottom:5px;
@@ -774,7 +776,8 @@ td{
   color: black;
 
   th{
-    background-color: turquoise;
+    color: white;
+    background-color: rgb(3, 53, 82);
     border-bottom: solid black 5x;
     text-align: left;
     padding-top: 10px;
@@ -785,6 +788,33 @@ td{
 
 td{
   font-size: 1.5rem;
+  // max-width: 150px;
+  padding-top:5px;
+  padding-bottom:5px;
+  padding-left: 10px;
+  height: 30px;
+}
+
+}
+.ConfirmTable2 {
+  font-family: 'Roboto Condensed', sans-serif;
+  width: 81vw;
+  background-color: white;
+  color: black;
+
+  th{
+    color: white;
+    background-color: rgb(3, 53, 82);
+    border-bottom: solid black 5x;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size:1.2rem;
+    // max-width: 50px;
+  }
+
+td{
+  font-size: 1rem;
   // max-width: 150px;
   padding-top:5px;
   padding-bottom:5px;
