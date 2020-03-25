@@ -66,7 +66,9 @@ class DirectorLogin extends Component {
             })
           )
         } else {
-          this.checkDirector()
+          return(
+            this.checkDirector()
+          )
         }
 
         })

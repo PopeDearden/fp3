@@ -161,7 +161,7 @@ module.exports = {
             sample_light_yellow,
             sample_puc_yellow,
             sample_puc_black} = req.body
-            const username = first_name + last_name
+            const username = first_name + last_name + req.session.director[0].tag
         await db.update_student([first_name,
             last_name,
             password,

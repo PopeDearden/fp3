@@ -15,10 +15,11 @@ class UpdateUser extends Component {
             sample_light_yellow: 0,
             sample_puc_yellow: 0,
             sample_puc_black: 0,
+            info: [0],
         }
     }
 
-    componentDidMount() {
+    componentDidMount () {
         axios.put(`/api/director/user/${this.props.match.params.id}`).then(res => {
             const student = res.data[0]
             this.setState({
@@ -31,6 +32,12 @@ class UpdateUser extends Component {
                 sample_puc_black: student.sample_puc_black,
             })
         })
+        axios.get('/api/check-director').then(res => {
+            console.log(res.data[0])
+            this.setState({
+              info: res.data[0]
+            })
+          })
     }
 
     generatePassword = () => {
@@ -89,7 +96,7 @@ class UpdateUser extends Component {
                                     </br><br></br>
                                         <h3>
                                             <b id="bold">
-                                                {this.state.first_name}{this.state.last_name}
+                                            {this.state.first_name}{this.state.last_name}{this.state.info.tag}
                                             </b>
                                         </h3>
                                         <br></br>
