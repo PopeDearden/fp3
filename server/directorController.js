@@ -177,6 +177,12 @@ module.exports = {
         const invoice = await db.get_director_invoice([tag])
         res.status(200).send(invoice)
     },
+    getRemaining: async (req, res) => {
+        const db = req.app.get('db')
+        const tag = req.session.director[0].tag
+        const remaining = await db.get_remaining_samples_director([tag])
+        res.status(200).send(remaining)
+    },
     logOut: (req, res) => {
         req.session.destroy()
         // console.log(req.session.director)

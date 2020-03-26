@@ -40,7 +40,7 @@ class AllDirectors extends Component {
                         <table class="ConfirmTable2">
                             <thead>
                                 <tr>
-                                    <th>Director Name &<br></br>School</th>
+                                    <th>School &<br></br>Director Name</th>
                                     <th>Stage</th>
                                     <th>Address</th>
                                     <th>Email/phone</th>
@@ -52,7 +52,7 @@ class AllDirectors extends Component {
                             </thead>
                             {this.state.directors.map(director => (
                                 <tr id="DataRow">
-                                    <td>{director.first_name} {director.last_name} <br></br>{director.school_name}</td>
+                                    <td><b id="bold">{director.school_name}</b> <br></br>{director.first_name} {director.last_name}</td>
                                     <td>{director.stage}</td>
                                     <td>{director.school_street}<br></br>{director.school_city}, {director.school_state}  {director.school_zip}</td>
                                     <td>{director.email}<br></br>{director.phone}</td>

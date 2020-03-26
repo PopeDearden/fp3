@@ -17,7 +17,7 @@ import OrdersPlacedPrint from '../components/Director/OrdersPlacedPrint'
 
 export default ( 
     <Switch>
-        <Route exact path='/director' component={DirectorDash} />
+        <Route exact path='/director/' component={DirectorDash} />
         <Route path='/director/create-user' component={CreateUser}/>
         <Route path='/director/in-progress' component={OrdersInProgress}/>
         <Route path='/director/collected' component={OrdersCollected}/>
