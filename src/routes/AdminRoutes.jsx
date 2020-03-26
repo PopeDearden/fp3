@@ -10,6 +10,7 @@ import CreateAdmin from '../components/Admin/CraeteAdmin'
 import CreateDirector from'../components/Admin/CreateDirector'
 import InvoiceHistory from '../components/Admin/InvoiceHistory'
 import AllDirectors from '../components/Admin/AllDirectors'
+import UpdateDirector from '../components/Admin/UpdateDirector'
 
 export default ( 
     <Switch>
@@ -21,6 +22,7 @@ export default (
         <Route path='/admin/school-progress' component={SchoolProgress} />
         <Route path='/admin/create-admin' component={CreateAdmin} />
         <Route path='/admin/create-director' component={CreateDirector} />
+        <Route path='/admin/update-director/:id' component={UpdateDirector} />
         <Route path='/admin/invoice' component={InvoiceHistory} />
         <Route path='/admin/directors' component={AllDirectors}/>
 

@@ -43,6 +43,50 @@ module.exports = {
     const db = req.app.get('db')
     const collected = await db.get_scott_daily_total_collected()
     res.status(200).send(collected)
-  }
+  },
+  getDirector: async (req, res) => {
+    console.log('getting director by id')
+    const db = req.app.get('db')
+    const id = +req.params.id
+    console.log(id)
+    const info = await db.get_director_by_id([id])
+    res.status(200).send(info)
+  },
+  updateDirector: async (req, res) => {
+    console.log('updating director')
+    const db = req.app.get('db')
+    const id = +req.params.id
+    const {first_name,
+      last_name,
+      email,
+      phone,
+      school_name,
+      school_street,
+      school_city,
+      school_state,
+      school_zip,
+      tag,
+      password,
+      black_flash_sample,
+      yellow_flash_sample,
+      yellow_puc_sample,
+      black_puc_sample} = req.body
+      await db.update_director([first_name,
+        last_name,
+        email,
+        phone,
+        school_name,
+        school_street,
+        school_city,
+        school_state,
+        school_zip,
+        tag,
+        password,
+        black_flash_sample,
+        yellow_flash_sample,
+        yellow_puc_sample,
+        black_puc_sample, id])
+        res.status(200).send('Updated Director')
+  },
 
 }

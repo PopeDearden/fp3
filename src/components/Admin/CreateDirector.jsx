@@ -57,7 +57,7 @@ class CreateDirector extends Component {
           Swal.fire({
               icon: 'error',
               title: 'There was an error',
-              text: 'We were unable to create your order',
+              text: 'We were unable to create the director account.',
           })
       }
   }
@@ -83,7 +83,7 @@ class CreateDirector extends Component {
               <h3>(Director's Email will be used for login)</h3>
               <input value={this.state.email} onChange={e => this.setState({ email: e.target.value })} />
               <h3>Phone | please format:</h3>
-              <h3>(xxx)-xxx-xxxx</h3>
+              <h3>(xxx) xxx-xxxx</h3>
               <input value={this.state.phone} onChange={e => this.setState({ phone: e.target.value })} />
             </div>
             <div class="Form-Box-Right">
@@ -103,6 +103,7 @@ class CreateDirector extends Component {
             <div class="Form-Box-Right">
               <h2>Data Tagging and password</h2>
               <br></br>
+              <h3 id="bad">This tag will be permanent and cannot be changed.</h3>
               <h3>Director's TAG</h3>
               <input value={this.state.tag} onChange={e => this.setState({ tag: e.target.value })} />
               <h3>Password</h3>

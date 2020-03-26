@@ -47,7 +47,7 @@ class AllDirectors extends Component {
                                     <th>Password</th>
                                     <th>Tag</th>
                                     <th>Samples Ordered<br></br>(Initial Order)</th>
-                                    {/* <th>Edit</th> */}
+                                    <th>Edit</th>
                                 </tr>
                             </thead>
                             {this.state.directors.map(director => (
@@ -63,7 +63,7 @@ class AllDirectors extends Component {
                                         <p>Yellow Flashlight {director.yellow_flash_sample}</p>
                                         <p>Yellow Lantern {director.yellow_puc_sample}</p>
                                     </td>
-                                    {/* <td id="EditData"><i onClick={() => this.props.history.push(`/admin/update-director/${director.director_id}`)} class="far fa-edit"></i></td> */}
+                                    <td id="EditData"><i onClick={() => this.props.history.push(`/admin/update-director/${director.director_id}`)} class="far fa-edit"></i></td>
                                 </tr>
                             ))}
                         </table>
