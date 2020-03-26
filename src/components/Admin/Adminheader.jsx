@@ -20,7 +20,7 @@ class AdminHeader extends Component {
     }
 
     logout = () => {
-        axios.get('/api/logout').then(res=> {
+        axios.get('/api/logout').then(res => {
             Swal.fire('Logged Out')
             this.props.history.push('/')
         })
@@ -50,6 +50,13 @@ class AdminHeader extends Component {
                     <i class="fas fa-users"></i>
 
                 </div>
+                <a id="linkchange" href="https://trello.com/invite/b/twXHHono/afc6af98307d859b89ec7426ea2532bd/fundraiser-portal" target="_blank">
+                    <div class="Header-Link">
+                        <p>Referral Manager</p>
+                        <i class="fas fa-users"></i>
+
+                    </div>
+                </a>
                 <div class="Header-Link" onClick={() => this.props.history.push('/admin/invoice')}>
                     <p>Invoice History</p>
                     <i class="fas fa-file-invoice-dollar"></i>
@@ -60,8 +67,8 @@ class AdminHeader extends Component {
                     <p>Create Student<br></br> Account</p>
                 </div> */}
 
-                
-                <div class="Header-Link" onClick={()=>this.logout()}>
+
+                <div class="Header-Link" onClick={() => this.logout()}>
                     <p>Logout</p>
                     <i class="fas fa-sign-out-alt"></i>
                 </div>
