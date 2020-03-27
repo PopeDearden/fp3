@@ -50,10 +50,10 @@ class AdminHeader extends Component {
                     <i class="fas fa-users"></i>
 
                 </div>
-                <a id="linkchange" href="https://trello.com/invite/b/twXHHono/afc6af98307d859b89ec7426ea2532bd/fundraiser-portal" target="_blank">
+                <a id="linkchange" href="https://trello.com/b/twXHHono" target="_blank">
                     <div class="Header-Link">
                         <p>Referral Manager</p>
-                        <i class="fas fa-users"></i>
+                        <i class="far fa-id-badge"></i>
 
                     </div>
                 </a>
