@@ -47,7 +47,7 @@ class DirectorDash extends Component {
     })
   }
 
-  tOrF = (check) => {
+  tOrF = (check, message) => {
     if (check === true) {
       return (
         <i id="good" class="fas fa-check"></i>
@@ -57,7 +57,7 @@ class DirectorDash extends Component {
       }
       else {
         return (
-        <div></div>
+          <p id="warning">{message}</p>
       )
     }
   }
@@ -88,7 +88,7 @@ class DirectorDash extends Component {
             <div className="A-Box2">
               <h2>Other Info</h2>
               <div className="B-Box">
-                <p> Sample Order Sent by HybridLight: {this.tOrF(this.state.director.sample_processed)} </p>
+                <p> Sample Order Sent by HybridLight: {this.tOrF(this.state.director.sample_processed, 'Waiting on Hybridlight to fulfill')} </p>
                
        
               </div>
