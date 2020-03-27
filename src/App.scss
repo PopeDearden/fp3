@@ -1216,3 +1216,43 @@ h3{
   color: none;
   text-decoration: none;
 }
+.A-Box {
+  color: white;
+  width: 350px;
+  border: solid 5px #555555;
+  padding: 20px;
+  background-color: rgb(3, 53, 82);
+  h2 {
+    color: white;
+    font-size: 2rem;
+    border-bottom: dashed turquoise 2px;
+  }
+  p{
+    font-size: 1.5rem;
+    line-height: 1.6;
+  }
+}
+.A-Box2 {
+  color: white;
+  width: 450px;
+  border: solid 5px #555555;
+  padding: 20px;
+  background-color: rgb(3, 53, 82);
+  h2 {
+    color: white;
+    font-size: 2rem;
+    border-bottom: dashed turquoise 2px;
+  }
+  p{
+    font-size: 1.5rem;
+    line-height: 1.6;
+  }
+}
+.B-Box{
+  display: flex;
+  flex-direction: column;
+}
+.Split {
+  display: flex;
+  justify-content: space-evenly;
+}
