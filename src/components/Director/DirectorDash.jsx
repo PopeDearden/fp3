@@ -8,25 +8,41 @@ class DirectorDash extends Component {
   constructor(s) {
     super()
     this.state = {
-      remaining: {},
+      remaining: {
+        remaining_black_flash: 0,
+        remaining_yellow_flash: 0,
+        remaining_yellow_puc: 0,
+        },
       director: {},
     }
   }
-  componentDidMount() {
-    this.getRemaining()
-    this.getSamples()
+ async componentDidMount () {
+    await this.getSamples()
+    await this.getRemaining()
   }
   getRemaining = async () => {
     await axios.get('/api/director/remaining').then(res => {
-      this.setState({
-        remaining: res.data[0]
-      })
+      console.log(res.data[0])
+      if(res.data[0] === undefined) {
+        return
+      }
+      else{
+        this.setState({
+          remaining: res.data[0]
+        })
+      }
     })
   }
   getSamples = async () => {
     await axios.get('/api/director/samples').then(res => {
       this.setState({
-        director: res.data.samples[0]
+        director: res.data.samples[0],
+        remaining: {
+          remaining_black_flash: res.data.samples[0].black_flash_sample,
+          remaining_yellow_flash: res.data.samples[0].yellow_flash_sample,
+          remaining_yellow_puc: res.data.samples[0].yellow_puc_sample,
+          }
+        
       })
     })
   }
@@ -59,13 +75,13 @@ class DirectorDash extends Component {
               <h2>Remaining Samples</h2>
               <div className="B-Box">
                 <p>
-                  Black flashlights: <b id="bold">{this.state.remaining.remaining_black_flash}</b>
+                  Black flashlights: <b id="bold">{+this.state.remaining.remaining_black_flash}</b>
                 </p>
                 <p>
-                  Yellow flashlights:  <b id="bold">{this.state.remaining.remaining_yellow_flash}</b>
+                  Yellow flashlights:  <b id="bold">{+this.state.remaining.remaining_yellow_flash}</b>
                 </p>
                 <p>
-                  Yellow lanterns:  <b id="bold">{this.state.remaining.remaining_yellow_puc}</b>
+                  Yellow lanterns:  <b id="bold">{+this.state.remaining.remaining_yellow_puc}</b>
                 </p>
               </div>
             </div>
