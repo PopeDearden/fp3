@@ -9,9 +9,9 @@ class DirectorDash extends Component {
     super()
     this.state = {
       remaining: {
-        remaining_black_flash: 0,
-        remaining_yellow_flash: 0,
-        remaining_yellow_puc: 0,
+        remaining_black_flash: 'loading...',
+        remaining_yellow_flash: 'loading...',
+        remaining_yellow_puc: 'loading...',
         },
       director: {},
     }
@@ -55,49 +55,85 @@ class DirectorDash extends Component {
       //  <div></div>
         )
       }
+      if(check === false) {
+        return(
+          <p id="warning">{message}</p>
+        )
+      }
       else {
         return (
-          <p id="warning">{message}</p>
+          <p>Loading...</p>
       )
     }
   }
 
   render() {
-    return (
-      <div className="App" >
-        <div className="General-Content">
-          <div className="Title-Bar">
-            <h2>Director Dashboard</h2>
-          </div>
-          <div class="Split">
+    if(this.state.director.stage === 'registered'){
 
-            <div className="A-Box">
-              <h2>Remaining Samples</h2>
-              <div className="B-Box">
-                <p>
-                  Black flashlights: <b id="bold">{+this.state.remaining.remaining_black_flash}</b>
-                </p>
-                <p>
-                  Yellow flashlights:  <b id="bold">{+this.state.remaining.remaining_yellow_flash}</b>
-                </p>
-                <p>
-                  Yellow lanterns:  <b id="bold">{+this.state.remaining.remaining_yellow_puc}</b>
-                </p>
+      return (
+        <div className="App" >
+          <div className="General-Content">
+            <div className="Title-Bar">
+              <h2>Director Dashboard</h2>
+            </div>
+            <div class="Split">
+  
+              <div className="A-Box">
+                <h2>Remaining Samples</h2>
+                <div className="B-Box">
+                  <p>
+                    Black flashlights: <b id="bold">{this.state.remaining.remaining_black_flash}</b>
+                  </p>
+                  <p>
+                    Yellow flashlights:  <b id="bold">{this.state.remaining.remaining_yellow_flash}</b>
+                  </p>
+                  <p>
+                    Yellow lanterns:  <b id="bold">{this.state.remaining.remaining_yellow_puc}</b>
+                  </p>
+                </div>
+              </div>
+              <div className="A-Box2">
+                <h2>Other Info</h2>
+                <div className="B-Box">
+                  <p> Sample Order Sent by HybridLight: {this.tOrF(this.state.director.sample_processed, 'Waiting on Hybridlight to fulfill')} </p>
+                 
+         
+                </div>
               </div>
             </div>
-            <div className="A-Box2">
-              <h2>Other Info</h2>
-              <div className="B-Box">
-                <p> Sample Order Sent by HybridLight: {this.tOrF(this.state.director.sample_processed, 'Waiting on Hybridlight to fulfill')} </p>
-               
-       
-              </div>
-            </div>
+  
           </div>
-
         </div>
-      </div>
-    )
+      )
+    }
+    if(this.state.director.stage ==='order sent') {
+      return(
+        <div class="App">
+          <div class="General-Content">
+            <div class="Title-Bar">
+              <h2>Director Dashboard</h2>
+            </div>
+            <div class="Split">
+              <div class="A-Box2">
+                <h2>Your Final Order<br></br> has been placed!</h2>
+                <p>When Hybridlight fulfills your order, your invoice will be updated. So check the <a onClick={()=>this.props.history.push('/director/invoice')}>invoice tab</a> for updates.</p>
+              </div>
+              <div class="A-Box2">
+                {/* <h2>If there was an error...</h2> */}
+                <p>If you placed your final order by accident, or a student has sold additional lights than was was confirmed, please contact Julie.</p>
+                <h2></h2>
+                <p>Julie@yourbestfundraiserever.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    }
+     else {
+      return(
+        <div>Loading....</div>
+      )
+    }
 
   }
 }
