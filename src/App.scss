@@ -1037,8 +1037,34 @@ td{
     height: 1px;
   }
 }
+
+
+
 .Printing{
   display: none;
+  font-family: 'Roboto Condensed', sans-serif;
+  table{
+    margin-top:10px;
+  }
+  th{
+    font-weight: bold;
+    border:solid 1px;
+    text-align: left;
+    padding: 5px;
+  }
+  td{
+    padding: 5px;
+    border:solid 1px;
+    width: 100px;
+    text-align: left;
+  }
+}
+.Printing2{
+  // display: none;
+  padding: 50px;
+  width: 80vw;
+  max-height: 80vh;
+  overflow: auto;
   font-family: 'Roboto Condensed', sans-serif;
   table{
     margin-top:10px;
@@ -1085,6 +1111,16 @@ td{
 .OneOrder{
   display: flex;
   width: 100vw;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-top: dotted 1px black;
+  padding-bottom: 10px;
+}
+.OneOrder2{
+  display: flex;
+  width: 80vw;
   flex-direction: row;
   justify-content: space-between;
   margin-top: 50px;
@@ -1159,6 +1195,9 @@ td{
 
 
 @media print {
+  .Printing2 {
+    overflow: visible;
+  }
   .Best-Print {
     max-height: none;
     overflow: visible;

@@ -158,19 +158,19 @@ class OrdersCollectedPrint extends Component {
                           <td>Black Flashlights</td>
                           <td>{orders.flashlights}</td>
                           <td>$30.00</td>
-                          <td>${30*+orders.flashlights}.00</td>
+                          <td>${30 * +orders.flashlights}.00</td>
                         </tr>
                         <tr>
                           <td>Yellow Flashlights</td>
                           <td>{orders.flashlight_yellow}</td>
                           <td>$30.00</td>
-                          <td>${30*+orders.flashlight_yellow}.00</td>
+                          <td>${30 * +orders.flashlight_yellow}.00</td>
                         </tr>
                         <tr>
                           <td>Yellow Lanterns</td>
                           <td>{orders.pucs}</td>
                           <td>$35.00</td>
-                          <td>${35*+orders.pucs}.00</td>
+                          <td>${35 * +orders.pucs}.00</td>
                         </tr>
                         {/* <tr>
                           <td>Black Lanterns</td>

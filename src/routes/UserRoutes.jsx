@@ -6,6 +6,8 @@ import CreateOrder from '../components/User/CreateOrder'
 import InProgress from '../components/User/InProgress'
 import Collected from '../components/User/Collected'
 import EditOrder from '../components/User/OrderEdit'
+import FinalOrder from '../components/User/FinalOrder'
+
 
 export default ( 
     <Switch>
@@ -14,5 +16,6 @@ export default (
         <Route path='/user/in-progress' component={InProgress}/>
         <Route path='/user/collected' component={Collected}/>
         <Route path='/user/edit-order/:id' component={EditOrder}/>
+        <Route path='/user/final' component={FinalOrder}/>
     </Switch>
 )
