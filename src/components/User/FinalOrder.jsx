@@ -37,7 +37,7 @@ class FinalOrder extends Component {
             <h1>Confirmed Orders for {this.state.student.username}</h1>
           </div>
           <div className="Printing2">
-            <button id="GeneratePrint" onClick={() => window.print()}>Generate PDF to print</button>
+            <button id="GeneratePrint" onClick={() => window.print()}>Generate PDF to print or save</button>
             <div className="Best-Print2">
               <table>
                 <thead>
