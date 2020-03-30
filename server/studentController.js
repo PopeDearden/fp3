@@ -66,7 +66,8 @@ getStudentConfirmedOrders: async(req, res) => {
     const db = req.app.get('db')
     const user_id = req.session.student[0].user_id
     const orders = await db.get_student_confirmed_orders([user_id])
-    res.status(200).send(orders)
+    const total = await db.get_student_final_totals([user_id])
+    res.status(200).send([orders, total[0]])
 },
 getOneOrder: async (req, res)  => {
     console.log('getting one order')
