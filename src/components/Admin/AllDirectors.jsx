@@ -47,7 +47,7 @@ class AllDirectors extends Component {
                                     <th>Password</th>
                                     <th>Tag</th>
                                     <th>Samples Ordered<br></br>(Initial Order)</th>
-                                    <th>Edit</th>
+                                    <th id="EditWidth">Edit</th>
                                 </tr>
                             </thead>
                             {this.state.directors.map(director => (

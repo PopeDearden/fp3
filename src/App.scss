@@ -837,6 +837,13 @@ td{
     font-size:1.5rem;
     color: rgb(43, 163, 43);
 }
+#TotalCollected2{
+
+    color: rgb(43, 163, 43);
+}
+#EditWidth {
+  width: 50px;
+}
 .TopCard1{
   margin-left:50px;
   width: 12vw;
@@ -1122,13 +1129,12 @@ td{
 .OneOrder2{
   display: flex;
   width: 80vw;
-  height:25vh;
+  // height:20vh;
   flex-direction: row;
   justify-content: space-between;
   margin-top: 50px;
   margin-bottom: 50px;
-  border-top: dotted 1px black;
-  padding-bottom: 10px;
+  // border-bottom: dotted 1px black;
 }
 #GeneratePrint{
   height: 50px;
@@ -1197,12 +1203,31 @@ td{
 
 
 @media print {
+  @page {
+    size: 8.5in 11in;
+    margin: .5in;
+  }
+  
   .Printing2 {
     overflow: visible;
   }
   .Best-Print {
     max-height: none;
     overflow: visible;
+  }
+  .Best-Print2 {
+    height: 9.5in;
+    width: 6.5in;
+    max-height: 9.5in;
+    overflow: visible;
+  }
+  .OneOrder2 {
+    font-size: 10pt;
+    height: 1.9in;
+    max-height: 1.9in;
+    margin-top: 0in;
+    margin-bottom: 0in;
+    overflow: hidden;
   }
 #medium{
   display: none;

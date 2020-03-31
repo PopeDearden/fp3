@@ -156,8 +156,8 @@ class OrdersCollected extends Component{
             <div class="TopCard1Bar">
               <h2>Total $ Collected</h2>
             </div>
-            <h3>
-              <h4>${this.state.totalMoneyNeed}</h4>
+            <h3 id="TotalCollected2">
+              ${this.state.totalMoneyNeed}
             </h3>
           </div>
         </div>
@@ -175,7 +175,7 @@ class OrdersCollected extends Component{
                 <th id="restrictTable">Flashlights<br></br>(Black)</th>
                 <th id="restrictTable">Flashlights<br></br>(Yellow)</th>
                 <th id="restrictTable">Lanterns <br></br>(Yellow)</th>
-                <th id="restrictTable">Total Owed</th>
+                <th id="restrictTable">Total Collected</th>
               </tr>
               {orders.filter((element) => { return element.user_id === student.user_id }).map(orders => (
                 <tr id="DataRow" key={orders.order_id}>
