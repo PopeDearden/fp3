@@ -32,7 +32,10 @@ class FinalOrder extends Component {
   render() {
     return (
       <div className="App" >
+
+
         <div className="Printing2">
+        <div className="Title-Bar"><h2>Your Final Order Information</h2></div>
           <button id="GeneratePrint" onClick={() => window.print()}>Generate PDF to print or save</button>
           <div className="Best-Print2">
             <h1>Confirmed Orders for {this.state.student.username}</h1>
@@ -106,16 +109,19 @@ class FinalOrder extends Component {
                 </tr>
               </tbody>
             </table>
+            <div className="Printing">
+              <p>*Your individual orders are found on the next pages</p>
+            </div>
           </div>
           {this.state.orders.map(orders => (
             <div className="OneOrder2">
               <div class="Box1">
-                <p>{orders.first_name_cust} {orders.last_name_cust}</p>
+                <p id="bold">{orders.first_name_cust} {orders.last_name_cust}</p>
                 <p><br></br></p>
+                <p>Date Order Created: <Moment format="MM/DD/YYYY">{orders.date}</Moment></p>
                 <p>{orders.address_cust}</p>
                 <p>{orders.phone_cust}</p>
                 <p>{orders.email_cust}</p>
-                <p>Date Order Created: <Moment format="MM/DD/YYYY">{orders.date}</Moment></p>
               </div>
               <div class="Box3">
                 <table>

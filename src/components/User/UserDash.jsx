@@ -19,10 +19,11 @@ class UserDash extends Component {
       sample_puc_yellow: 0,
       sample_puc_black: 0,
       username: '',
-
+      confirmed: '',
     }
   }
   async componentDidMount() {
+    await this.getStage()
     await axios.get(`/api/student/in-progress`).then(res => {
       console.log(res.data)
       this.setState({
@@ -43,13 +44,21 @@ class UserDash extends Component {
         sample_puc_black: res.data[0].sample_puc_black,
         sample_light_black: res.data[0].sample_light_black,
         sample_light_yellow: res.data[0].sample_light_yellow,
-        username: res.data[0].username
+        username: res.data[0].username,
+        name: res.data[0].first_name + ' ' + res.data[0].last_name
       })
     }
     )
     //calculateTotal is for in progress
     await this.calculateTotalCollected()
     await this.calculateTotal()
+  }
+  getStage = () => {
+    axios.get('/api/student/stage').then(res => {
+      this.setState({
+        confirmed: res.data
+      })
+    })
   }
   calculateTotalCollected() {
     let totalFlash = 0
@@ -97,7 +106,7 @@ class UserDash extends Component {
     }
     let totalMoneyNeed = totalLantern * 35 + totalFlash * 30 + totalYellowFlash * 30
     let possible = totalMoneyNeed / 2
-    let earnedPotential = +this.state.earnedC + possible 
+    let earnedPotential = +this.state.earnedC + possible
     this.setState({
       totalLantern: totalLantern,
       totalMoneyNeed: totalMoneyNeed.toFixed(2),
@@ -111,84 +120,118 @@ class UserDash extends Component {
 
   render() {
     function sampleTotal(light, puc) {
-      let total = light*15 + puc*(35/2)
+      let total = light * 15 + puc * (35 / 2)
       return total.toFixed(2)
     }
-    return (
-      <div className="App" >
-        <div className="Title-Bar-Dash"><h2>Student Dashboard: Welcome {this.state.username}!</h2></div>
-        <div className="TopCards">
-          <div class="TopCard3">
-            <div class="TopCard1Bar">
-              <h2>Total orders in progress: </h2>
-            </div>
-            <h3>
-              {this.state.totalOrdersInProgress}
-            </h3>
-          </div>
-          <div class="TopCard3">
-            <div class="TopCard1Bar">
-              <h2>Total Orders w/ Money Collected</h2>
-            </div>
-            <h3>
-              {this.state.collectedOrdersTotal}
-            </h3>
-          </div>
-          <div class="TopCard3">
-            <div class="TopCard1Bar">
-              <h2>Current Earnings</h2>
-            </div>
-            <h3 id="CollectedCard">
-              ${this.state.earnedC}
-            </h3>
-          </div>
-        </div>
-        <div class="TopCards">
-        <div class="TopCard3">
-            <div class="TopCard1Bar">
-              <h2 >Total $ to be collected</h2>
-            </div>
-            <h3>
-              <h4>
-                ${this.state.totalMoneyNeed}<i class="fas fa-exclamation-triangle"></i>
-              </h4>
-            </h3>
-          </div>
-          <div class="TopCard3">
-            <div class="TopCard1Bar">
-              <h2>Total money collected </h2>
-            </div>
-            <h3 id="CollectedCard">
-              ${this.state.totalMoneyC}
-            </h3>
-          </div>
-          <div class="TopCard3">
-            <div class="TopCard1Bar">
-              <h1> Possible total earnings after "In progress" $ collected</h1>
-            </div>
-            <h3 id="CollectedCard">
-              <h4>
-                ${this.state.possibleToEarn}
-              </h4>
-            </h3>
-          </div>
-        </div>
-        <div class="Title-Bar-Collected">Samples information</div>
-        <h2 id="SampleInfo">Our records show that you have been given: 
-        <br></br>
-        {this.state.sample_light_black} sample (black) flashlights ($15.00 each - student price)
-        <br></br>
-        {this.state.sample_light_yellow} sample (yellow) flashlights ($15.00 each - student price )
-        <br></br>
-        {this.state.sample_puc_yellow} sample (yellow) lanterns ($17.50 each - student price)
-        <br></br>
-        {/* {this.state.sample_puc_black} sample (black) lanterns ($35 each) */}
-        <br></br>
-      
-        You are responsible for payment of ${sampleTotal(this.state.sample_light_black, this.state.sample_puc_yellow)} at the end of the fundraiser deadline. This will be subtracted from your total earnings.</h2>
-      </div>
-    )
+    if (this.state.confirmed === false) {
 
+      return (
+        <div className="App" >
+          <div className="Title-Bar-Dash"><h2>Student Dashboard: Welcome {this.state.name}!</h2></div>
+          <div className="TopCards">
+            <div class="TopCard3">
+              <div class="TopCard1Bar">
+                <h2>Total orders in progress: </h2>
+              </div>
+              <h3>
+                {this.state.totalOrdersInProgress}
+              </h3>
+            </div>
+            <div class="TopCard3">
+              <div class="TopCard1Bar">
+                <h2>Total Orders w/ Money Collected</h2>
+              </div>
+              <h3>
+                {this.state.collectedOrdersTotal}
+              </h3>
+            </div>
+            <div class="TopCard3">
+              <div class="TopCard1Bar">
+                <h2>Current Earnings</h2>
+              </div>
+              <h3 id="CollectedCard">
+                ${this.state.earnedC}
+              </h3>
+            </div>
+          </div>
+          <div class="TopCards">
+            <div class="TopCard3">
+              <div class="TopCard1Bar">
+                <h2 >Total $ to be collected</h2>
+              </div>
+              <h3>
+                <h4>
+                  ${this.state.totalMoneyNeed}<i class="fas fa-exclamation-triangle"></i>
+                </h4>
+              </h3>
+            </div>
+            <div class="TopCard3">
+              <div class="TopCard1Bar">
+                <h2>Total money collected </h2>
+              </div>
+              <h3 id="CollectedCard">
+                ${this.state.totalMoneyC}
+              </h3>
+            </div>
+            <div class="TopCard3">
+              <div class="TopCard1Bar">
+                <h1> Possible total earnings after "In progress" $ collected</h1>
+              </div>
+              <h3 id="CollectedCard">
+                <h4>
+                  ${this.state.possibleToEarn}
+                </h4>
+              </h3>
+            </div>
+          </div>
+          <div class="Title-Bar-Collected">Samples information</div>
+          <h2 id="SampleInfo">Our records show that you have been given:
+          <br></br>
+            {this.state.sample_light_black} sample (black) flashlights ($15.00 each - student price)
+          <br></br>
+            {this.state.sample_light_yellow} sample (yellow) flashlights ($15.00 each - student price )
+          <br></br>
+            {this.state.sample_puc_yellow} sample (yellow) lanterns ($17.50 each - student price)
+          <br></br>
+            {/* {this.state.sample_puc_black} sample (black) lanterns ($35 each) */}
+            <br></br>
+
+          You are responsible for payment of ${sampleTotal(this.state.sample_light_black, this.state.sample_puc_yellow)} at the end of the fundraiser deadline. This will be subtracted from your total earnings.</h2>
+        </div>
+      )
+    }
+    if (this.state.confirmed === true) {
+      return (
+        <div>
+          <div className="Title-Bar-Dash">
+            <h2>Your Director has confirmed your orders!</h2>
+          </div>
+          <div class="Split">
+              <div class="A-Box2">
+                <h2>Please review <br></br>"Your Final Orders"</h2>
+                <p>If there are any errors, contact your director and have them "Un-Confirm" your orders so you can make corrections. </p>
+                
+              </div>
+              <div class="A-Box2">
+                <h2>Other<br></br>Information</h2>
+                <p>Your director will not be able to "Un-confirm" any orders once they have placed the final order for your school.</p>
+              </div>
+          </div>
+        </div>
+
+
+      )
+    }
+    else {
+      return (
+
+        <div className="Title-Bar-Dash">
+          <h2>Loading...</h2>
+        </div>
+
+
+      )
+    }
   }
 }
 

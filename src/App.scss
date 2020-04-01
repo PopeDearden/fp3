@@ -1007,7 +1007,7 @@ td{
   margin-bottom: 10px;
 }
 .Title-Bar-Dash {
-  background-image: linear-gradient(to right, turquoise, yellow);
+  background-image: linear-gradient(to right, turquoise, rgb(3, 53, 82));
   color: black;
   font-weight: bold;
   width: 80vw;
@@ -1127,14 +1127,21 @@ td{
   padding-bottom: 10px;
 }
 .OneOrder2{
+  // background-color: rgb(3, 53, 82);
+  // color: white;
   display: flex;
   width: 80vw;
   // height:20vh;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin-top: 50px;
   margin-bottom: 50px;
-  // border-bottom: dotted 1px black;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  border-bottom: dashed 1px black;
+}
+.Box1{
+  margin-right: 50px;
 }
 #GeneratePrint{
   height: 50px;
@@ -1204,10 +1211,12 @@ td{
 
 @media print {
   @page {
-    size: 8.5in 11in;
+    // size: 8.5in 11in;
     margin: .5in;
   }
-  
+  .Title-Bar {
+    display: none;
+  }
   .Printing2 {
     overflow: visible;
   }
@@ -1224,10 +1233,9 @@ td{
   .OneOrder2 {
     font-size: 10pt;
     height: 2in;
-    max-height: 2in;
+    // max-height: 2in;
     margin-top: 0in;
     margin-bottom: 0in;
-    overflow: hidden;
   }
 #medium{
   display: none;
