@@ -88,5 +88,12 @@ module.exports = {
         black_puc_sample, id])
         res.status(200).send('Updated Director')
   },
-
+  getSummary: async (req, res) => {
+    console.log('getting summaries collected')
+    const db = req.app.get('db')
+    const collected = await db.get_directors_collected_summary()
+    const confirmed = await db.get_directors_confirmed_summary()
+    const directors = await db.get_all_directors()
+    res.status(200).send({directors, collected, confirmed})
+  }
 }
