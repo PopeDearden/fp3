@@ -16,6 +16,9 @@ background-color:#f9f9f9;
 width: auto;
  max-height: 100vh;
  min-height: 100vh;
+ th{
+   z-index: 0;
+ }
  h2{
    font-size:1.5rem;
  }
@@ -38,7 +41,11 @@ button {
   font-size: .75rem;
 }
 }
+#Home-Link {
+  display: none;
+}
 .Header {
+  position: absolute;
   position: sticky;
   top:0;
   display: flex;
@@ -56,6 +63,9 @@ button {
   // border-bottom: solid black 5px;
   // border-top: solid black;
   // box-shadow: 0px 5px 15px gray;
+}
+.Header-Menu {
+  display: none;
 }
 
 .Header-Link {
@@ -82,7 +92,6 @@ button {
   transform: scale(1.05);
   cursor: pointer;
   background-color: #5e5e5e;
- 
 }
 
 .page-bar-blue{
@@ -1329,4 +1338,185 @@ h3{
 .Split {
   display: flex;
   justify-content: space-evenly;
+}
+
+@media(max-width:1100px) {
+  .Landing-Page {
+    max-width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+  }
+  .Landing-Left {
+    width: 80vw;
+    max-width: 80vw;
+  }
+  #Main-Title {
+    width: 80vw;
+  }
+  .Login-Box {
+    width: 80vw;
+    min-height: 225px;
+    padding: 10px;
+    height: 350px;
+    max-height: 400px;
+    color: white;
+    background-color: #55555557;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border: solid 2px #363636;
+    box-shadow:rgba(0, 0, 0, 0.596) 5px 5px 15px;
+    h2{
+      color: white;
+    }
+  }
+  #big {
+    max-width: 70vw;
+  }
+  .GradientLine {
+    background-image: linear-gradient(to right, turquoise, rgb(20, 100, 92));
+    width: 60vw;
+    height: 5px;
+    margin-top: 10px;
+  }
+  .Header {
+    width: 100vw;
+    min-width: 100vw;
+    max-width: 100vw;
+    position: static;
+    top:0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
+    max-height: none;
+    min-height: auto;
+    background-color:  #555555;
+  }
+  .Header-Menu {
+    position: static;
+    top: 0;
+    min-height: none;
+    height: 100%;
+    width: 90vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    color: white;
+    font-size: 2rem;
+    h1{
+      font-family: 'Pacifico';
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+  #Home-Link {
+    display: flex;
+  }
+  .Animate-Lines{
+    display: none;
+  }
+  .Header-Link {
+    position: relative;
+    height: 40px;
+    margin: 10px;
+    padding: 3px;
+    width: 80vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: 1.2 rem;
+    transition: .15s;
+    border-bottom: 1px solid transparent;
+  }
+  .Header-Link:hover {
+    border-bottom: 1px solid turquoise;
+    width: 80vw;
+    border-bottom: solid turquoise -1px;
+    color: turquoise;
+    transform: scale(1.05);
+    cursor: pointer;
+    background-color: #5e5e5e;
+  }
+  .Header-List-true {
+    width: 100vw;
+    position: relative;
+    min-height: none;
+    background-color:  #555555;
+  }
+  .Header-List-false {
+    display: none;
+  }
+  .Admin-Page{
+    max-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    max-height: 100vh;
+    overflow-y: scroll;
+  }
+  .Form-Box {
+    font-size: 1rem;
+    border: solid 10px #555555;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    background-color: #f3f3f3;
+    width: 90vw;
+    max-width: 90vw;
+    height:auto;
+    border-radius: 0px;
+    // box-shadow: 5px 5px 5px rgba(64, 224, 208, 0.185);
+    h2{
+      font-family: 'Encode Sans', sans-serif;
+      font-size:1.3rem;
+      border-bottom: solid 5px #555555;
+    }
+    p{
+      font-family: 'Encode Sans', sans-serif;
+      min-width: 20px;
+      max-width: 300px;
+      text-align: center;
+      word-spacing: 5px;
+      min-height: 80px;
+      border: solid 5px #555555;
+      padding: 5px;
+      font-size: 1rem;
+      margin: 10px;
+      // box-shadow: 5px 5px 5px rgba(64, 224, 208, 0.185);
+      // border-bottom:solid 0px white;
+    }
+    input{
+      background-color: #f9f9f9;
+      width: inherit;
+    }
+  
+  .Form-Split {
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  }
+  .General-Content {
+    margin: 0px;
+  }
+  .General-Page {
+    max-width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .Title-Bar {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin: 0px;
+    width: 100%;
+  }
 }

@@ -70,7 +70,9 @@ class UserLogin extends Component {
           <UserHeader
             username = {this.state.username} 
             tag = {this.state.tag}/>
+            <div class="Helper">
           {UserRoutes}
+            </div>
 
         </div>
       )

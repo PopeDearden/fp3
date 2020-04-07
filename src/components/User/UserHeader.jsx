@@ -14,6 +14,7 @@ class StudentHeader extends Component {
         super()
         this.state = {
             confirmed: false,
+            menu: true,
         }
     }
 
@@ -34,22 +35,36 @@ class StudentHeader extends Component {
             this.props.history.push('/')
         })
     }
-
+    hitLink = async (path) => {
+        await this.setState(prevState => ({
+            menu: !prevState.menu
+          }))
+          this.props.history.push(path)
+    }
 
 
     render() {
 
         if (this.state.confirmed === false) {
-
             return (
-
                 <div class="Header">
+                     <div class="Header-Menu">
+                        <h1>Fundraiser Portal
+                        </h1><i onClick={() => this.setState(prevState => ({
+              menu: !prevState.menu
+            }))} class="fas fa-bars"></i>
+                    </div>
                     <div class="Animate-Lines" onClick={() => this.props.history.push('/user/')}>
                         <h1 id="Fancy-Title-2-white">Fundraiser Portal</h1>
                         <div class="Animate-Lines__horizontal"></div>
                         <div class="Animate-Lines__vertical"></div>
                     </div>
-                    <div class="Header-Link" onClick={() => this.props.history.push('/user/create-order')}>
+                    <div class={`Header-List-${this.state.menu}`}>
+                    <div id="Home-Link" class="Header-Link" onClick={() => this.hitLink('/user/')}>
+                        <p>Dashboard</p>
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="Header-Link" onClick={() =>this.hitLink('/user/create-order')}>
                         <p>Create a new order</p>
                         <i class="fas fa-user-plus"></i>
 
@@ -59,11 +74,11 @@ class StudentHeader extends Component {
                 <p>Create Student<br></br> Account</p>
             </div> */}
 
-                    <div class="Header-Link" onClick={() => this.props.history.push('/user/in-progress')}>
+                    <div class="Header-Link" onClick={() => this.hitLink('/user/in-progress')}>
                         <p>Orders in Progress</p>
                         <i class="fas fa-user-edit"></i>
                     </div>
-                    <div class="Header-Link" onClick={() => this.props.history.push('/user/collected')}>
+                    <div class="Header-Link" onClick={() => this.hitLink('/user/collected')}>
                         <p>Orders w/ money collected</p>
 
                         <i class="fas fa-money-check-alt"></i>
@@ -76,6 +91,7 @@ class StudentHeader extends Component {
                     <div class="Header-Link" onClick={() => this.logout()}>
                         <p>Logout</p>
                         <i class="fas fa-sign-out-alt"></i>
+                    </div>
                     </div>
                 </div>
             )
