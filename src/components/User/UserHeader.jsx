@@ -14,7 +14,7 @@ class StudentHeader extends Component {
         super()
         this.state = {
             confirmed: false,
-            menu: true,
+            menu: false,
         }
     }
 
