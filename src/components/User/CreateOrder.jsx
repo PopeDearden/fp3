@@ -150,6 +150,7 @@ class CreateOrder extends Component {
                             <button onClick={() => this.createOrder()} id="medium">Create Order</button>
                         </div>
                     </div>
+                    <div className="Footer"></div>
                 </div>
             </div>
         )

@@ -149,7 +149,7 @@ class Collected extends Component {
                 </table>
                 </div>
 
-
+                    <div className="Footer"></div>
             </div>
         )
 

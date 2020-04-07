@@ -169,6 +169,7 @@ class EditOrder extends Component {
                         <button onClick={() => this.updateOrder()} id="medium">Update Order</button>
                     </div>
                 </div>
+                <div className="Footer"></div>
             </div>
         </div>
         )

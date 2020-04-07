@@ -114,7 +114,9 @@ class InProgress extends Component {
                     </h3>
                 </div>
                 </div>
-                <input class="Search" placeholder={"Search by name"}  onChange={e => this.setState({ searchInput: e.target.value })}/>    <i class="fas fa-search"></i> Orders In Progress are considered "draft" and are not valid until you have collected the funds and updated the order!
+                <div className="TextContainer">
+                <input class="Search" placeholder={"Search by name"}  onChange={e => this.setState({ searchInput: e.target.value })}/>    <i class="fas fa-search"></i>Orders In Progress are considered "draft" and are not valid until you have collected the funds and updated the order!
+                </div>
                 <div class="TableContainer">
                 <table class="InProgressTable">
                     <tr id="TableHeader">
@@ -149,7 +151,7 @@ class InProgress extends Component {
                 </table>
                 </div>
 
-
+                    <div className="Footer"></div>
             </div>
         )
 
