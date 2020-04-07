@@ -197,6 +197,7 @@ class UserDash extends Component {
             <br></br>
 
           You are responsible for payment of ${sampleTotal(this.state.sample_light_black, this.state.sample_puc_yellow)} at the end of the fundraiser deadline. This will be subtracted from your total earnings.</h2>
+          <div className="Footer"></div>
         </div>
       )
     }
@@ -207,15 +208,15 @@ class UserDash extends Component {
             <h2>Your Director has confirmed your orders!</h2>
           </div>
           <div class="Split">
-              <div class="A-Box2">
-                <h2>Please review <br></br>"Your Final Orders"</h2>
-                <p>If there are any errors, contact your director and have them "Un-Confirm" your orders so you can make corrections. </p>
-                
-              </div>
-              <div class="A-Box2">
-                <h2>Other<br></br>Information</h2>
-                <p>Your director will not be able to "Un-confirm" any orders once they have placed the final order for your school.</p>
-              </div>
+            <div class="A-Box2">
+              <h2>Please review <br></br>"Your Final Orders"</h2>
+              <p>If there are any errors, contact your director and have them "Un-Confirm" your orders so you can make corrections. </p>
+
+            </div>
+            <div class="A-Box2">
+              <h2>Other<br></br>Information</h2>
+              <p>Your director will not be able to "Un-confirm" any orders once they have placed the final order for your school.</p>
+            </div>
           </div>
         </div>
 
