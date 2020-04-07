@@ -41,6 +41,9 @@ button {
   font-size: .75rem;
 }
 }
+.Denied {
+  display: none;
+}
 #Home-Link {
   display: none;
 }
@@ -589,6 +592,11 @@ color: black;
   display: flex;
   flex-direction: row;
 }
+.Admin-Page-Stop{
+  // background-color: Orange;
+  display: flex;
+  flex-direction: row;
+}
 
 
 .Animate-Lines {
@@ -1055,6 +1063,9 @@ td{
     height: 1px;
   }
 }
+.TextContainer2 {
+  display: none;
+}
 
 
 
@@ -1343,12 +1354,24 @@ h3{
 
 @media(max-width:1100px) {
   .TextContainer {
+    display: none;
+  }
+  .TextContainer2 {
+    width: 100vw;
     display: flex;
     flex-direction: column;
-    // padding-left: 10vw;
-    // padding-right: 10vw;
-    width: 90vw;
-    max-width: 90vw;
+    align-items: center;
+    justify-content: center;
+    p {
+      margin: 5px;
+      border: solid 2px turquoise;
+      padding: 10px;
+      color: turquoise;
+      background-color: #5e5e5e;
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
   }
   .Landing-Page {
     max-width: 100vw;
@@ -1488,6 +1511,9 @@ h3{
     flex-direction: column;
     max-height: 100vh;
     overflow-y: scroll;
+  }
+  .Admin-Page-Stop{
+    display: none;
   }
   .Form-Box {
     font-size: 1rem;
@@ -1722,7 +1748,7 @@ h3{
   }
   .Search {
     background-color: transparent;
-    min-width: 20vw;
+    min-width: 80vw;
     margin-left:0px;
   }
   #SampleInfo{
@@ -1741,5 +1767,16 @@ h3{
       color: white;
       height: 1px;
     }
+  }
+  .Denied {
+    display: flex;
+    flex-direction: column;
+      font-size: 2rem;
+      width: inherit;
+      height: 100vh;
+      color: turquoise;
+      background-color: #555555;
+      text-align: center;
+      padding: 20vw;
   }
 }

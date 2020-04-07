@@ -66,24 +66,26 @@ class DirectorLogin extends Component {
             })
           )
         } else {
-          return(
+          return (
             this.checkDirector()
           )
         }
 
-        })
+      })
   }
 
 
   render() {
     if (this.state.approved === true) {
       return (
-        <div class="Admin-Page">
-          <DirectorHeader
-            first_name={this.state.first_name}
-            last_name={this.state.last_name} />
-          {DirectorRoutes}
-
+        <div>
+          <p className="Denied"><i class="far fa-frown-open"></i><br></br>Sorry, only Student Accounts can use this app on mobile.</p>
+          <div class="Admin-Page-Stop">
+            <DirectorHeader
+              first_name={this.state.first_name}
+              last_name={this.state.last_name} />
+            {DirectorRoutes}
+          </div>
         </div>
       )
     } else {
