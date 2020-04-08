@@ -47,12 +47,12 @@ class CreateOrder extends Component {
                         phone_cust: '',
                         email_cust: '',
                         address_cust: '',
-                        flashlights: 0,
-                        pucs: 0,
-                        flashlight_yellow: 0,
-                        puc_black: 0,
-                        good_flash: 0,
-                        good_puc: 0,
+                        flashlights: '',
+                        pucs: '',
+                        flashlight_yellow: '',
+                        puc_black: '',
+                        good_flash: '',
+                        good_puc: '',
                     })
                 }
                 else {
