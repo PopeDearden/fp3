@@ -13,16 +13,16 @@ class CreateOrder extends Component {
             phone_cust: '',
             email_cust: '',
             address_cust: '',
-            flashlights: 0,
-            pucs: 0,
+            flashlights: '',
+            pucs: '',
             collected: false,
             confirmed: false,
             order_placed: false,
             order_sent: false,
-            flashlight_yellow: 0,
-            puc_black: 0,
-            good_flash: 0,
-            good_puc: 0,
+            flashlight_yellow: '',
+            puc_black: '',
+            good_flash: '',
+            good_puc: '',
         }
     }
     createOrder = async () =>  {
