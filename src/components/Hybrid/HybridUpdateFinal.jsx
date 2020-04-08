@@ -98,7 +98,7 @@ class HybridFinalUpdate extends Component {
                             <p>{order.phone}</p>
                             <p>{order.email}</p>
                         </div>
-                        <button  onClick={() => window.print()} id="GeneratePrint">Print</button>
+                        {/* <button  onClick={() => window.print()} id="GeneratePrint">Print</button> */}
                     </div>
               
                     </div>

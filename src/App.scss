@@ -1235,6 +1235,10 @@ td{
     // size: 8.5in 11in;
     margin: .5in;
   }
+  .Admin-Page-Stop{
+  display: flex;
+  flex-direction: row;
+}
   .Title-Bar {
     display: none;
   }

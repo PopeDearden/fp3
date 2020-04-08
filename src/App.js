@@ -10,6 +10,7 @@ import Landing from './components/Landing/Landing'
 import DirectorLogin from './components/Director/DirectorLogin'
 import UserLogin from './components/User/UserLogin'
 import Hybrid from './components/Hybrid/HybridLogin'
+import BasePrint from './components/Landing/BasePrint'
 
 class App extends Component {
   constructor(s) {
@@ -27,6 +28,7 @@ class App extends Component {
           <Route path='/user' component={UserLogin} />
           <Route path='/director' component={DirectorLogin} />
           <Route path='/hybridlight' component={Hybrid} />
+          <Route path='/print' component={BasePrint} />
         </Switch>
       </div>
     )

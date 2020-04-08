@@ -104,7 +104,7 @@ class StudentHeader extends Component {
                         <div class="Animate-Lines__horizontal"></div>
                         <div class="Animate-Lines__vertical"></div>
                     </div>
-                    <div class="Header-Link" onClick={() => this.props.history.push('/user/final')}>
+                    <div class="Header-Link" onClick={() => this.props.history.push('print/student-final-order')}>
                         <p>Your Final Orders</p>
 
                         <i class="fas fa-money-check-alt"></i>

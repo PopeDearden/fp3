@@ -57,7 +57,9 @@ class UpdateSample extends Component {
         return (
             <div className="App" >
                 <div class="Best-Print">
-                    <h2>Requested samples for <b>{order.school_name}</b><button  onClick={() => window.print()} id="GeneratePrint">Print</button></h2>
+                    <h2>Requested samples for <b>{order.school_name}</b>
+                    </h2>
+                    {/* <button  onClick={() => window.print()} id="GeneratePrint">Print</button> */}
                     <br></br>
                     <p>{order.first_name} {order.last_name}</p>
                     <p>{order.school_street}</p>
