@@ -203,8 +203,8 @@ class UserDash extends Component {
     }
     if (this.state.confirmed === true) {
       return (
-        <div>
-          <div className="Title-Bar-Dash">
+        <div className="General-Content">
+          <div className="Title-Bar">
             <h2>Your Director has confirmed your orders!</h2>
           </div>
           <div class="Split">

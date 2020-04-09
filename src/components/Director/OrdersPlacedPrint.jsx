@@ -111,7 +111,7 @@ class OrdersPlacedPrint extends Component {
     return (
       <div className="App" >
         <button id="GeneratePrint" onClick={() => window.print()}>Generate PDF for Orders placed by students</button>
-        <div className="Printing">
+        <div className="Printing2">
 
           <h1>Orders placed by students</h1>
           <h2>Total Black Flashlights: {this.state.totalFlash}</h2>
@@ -120,7 +120,7 @@ class OrdersPlacedPrint extends Component {
           {/* <h2>Total Black Lanterns:     {this.state.totalBlackPuc}</h2> */}
           <h2>Total Potential Earnings: ${this.state.possible}</h2>
           <h2>Total $ Collected: ${this.state.totalMoneyNeed}</h2>
-          <div class="Printing">
+          <div class="Best-Print-2">
             {student.map(student => (
               <div id="Individual">
 
@@ -132,7 +132,7 @@ class OrdersPlacedPrint extends Component {
                   <p>Total $ collected: ${this.calculate(orders, student).totalPrice.toFixed(2)}</p>
                 </div>
                 {orders.filter((element) => { return element.user_id === student.user_id }).map(orders => (
-                  <div className="OneOrder" key={orders.order_id}>
+                  <div className="OneOrder2" key={orders.order_id}>
                     <div class="Box1">
                       <p>{orders.first_name_cust} {orders.last_name_cust}</p>
                       <p><br></br></p>
@@ -146,14 +146,14 @@ class OrdersPlacedPrint extends Component {
                     </div>
                     <div class="Box3">
                       <table>
-                        <thead>
+                        
                           <tr>
                             <th>Product</th>
                             <th>Quantity</th>
                             <th>Price</th>
                             <th>Total</th>
                           </tr>
-                        </thead>
+                        
                         <tr>
                           <td>Black Flashlights</td>
                           <td>{orders.flashlights}</td>
