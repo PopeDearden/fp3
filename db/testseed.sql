@@ -1,5 +1,5 @@
 insert into director (first_name, last_name, email, phone, school_name, school_street, school_city, school_state, school_zip, tag, stage, password, black_flash_sample, yellow_flash_sample, yellow_puc_sample, black_puc_sample, sample_processed)
-values('TESTING','TESTING','asdf@gmail.com','801-111-1111','TESTING High','123 Street','Layton','Utah','84041','-asdf','registered','test123',50,50,50,0,false);
+values('Taylor','Dearden','asdf@gmail.com','801-111-1111','TESTING Highschool','123 Street','Layton','Utah','84041','-asdf','registered','test123',50,50,50,0,false);
 
 
 

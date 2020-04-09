@@ -96,8 +96,6 @@ class DirectorDash extends Component {
                 <h2>Other Info</h2>
                 <div className="B-Box">
                   <p> Sample Order Sent by HybridLight: {this.tOrF(this.state.director.sample_processed, 'Waiting on Hybridlight to fulfill')} </p>
-                 
-         
                 </div>
               </div>
             </div>
