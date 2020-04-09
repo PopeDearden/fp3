@@ -84,6 +84,9 @@ class CreateUser extends Component {
           <h2>Create Student Account</h2>
         </div> */}
         <div class="General-Content">
+          <div className="Title-Bar">
+            <h2>Create new student account</h2>
+          </div>
           <div class="Form-Box">
             <div class="Form-Box-Left">
               <h2>Create new student account</h2>

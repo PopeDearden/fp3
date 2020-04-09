@@ -9,17 +9,17 @@ class AdminDash extends Component {
   constructor(s) {
     super()
     this.state = {
-          data: [],
+      data: [],
 
     }
   }
-  async componentDidMount () {
+  async componentDidMount() {
     await this.getCollectedTotal()
     this.prepareCollected()
   }
 
   getCollectedTotal = async () => {
-   await axios.get('/api/admin/collectedTotals').then(res => {
+    await axios.get('/api/admin/collectedTotals').then(res => {
       console.log(res.data)
       this.setState({
         collected: res.data
@@ -32,11 +32,11 @@ class AdminDash extends Component {
     const data1 = []
     for (let i = 0; i < this.state.collected.length; i++) {
       console.log(this.state.collected[i].sum)
-      labels1.push(this.state.collected[i].date.slice(5,10))
+      labels1.push(this.state.collected[i].date.slice(5, 10))
       data1.push(this.state.collected[i].sum)
     }
     this.setState({
-         data: {
+      data: {
         labels: labels1,
         scaleLabel: {
           fontColor: '#fff',
@@ -69,25 +69,52 @@ class AdminDash extends Component {
     })
   }
 
-  render(){
-    return(
-      <div className = "App" >
-        <h1>Admin Dash</h1>
-        <div class="TestChart">
-        <Line
-        data={this.state.data}
-        options={{
-          title: {
-            display: true,
-            text: 'Total Products Sold by Date',
-            fontSize: 20
-          },
-          legend: {
-            display: false,
-            position: 'top'
-          }
-        }}/>
+  render() {
+    return (
+      <div className="App" >
+        <div className="General-Content">
+          <div className="Title-Bar">
+            <h2>Admin Dashboard</h2>
+          </div>
+          <div className="Split">
+            <div className="A-Box2">
+              <h2>Features coming soon/planned</h2>
+              <div className="B-Box">
+                <br></br>
+                <h3>Director Summary Board</h3>
+                <p id="smallp">This will show an encompassing summary of individual schools, like total products sold, how many students are registered.</p>
+                <br></br>
+                <h3>Additional Order Option</h3>
+                <p id="smallp">This will be an option for schools to order extra samples, or to order additional lights if somehow an order was missed in the final order.</p>
+                <br></br>
+                <h3>Dashboard bar chart</h3>
+                <p id="smallp">This chart will show appear on this page, showing directors on the x-axis and total products sold on the y-axis</p>
+                <br></br>
+              </div>
+            </div>
+            <div class="TestChart">
+              <Line
+                data={this.state.data}
+                options={{
+                  title: {
+                    display: true,
+                    text: 'Total Products Sold by Date',
+                    fontSize: 20
+                  },
+                  legend: {
+                    display: false,
+                    position: 'top'
+                  }
+                }} />
+              <div className="A-Box2">
+                <h3>Additional info</h3>
+                <p id="smallp">This chart displays dates from the previous 30 days, but only shows dates in which orders were placed. If no orders were placed on that date, then it will not appear.</p>
+              </div>
+            </div>
+          </div>
+          {/* <div className="C-Box">
 
+          </div> */}
         </div>
       </div>
     )

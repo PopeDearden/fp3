@@ -510,11 +510,15 @@ color: black;
   flex-direction: row;
 }
 .TestChart{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   filter: contrast(100%);
   background-color: white;
-  margin: 5px;
-  border: solid 1px black;
-  color: white;
+  margin: 0px;
+  border: solid 5px #555555;
+  padding: 10px;
   width: 35vw;
 }
 #Drop {
@@ -582,7 +586,8 @@ color: black;
 }
 .General-Content {
   font-family: sans-serif;
-  margin: 20px;
+  margin:  0px 0px 0px 20px;
+  min-width: 80vw;
   // max-height: 90vh;
   // overflow: auto;
 
@@ -983,7 +988,7 @@ td{
   background-image: linear-gradient(to right, turquoise, rgb(3, 53, 82));
   color: black;
   font-weight: bold;
-  width: 80vw;
+  width: inherit;
   height: 20px;
   
   padding: 10px;
@@ -1316,6 +1321,7 @@ h3{
   text-decoration: none;
 }
 .A-Box {
+  margin-right: 30px;
   color: white;
   width: 350px;
   border: solid 5px #555555;
@@ -1332,6 +1338,7 @@ h3{
   }
 }
 .A-Box2 {
+  margin-right: 30px;
   color: white;
   width: 450px;
   border: solid 5px #555555;
@@ -1360,9 +1367,27 @@ h3{
   display: flex;
   flex-direction: column;
 }
+.C-Box {
+  margin-right: 30px;
+  color: white;
+  width: 100%;
+  margin-top: 15px;
+  border: solid 5px #555555;
+  padding: 20px;
+  background-color: rgb(3, 53, 82);
+  h2 {
+    color: white;
+    font-size: 2rem;
+    border-bottom: dashed turquoise 2px;
+  }
+  p{
+    font-size: 1.5rem;
+    line-height: 1.6;
+  }
+}
 .Split {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
 }
 
 @media(max-width:1100px) {
