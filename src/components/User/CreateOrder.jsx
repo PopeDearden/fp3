@@ -19,10 +19,10 @@ class CreateOrder extends Component {
             confirmed: false,
             order_placed: false,
             order_sent: false,
-            flashlight_yellow: '',
-            puc_black: '',
-            good_flash: '',
-            good_puc: '',
+            flashlight_yellow: 0,
+            puc_black: 0,
+            good_flash: 0,
+            good_puc: 0,
         }
     }
     createOrder = async () =>  {
@@ -115,15 +115,15 @@ class CreateOrder extends Component {
                             <div class="Form-Split">
                                 <div>
                                     <h3>Black FlashLights ($30)</h3>
-                                    <input type="number" min="0"  value={this.state.flashlights} onChange={e => this.setState({ flashlights: +e.target.value })} />
+                                    <input type="number" min="0"  value={+this.state.flashlights} onChange={e => this.setState({ flashlights: +e.target.value })} />
                                 </div>
                                 <div>
                                     <h3>Yellow FlashLights ($30)</h3>
-                                    <input type="number" min="0"  value={this.state.flashlight_yellow} onChange={e => this.setState({ flashlight_yellow: +e.target.value })} />
+                                    <input type="number" min="0"  value={+this.state.flashlight_yellow} onChange={e => this.setState({ flashlight_yellow: +e.target.value })} />
                                 </div>
                                 <div>
                                     <h3>Lanterns ($35)</h3>
-                                    <input type="number" min="0"   value={this.state.pucs} onChange={e => this.setState({ pucs: +e.target.value })} />
+                                    <input type="number" min="0"   value={+this.state.pucs} onChange={e => this.setState({ pucs: +e.target.value })} />
                                 </div>
                             </div>
                             <div class="Form-Split">
