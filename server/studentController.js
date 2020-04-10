@@ -86,7 +86,8 @@ updateOrder: async (req, res) => {
         phone_cust, 
         email_cust, 
         address_cust, 
-        flashlights, 
+        flashlights,
+        flashlight_yellow, 
         pucs, 
         collected, 
         confirmed, order_id} =req.body
@@ -97,10 +98,10 @@ updateOrder: async (req, res) => {
             phone_cust, 
             email_cust, 
             address_cust, 
-            flashlights, 
+            flashlights,
             pucs, 
             collected, 
-            user_id])
+            user_id, flashlight_yellow])
             res.status(200).send('Updated order')
 }
 }

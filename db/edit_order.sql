@@ -6,6 +6,7 @@ update ordertable set(
             address_cust, 
             flashlights, 
             pucs, 
-            collected) =
-            ($2,$3,$4,$5,$6,$7,$8,$9)
+            collected, 
+            flashlight_yellow) =
+            ($2,$3,$4,$5,$6,$7,$8,$9,$11)
 where order_id = $1 AND user_id =$10

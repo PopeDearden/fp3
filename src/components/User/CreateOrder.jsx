@@ -106,7 +106,7 @@ class CreateOrder extends Component {
                             </div>
                             <h3>Email</h3>
                             <input value={this.state.email_cust} onChange={e => this.setState({ email_cust: e.target.value })} />
-                            <h3>Home Addresss</h3>
+                            <h3>Home Address</h3>
                             <input value={this.state.address_cust} onChange={e => this.setState({ address_cust: e.target.value })} />
                         </div>
                         <div class="Form-Box-Right">
