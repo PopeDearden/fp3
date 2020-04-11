@@ -114,9 +114,10 @@ class OrdersPlacedPrint extends Component {
         <div className="Printing2">
           <div className="Best-Print2">
           <h1>Orders placed by students at your school:</h1>
+          <h2><br></br></h2>
           <h2>Total Black Flashlights: {this.state.totalFlash}</h2>
           <h2>Total Yellow Flashlights: {this.state.totalYellowFlash}</h2>
-          <h2>Total Yellow Flashlights:     {this.state.totalLantern}</h2>
+          <h2>Total Yellow Lanterns:     {this.state.totalLantern}</h2>
           {/* <h2>Total Black Lanterns:     {this.state.totalBlackPuc}</h2> */}
           <h2>Total Potential Earnings: ${this.state.possible}</h2>
           <h2>Total $ Collected: ${this.state.totalMoneyNeed}</h2>

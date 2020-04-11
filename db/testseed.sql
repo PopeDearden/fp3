@@ -1,6 +1,8 @@
 insert into director (first_name, last_name, email, phone, school_name, school_street, school_city, school_state, school_zip, tag, stage, password, black_flash_sample, yellow_flash_sample, yellow_puc_sample, black_puc_sample, sample_processed)
 values('Taylor','Dearden','asdf@gmail.com','801-111-1111','TESTING Highschool','123 Street','Layton','Utah','84041','-asdf','registered','test123',50,50,50,0,false);
 
+insert into samplehistory(tag, date, comment, black_flashlights, yellow_flashlights, yellow_pucs)
+values('-asdf', to_timestamp('13 Mar 2020', 'DD Mon YYYY'), 'Initial Sample Order', 50, 50, 50);
 
 
 insert into userinfo (first_name, last_name, password, sample_light_black, sample_light_yellow, sample_puc_yellow,sample_puc_black, director_tag, username, user_id)

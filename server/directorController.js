@@ -3,8 +3,10 @@ module.exports = {
         console.log('creating director')
         const db = req.app.get('db')
         const { first_name, last_name, email, phone, school_name, school_street, school_city, school_state, school_zip, tag, stage, password, black_flash_sample, yellow_flash_sample, yellow_puc_sample, black_puc_sample, sample_processed } = req.body
-        console.log(sample_processed)
+        const comment = 'Initial Sample Order'
+        date = new Date()
         await db.create_director([first_name, last_name, email, phone, school_name, school_street, school_city, school_state, school_zip, tag, stage, password, black_flash_sample, yellow_flash_sample, yellow_puc_sample, black_puc_sample, sample_processed])
+        await db.create_sample_history([tag, date, comment, black_flash_sample, yellow_flash_sample, yellow_puc_sample])
         res.status(200).send('Created Director')
     },
     getStage: (req, res) => {

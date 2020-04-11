@@ -50,7 +50,8 @@ module.exports = {
     const id = +req.params.id
     console.log(id)
     const info = await db.get_director_by_id([id])
-    res.status(200).send(info)
+    const sample = await db.get_sample_history([info[0].tag])
+    res.status(200).send([info, sample])
   },
   updateDirector: async (req, res) => {
     console.log('updating director')

@@ -181,7 +181,7 @@ h2{
 #Fancy-Title-2-white {
   color: white;
   font-family: 'Pacifico';
-  font-size: 2.0rem;
+  font-size: 1.5rem;
 }
 .Landing-Left {
   display: flex;
@@ -529,6 +529,62 @@ color: black;
   padding: 4px;
   font-size: 1rem;
 }
+.Form-Box-false {
+  height: 0vh;
+  width: auto;
+  overflow-y: hidden;
+  transition: height .25s ease-out; 
+  margin-top: 20px;
+  font-size: 1rem;
+  border: solid 0px turquoise;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  background-color: #f3f3f3;
+  border-radius: 0px;
+  transition: border .25s ease-out;
+}
+.Form-Box-true {
+  margin-top: 20px;
+  font-size: 1rem;
+  border: solid 10px #555555;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  background-color: #f3f3f3;
+  width: auto;
+  height:30vh;
+  border-radius: 0px;
+  transition: height .25s ease-out;
+  transition: border .5s ease-out; 
+  // box-shadow: 5px 5px 5px rgba(64, 224, 208, 0.185);
+  h2{
+    font-family: 'Encode Sans', sans-serif;
+    font-size:1.3rem;
+    border-bottom: solid 5px #555555;
+  }
+  p{
+    font-family: 'Encode Sans', sans-serif;
+    min-width: 300px;
+    max-width: 300px;
+    text-align: center;
+    word-spacing: 5px;
+    min-height: 80px;
+    border: solid 5px #555555;
+    padding: 5px;
+    font-size: 1rem;
+    margin: 10px;
+    // box-shadow: 5px 5px 5px rgba(64, 224, 208, 0.185);
+    // border-bottom:solid 0px white;
+  }
+  input{
+    background-color: #f9f9f9;
+    width: inherit;
+  }
+}
 .Form-Box {
   font-size: 1rem;
   border: solid 10px #555555;
@@ -605,9 +661,9 @@ color: black;
 
 
 .Animate-Lines {
-  margin-top:15px;
+  margin-top:20px;
   margin-bottom:15px;
-  width: 70px;
+  width: 30px;
   --offset: 10px;
   --border-size: 2px;
   text-align: center;
