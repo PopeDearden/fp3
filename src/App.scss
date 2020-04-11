@@ -1140,6 +1140,7 @@ td{
   border: solid 4px black;
   max-width: 30vw;
   margin-bottom: 20px;
+  padding: 2px;
   // margin-top: 20px;
 }
 .OneOrder{
@@ -1260,6 +1261,9 @@ td{
     max-height: 9.5in;
     overflow: visible;
   }
+  .StudentTotal{
+    border-bottom: solid 2px;
+  }
   .OneOrder2 {
     font-size: 10pt;
     height: 2in;
@@ -1271,7 +1275,9 @@ td{
   display: none;
 }
   #Individual {
-    border: solid black 1px;
+    padding: 10px;
+    width: 6.5in;
+    border: solid black 2px;
     margin-bottom: 10px;
   }
   #GeneratePrint{

@@ -112,20 +112,21 @@ class OrdersPlacedPrint extends Component {
       <div className="App" >
         <button id="GeneratePrint" onClick={() => window.print()}>Generate PDF for Orders placed by students</button>
         <div className="Printing2">
-
-          <h1>Orders placed by students</h1>
+          <div className="Best-Print2">
+          <h1>Orders placed by students at your school:</h1>
           <h2>Total Black Flashlights: {this.state.totalFlash}</h2>
           <h2>Total Yellow Flashlights: {this.state.totalYellowFlash}</h2>
           <h2>Total Yellow Flashlights:     {this.state.totalLantern}</h2>
           {/* <h2>Total Black Lanterns:     {this.state.totalBlackPuc}</h2> */}
           <h2>Total Potential Earnings: ${this.state.possible}</h2>
           <h2>Total $ Collected: ${this.state.totalMoneyNeed}</h2>
+          </div>
           <div class="Best-Print-2">
             {student.map(student => (
               <div id="Individual">
 
                 <p id="StudentName">{student.first_name} {student.last_name}</p>
-                <div class="TotalCollectedPrint" >
+                <div class="StudentTotal" >
                   <p>Total Black Flashlights: {this.calculate(orders, student).totalFlashBlack}</p>
                   <p>Total Yellow Flashlights: {this.calculate(orders, student).totalFlashYellow}</p>
                   <p>Total Yellow Lanterns: {this.calculate(orders, student).totalLanternYellow}</p>
@@ -139,10 +140,10 @@ class OrdersPlacedPrint extends Component {
                       <p>{orders.address_cust}</p>
                       <p>Phone: {orders.phone_cust}</p>
                       <p>Email: {orders.email_cust}</p>
-                    </div>
-                    <div class="Box2">
                       <p>Date Order created</p>
                       <p><Moment format="MM/DD/YYYY">{orders.date}</Moment></p>
+                    </div>
+                    <div class="Box2">
                     </div>
                     <div class="Box3">
                       <table>
