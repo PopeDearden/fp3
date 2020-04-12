@@ -529,24 +529,7 @@ color: black;
   padding: 4px;
   font-size: 1rem;
 }
-.Form-Box-false {
-  height: 0vh;
-  width: auto;
-  overflow-y: hidden;
-  transition: height .25s ease-out; 
-  margin-top: 20px;
-  font-size: 1rem;
-  border: solid 0px turquoise;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: flex-start;
-  background-color: #f3f3f3;
-  border-radius: 0px;
-  transition: border .25s ease-out;
-}
-.Form-Box-true {
-  margin-top: 20px;
+.Form-Box {
   font-size: 1rem;
   border: solid 10px #555555;
   padding: 20px;
@@ -556,10 +539,8 @@ color: black;
   align-items: flex-start;
   background-color: #f3f3f3;
   width: auto;
-  height:30vh;
+  height:auto;
   border-radius: 0px;
-  transition: height .25s ease-out;
-  transition: border .5s ease-out; 
   // box-shadow: 5px 5px 5px rgba(64, 224, 208, 0.185);
   h2{
     font-family: 'Encode Sans', sans-serif;
@@ -584,20 +565,85 @@ color: black;
     background-color: #f9f9f9;
     width: inherit;
   }
+
+.Form-Split {
+  min-width: 200px;
+  display: flex;
+  justify-content: space-between;
 }
-.Form-Box {
+}
+.Form-Box-true {
   font-size: 1rem;
-  border: solid 10px #555555;
-  padding: 20px;
+  border-bottom: solid 10px #555555;
+  border-left: solid 10px #555555;
+  border-right: solid 10px #555555;
+  padding:20px 0px 20px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: #f3f3f3;
+  width: inherit;
+  height:25vh;
+  transition: height .25s ease-in;
+  transition: padding .25s ease-in;
+  border-radius: 0px;
+  overflow: hidden;
+  // box-shadow: 5px 5px 5px rgba(64, 224, 208, 0.185);
+  .TotalRow {
+    border-top: solid 1px;
+  }
+  #smallinput {
+    width: auto;
+  }
+  h2{
+    font-family: 'Encode Sans', sans-serif;
+    font-size:1.3rem;
+    border-bottom: solid 5px #555555;
+  }
+  p{
+    font-family: 'Encode Sans', sans-serif;
+    min-width: 300px;
+    max-width: 300px;
+    text-align: center;
+    word-spacing: 5px;
+    min-height: 80px;
+    border: solid 5px #555555;
+    padding: 5px;
+    font-size: 1rem;
+    margin: 10px;
+    // box-shadow: 5px 5px 5px rgba(64, 224, 208, 0.185);
+    // border-bottom:solid 0px white;
+  }
+  input{
+    background-color: #f9f9f9;
+    width: inherit;
+  }
+
+.Form-Split {
+  min-width: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+}
+.Form-Box-false {
+  font-size: 1rem;
+  border-bottom: solid 10px #555555;
+  border-left: solid 10px #555555;
+  border-right: solid 10px #555555;
+  padding: 0px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: flex-start;
   background-color: #f3f3f3;
-  width: auto;
-  height:auto;
+  width: inherit;
+  height: 0px;
+  overflow-y: hidden;
   border-radius: 0px;
   // box-shadow: 5px 5px 5px rgba(64, 224, 208, 0.185);
+  transition: height .25s ease-out;
+  transition: padding .25s ease-out;
   h2{
     font-family: 'Encode Sans', sans-serif;
     font-size:1.3rem;

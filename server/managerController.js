@@ -89,6 +89,51 @@ module.exports = {
         black_puc_sample, id])
         res.status(200).send('Updated Director')
   },
+  newRequest: async(req,res) => {
+    const db = req.app.get('db')
+    const id = +req.params.id
+    const {first_name,
+      last_name,
+      email,
+      phone,
+      school_name,
+      school_street,
+      school_city,
+      school_state,
+      school_zip,
+      tag,
+      password,
+      black_flash_sample,
+      yellow_flash_sample,
+      yellow_puc_sample,
+      black_puc_sample,
+      black_flashlights,
+      yellow_flashlights,
+      yellow_pucs,
+      comment} = req.body
+      const total_black_flash = black_flash_sample + black_flashlights
+      const total_yellow_flash = yellow_flash_sample + yellow_flashlights
+      const total_yellow_puc = yellow_puc_sample + yellow_pucs
+      date = new Date()
+      await db.update_director([first_name,
+        last_name,
+        email,
+        phone,
+        school_name,
+        school_street,
+        school_city,
+        school_state,
+        school_zip,
+        tag,
+        password,
+        total_black_flash,
+        total_yellow_flash,
+        total_yellow_puc,
+        black_puc_sample, id])
+      await db.create_sample_history([tag, date, comment, black_flashlights, yellow_flashlights, yellow_pucs])
+      await db.sample_processed_to_false([id])
+      res.status(200).send('Request Sent')
+    },
   getSummary: async (req, res) => {
     console.log('getting summaries collected')
     const db = req.app.get('db')

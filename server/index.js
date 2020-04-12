@@ -67,6 +67,7 @@ app.get('/api/director/invoice', directorController.getInvoice)
 
 app.put('/api/admin/get-director/:id', managerController.getDirector)
 app.put('/api/admin/update-director/:id', managerController.updateDirector)
+app.put('/api/admin/new-request/:id', managerController.newRequest)
 app.put('/api/director/user/:id', directorController.getStudent)
 app.put('/api/director/update/user/:id', directorController.updateStudent)
 app.put('/api/hybrid/invoice', hybridController.updateInvoice)
