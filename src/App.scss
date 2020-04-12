@@ -1295,7 +1295,9 @@ td{
     border-bottom: 1px solid;
   }
 }
-
+#ButtonHelp{
+  margin-left: 20px;
+}
 .Best-Print {
   display: flex;
   flex-direction: column;
@@ -1313,9 +1315,14 @@ td{
     font-size: 1.5rem;
     border-bottom: solid 1px;
   }
+  h3 {
+    font-size: 1.5rem;
+    border-bottom: solid 1px;
+    margin-top: 20px;
+  }
   table {
     text-align: right;
-    margin-top: 50px;
+    margin-top: 20px;
     width: 600px;
     border: solid 1px;
   th {
@@ -1324,7 +1331,7 @@ td{
     border-bottom: solid 1px;
   }
   td{
-    padding: 20px;
+    padding: 5px;
   }
   }
 }

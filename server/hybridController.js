@@ -9,7 +9,8 @@ module.exports = {
         const db = req.app.get('db')
         const tag = req.params.id
         const order = await db.get_one_sample([tag])
-        res.status(200).send(order)
+        const history = await db.get_sample_history([tag])
+        res.status(200).send({order, history})
     },
     updateInvoice: async( req, res) => {
         db = req.app.get('db')
