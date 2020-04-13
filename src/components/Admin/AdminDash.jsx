@@ -86,6 +86,7 @@ class AdminDash extends Component {
                 <br></br>
                 <h3>Director Archiving</h3>
                 <p id="smallp">Admins will be able to "Archive" old director accounts along with all their student accounts once they have completed the fundraiser.</p>
+                <br></br>
                 <h3>Dashboard bar chart</h3>
                 <p id="smallp">This chart will show appear on this page, showing directors on the x-axis and total products sold on the y-axis</p>
                 <br></br>

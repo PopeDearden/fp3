@@ -48,6 +48,7 @@ class AllDirectors extends Component {
                                     <th>Tag</th>
                                     <th>Samples Ordered<br></br>(Total)</th>
                                     <th id="EditWidth">Edit</th>
+                                    <th>Summary</th>
                                 </tr>
                             </thead>
                             {this.state.directors.map(director => (
@@ -64,6 +65,7 @@ class AllDirectors extends Component {
                                         <p>Yellow Lantern {director.yellow_puc_sample}</p>
                                     </td>
                                     <td id="EditData"><i onClick={() => this.props.history.push(`/admin/update-director/${director.director_id}`)} class="far fa-edit"></i></td>
+                                    <td id="EditData"><i onClick={() => this.props.history.push(`/admin/summary/${director.director_id}`)}  class="fas fa-chart-line"></i></td>
                                 </tr>
                             ))}
                         </table>

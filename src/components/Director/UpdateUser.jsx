@@ -19,7 +19,7 @@ class UpdateUser extends Component {
         }
     }
 
-    componentDidMount () {
+    componentDidMount() {
         axios.put(`/api/director/user/${this.props.match.params.id}`).then(res => {
             const student = res.data[0]
             this.setState({
@@ -35,9 +35,9 @@ class UpdateUser extends Component {
         axios.get('/api/check-director').then(res => {
             console.log(res.data[0])
             this.setState({
-              info: res.data[0]
+                info: res.data[0]
             })
-          })
+        })
     }
 
     generatePassword = () => {
@@ -76,10 +76,10 @@ class UpdateUser extends Component {
     render() {
         return (
             <div class="General-Page" >
-                {/* <div class="page-bar-blue">
-          <h2>Create Student Account</h2>
-        </div> */}
                 <div class="General-Content">
+                <div class="Title-Bar">
+                    <h2>Update Student Account: {this.state.first_name} {this.state.last_name}</h2>
+                </div>
                     <div class="Form-Box">
                         <div class="Form-Box-Left">
                             <h2>Update student account</h2>
@@ -96,7 +96,7 @@ class UpdateUser extends Component {
                                     </br><br></br>
                                         <h3>
                                             <b id="bold">
-                                            {this.state.first_name}{this.state.last_name}{this.state.info.tag}
+                                                {this.state.first_name}{this.state.last_name}{this.state.info.tag}
                                             </b>
                                         </h3>
                                         <br></br>
