@@ -11,11 +11,13 @@ import CreateDirector from'../components/Admin/CreateDirector'
 import InvoiceHistory from '../components/Admin/InvoiceHistory'
 import AllDirectors from '../components/Admin/AllDirectors'
 import UpdateDirector from '../components/Admin/UpdateDirector'
+import Summary from '../components/Admin/Summary'
 
 export default ( 
     <Switch>
         <Route exact path='/admin/' component={AdminDash} />
         <Route path='/admin/in-progress' component={InProgress} />
+        <Route path='/admin/summary/:id' component={Summary} />
         <Route path='/admin/interested' component={Interested} />
         <Route path='/admin/placed-orders' component={PlacedOrders} />
         <Route path='/admin/view-and-confirm' component={ViewAndConfirm} />

@@ -59,7 +59,8 @@ button {
   // border-right: rgb(31, 30, 30) 4px solid;
   min-height: 100vh;
   // max-height:150vh;
-  background-color:  #555555;
+  // background-color:  #555555;
+  background-color: rgb(3, 53, 82);
   // background-image: linear-gradient(to right,#5555 , black);
   // background-image: url('https://images.pexels.com/photos/301378/pexels-photo-301378.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
   // background-size: cover;
@@ -95,6 +96,8 @@ button {
   transform: scale(1.05);
   cursor: pointer;
   background-color: #5e5e5e;
+  background-color: rgba(64, 224, 208, 0.24);
+  border-radius: 5px;
 }
 
 .page-bar-blue{
@@ -1593,7 +1596,8 @@ h3{
     align-items: center;
     color: white;
     font-size: 2rem;
-    background-color: #555555;
+    // background-color: #555555;
+    background-color: rgb(3, 53, 82);
     h1{
       font-family: 'Pacifico';
       margin-top: 10px;
@@ -1640,12 +1644,14 @@ h3{
     position: static;
     min-height: 100vh;
     height: auto;
-    background-color:  #363636;
+    // background-color:  #363636;
+    background-color: rgb(13, 66, 97);
     overflow: hidden;
     transition: min-height .255s ease-out; 
   }
   .Header-List-false {
-    background-color:  #363636;
+    // background-color:  #363636;
+    background-color: rgb(13, 66, 97);
     min-width: 100vw;
     width: 100vw;
     min-height: 0vh;
