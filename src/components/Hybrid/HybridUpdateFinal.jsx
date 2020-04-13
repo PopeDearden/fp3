@@ -33,15 +33,18 @@ class HybridFinalUpdate extends Component {
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
             confirmButtonText: 'Mark as fulfilled',
-            inputValidator: (value) => {
+            inputValidator: async (value) => {
+                this.setState({
+                    url: value,
+                })
                 if (!value) {
                     return 'You need to add a link to your invoice!'
                 }
                 else {
-                    this.setState({
+                   await this.setState({
                         url: value
                     })
-                    axios.put(`/api/final/update/${this.props.match.params.id}`, [this.state.url]).then(res => {
+                   await axios.put(`/api/final/update/${this.props.match.params.id}`, [this.state.url]).then(res => {
                         Swal.fire('The order was updated and marked as fulfilled.')
                         this.props.history.push('/hybridlight/invoice/history')
                     })

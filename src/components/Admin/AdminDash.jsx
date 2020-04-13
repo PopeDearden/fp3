@@ -84,9 +84,8 @@ class AdminDash extends Component {
                 <h3>Director Summary Board</h3>
                 <p id="smallp">This will show an encompassing summary of individual schools, like total products sold, how many students are registered.</p>
                 <br></br>
-                <h3>Additional Order Option</h3>
-                <p id="smallp">This will be an option for schools to order extra samples, or to order additional lights if somehow an order was missed in the final order.</p>
-                <br></br>
+                <h3>Director Archiving</h3>
+                <p id="smallp">Admins will be able to "Archive" old director accounts along with all their student accounts once they have completed the fundraiser.</p>
                 <h3>Dashboard bar chart</h3>
                 <p id="smallp">This chart will show appear on this page, showing directors on the x-axis and total products sold on the y-axis</p>
                 <br></br>

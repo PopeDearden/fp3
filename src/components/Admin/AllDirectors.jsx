@@ -46,7 +46,7 @@ class AllDirectors extends Component {
                                     <th>Email/phone</th>
                                     <th>Password</th>
                                     <th>Tag</th>
-                                    <th>Samples Ordered<br></br>(Initial Order)</th>
+                                    <th>Samples Ordered<br></br>(Total)</th>
                                     <th id="EditWidth">Edit</th>
                                 </tr>
                             </thead>
