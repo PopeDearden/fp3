@@ -64,6 +64,7 @@ app.get('/api/director/remaining', directorController.getRemaining)
 app.get('/api/student-info', directorController.getStudents)
 app.get('/api/admin/collectedTotals', managerController.getCollectedTotals)
 app.get('/api/director/invoice', directorController.getInvoice)
+app.get('/api/director/unconfirmed-count', directorController.getUnconfirmed)
 
 app.put('/api/admin/get-director/:id', managerController.getDirector)
 app.put('/api/admin/update-director/:id', managerController.updateDirector)

@@ -129,6 +129,12 @@ module.exports = {
         const given = await db.get_given_samples([tag])
         res.status(200).send({samples, given})
     },
+    getUnconfirmed: async (req, res) => {
+        const db = req.app.get('db')
+        const tag = req.session.director[0].tag
+        const total = await db.get_count_unconfirmed([tag])
+        res.status(200).send(total)
+    },
     createFinal: async (req,res) => {
         const db = req.app.get('db')
         const tag = req.session.director[0].tag
