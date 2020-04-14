@@ -115,7 +115,7 @@ class Summary extends Component {
           </div>
           <div className="Split">
             <div className="A-Box2">
-              <h2>Student Order's Progress</h2>
+              <h2>Student Orders Progress</h2>
               <br></br>
               <table className="Finalize" id="white">
                 <tr>
@@ -175,6 +175,7 @@ class Summary extends Component {
                   </td>
                 </tr>
               </table>
+              <br></br>
               <h2>Samples</h2>
               <br></br>
               <table className="Finalize">
