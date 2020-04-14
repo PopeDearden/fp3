@@ -135,7 +135,7 @@ class Summary extends Component {
       <div className="App" >
         <div className="General-Content">
           <div className="Title-Bar">
-            <h2>Summary for {this.state.collected.school_name}</h2>
+            <h2>Summary for {this.state.info.school_name}</h2>
           </div>
           <div>
 
