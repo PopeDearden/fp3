@@ -148,6 +148,8 @@ module.exports = {
     const collected = await db.get_summary_collected([id])
     const confirmed = await db.get_summary_confirmed([id])
     const in_progress = await db.get_summary_in_progress([id])
-    res.status(200).send({collected, confirmed, in_progress})
+    const info = await db.get_director_info([id])
+    const remaining = await db.get_remaining_samples_director_id([id])
+    res.status(200).send({collected, confirmed, in_progress, info, remaining})
   }
 }

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-
+import { Bar } from 'react-chartjs-2'
 
 
 
@@ -28,6 +28,12 @@ class Summary extends Component {
         "black_flashlights": "0",
         "yellow_pucs": "0",
         "yellow_flashlights": "0"
+      },
+      info: {
+
+      },
+      remaining: {
+
       }
     }
   }
@@ -64,11 +70,40 @@ class Summary extends Component {
       this.setState({
         collected: collected,
         confirmed: confirmed,
-        in_progress: in_progress
+        in_progress: in_progress,
+        info: res.data.info[0],
+        remaining: res.data.remaining[0]
       })
     })
   }
   render() {
+    let barData = {
+      labels: ['Black Flashlights', 'Yellow Flashlights', 'Yellow Lanterns'],
+      datasets: [
+        {
+          label: 'In Progress',
+          backgroundColor: 'rgba(75,500,600,1)',
+          borderColor: 'rgba(0,0,0,1)',
+          borderWidth: 2,
+          data: [this.state.in_progress.black_flashlights, this.state.in_progress.yellow_flashlights, this.state.in_progress.yellow_pucs]
+        },
+        {
+          label: 'Collected',
+          backgroundColor: 'rgba(75,192,192,1)',
+          borderColor: 'rgba(0,0,0,1)',
+          borderWidth: 2,
+          data: [this.state.collected.black_flashlights, this.state.collected.yellow_flashlights, this.state.collected.yellow_pucs]
+        },
+        {
+          label: 'Confirmed',
+          backgroundColor: 'rgba(75,150,992,1)',
+          borderColor: 'rgba(0,0,0,1)',
+          borderWidth: 2,
+          data: [this.state.confirmed.black_flashlights, this.state.confirmed.yellow_flashlights, this.state.confirmed.yellow_pucs]
+        },
+
+      ],
+    }
     return (
       <div className="App" >
         <div className="General-Content">
@@ -80,10 +115,12 @@ class Summary extends Component {
           </div>
           <div className="Split">
             <div className="A-Box2">
+              <h2>Student Order's Progress</h2>
+              <br></br>
               <table className="Finalize" id="white">
                 <tr>
                   <th>
-                    Products
+                    Product
                 </th>
                   <th>
                     In Progress
@@ -138,9 +175,76 @@ class Summary extends Component {
                   </td>
                 </tr>
               </table>
+              <h2>Samples</h2>
+              <br></br>
+              <table className="Finalize">
+                <tr>
+                  <th>
+                    Product
+                  </th>
+                  <th>
+                    Total <br></br>Samples
+                  </th>
+                  <th>
+                   Given to<br></br> Students
+                  </th>
+                  <th>
+                    Remaining
+                  </th>
+                </tr>
+                <tr>
+                  <td id="white">
+                  Black Flashlights
+                  </td>
+                  <td id="white">
+                    {this.state.info.black_flash_sample}
+                  </td>
+                  <td id="white">
+                    {this.state.info.black_flash_sample - this.state.remaining.remaining_black_flash}
+                  </td>
+                  <td id="white">
+                    {this.state.remaining.remaining_black_flash}
+                  </td>
+                </tr>
+                <tr>
+                  <td id="white">
+                  Yellow Flashlights
+                  </td>
+                  <td id="white">
+                    {this.state.info.yellow_flash_sample}
+                  </td>
+                  <td id="white">
+                    {this.state.info.yellow_flash_sample - this.state.remaining.remaining_yellow_flash}
+                  </td>
+                  <td id="white">
+                    {this.state.remaining.remaining_yellow_flash}
+                  </td>
+                </tr>
+                <tr>
+                  <td id="white">
+                  Yellow Lanterns
+                  </td>
+                  <td id="white">
+                    {this.state.info.yellow_puc_sample}
+                  </td>
+                  <td id="white">
+                    {this.state.info.yellow_puc_sample - this.state.remaining.remaining_yellow_puc}
+                  </td>
+                  <td id="white">
+                    {this.state.remaining.remaining_yellow_puc}
+                  </td>
+                </tr>
+              </table>
             </div>
-            <div className="A-Box2">
-              <h2>Other Information</h2>
+            <div className="A-Box3">
+                <h2>Product Statuses</h2>
+                {/* <br></br> */}
+              <div className="BarChart">
+                <Bar
+                  height="300px"
+                  width="600px"
+                  data={barData} />
+              </div>
             </div>
           </div>
         </div>
