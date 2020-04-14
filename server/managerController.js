@@ -141,5 +141,13 @@ module.exports = {
     const confirmed = await db.get_directors_confirmed_summary()
     const directors = await db.get_all_directors()
     res.status(200).send({directors, collected, confirmed})
+  },
+  getSummaries: async (req, res) => {
+    const db = req.app.get('db')
+    const id = +req.params.id
+    const collected = await db.get_summary_collected([id])
+    const confirmed = await db.get_summary_confirmed([id])
+    const in_progress = await db.get_summary_in_progress([id])
+    res.status(200).send({collected, confirmed, in_progress})
   }
 }

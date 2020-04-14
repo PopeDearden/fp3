@@ -80,6 +80,7 @@ app.put('/api/get-one-order/:id', studentController.getOneOrder)
 app.put('/api/director/student-totals/:id', directorController.getStudentTotals)
 app.put('/api/director/student-confirm/:id', directorController.updateStudentOrderConfirm)
 app.put('/api/director/student-unconfirm/:id', directorController.updateStudentOrderUnConfirm)
+app.put('/api/admin/get-summaries/:id', managerController.getSummaries)
 
 app.post('/api/create-manager', managerController.createManager)
 app.post('/api/create-director', directorController.createDirector)
