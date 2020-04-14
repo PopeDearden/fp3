@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Bar } from 'react-chartjs-2'
+import { Pie } from 'react-chartjs-2'
 
 
 
@@ -33,7 +34,11 @@ class Summary extends Component {
 
       },
       remaining: {
-
+          "remaining_black_flash": "0",
+          "remaining_yellow_flash": "0",
+          "remaining_yellow_puc": "0",
+          "tag": "",
+          "school_name": ""
       }
     }
   }
@@ -66,13 +71,19 @@ class Summary extends Component {
         "yellow_pucs": "0",
         "yellow_flashlights": "0"
       } : res.data.in_progress[0]
-
+      let remaining = res.data.remaining[0] === undefined ? {
+        "remaining_black_flash": undefined,
+        "remaining_yellow_flash": undefined,
+        "remaining_yellow_puc": undefined,
+        "tag": "",
+        "school_name": ""
+      } : res.data.remaining[0]
       this.setState({
         collected: collected,
         confirmed: confirmed,
         in_progress: in_progress,
         info: res.data.info[0],
-        remaining: res.data.remaining[0]
+        remaining: remaining
       })
     })
   }
@@ -103,6 +114,22 @@ class Summary extends Component {
         },
 
       ],
+    }
+    let remaining = (+this.state.remaining.remaining_black_flash + +this.state.remaining.remaining_yellow_flash + +this.state.remaining.remaining_yellow_puc)
+    let given = (+this.state.info.black_flash_sample - +this.state.remaining.remaining_black_flash + +this.state.info.yellow_flash_sample - this.state.remaining.remaining_yellow_flash + +this.state.info.yellow_puc_sample - this.state.remaining.remaining_yellow_puc)
+    let pieData = {
+      datasets: [{
+        data: [given, remaining
+        ],
+        backgroundColor: [
+          'rgba(75,150,992,1)',
+          'rgba(75,192,192,1)',
+        ],
+        label: 'Dataset 1'
+      }],
+      labels: [
+        'Given to Students', 'Remaining'
+      ]
     }
     return (
       <div className="App" >
@@ -187,7 +214,7 @@ class Summary extends Component {
                     Total <br></br>Samples
                   </th>
                   <th>
-                   Given to<br></br> Students
+                    Given to<br></br> Students
                   </th>
                   <th>
                     Remaining
@@ -195,7 +222,7 @@ class Summary extends Component {
                 </tr>
                 <tr>
                   <td id="white">
-                  Black Flashlights
+                    Black Flashlights
                   </td>
                   <td id="white">
                     {this.state.info.black_flash_sample}
@@ -209,7 +236,7 @@ class Summary extends Component {
                 </tr>
                 <tr>
                   <td id="white">
-                  Yellow Flashlights
+                    Yellow Flashlights
                   </td>
                   <td id="white">
                     {this.state.info.yellow_flash_sample}
@@ -223,7 +250,7 @@ class Summary extends Component {
                 </tr>
                 <tr>
                   <td id="white">
-                  Yellow Lanterns
+                    Yellow Lanterns
                   </td>
                   <td id="white">
                     {this.state.info.yellow_puc_sample}
@@ -236,15 +263,39 @@ class Summary extends Component {
                   </td>
                 </tr>
               </table>
+              <div className="BarChart">
+                <Pie
+                  data={pieData} />
+              </div>
             </div>
             <div className="A-Box3">
-                <h2>Product Statuses</h2>
-                {/* <br></br> */}
+              <h2>Product Statuses</h2>
+              {/* <br></br> */}
               <div className="BarChart">
                 <Bar
                   height="300px"
                   width="600px"
                   data={barData} />
+              </div>
+              <br></br>
+              <h2>Other information</h2>
+              <br></br>
+              <div className="Split-Between">
+                <div>
+                  <p>Director</p>
+                  <p id="smallp">{this.state.info.first_name} {this.state.info.last_name}</p>
+                </div>
+                <div>
+                  <p>Contact</p>
+                  <p id="smallp">{this.state.info.phone}</p>
+                  <p id="smallp">{this.state.info.email}</p>
+                </div>
+                <div>
+                  <p>School Address</p>
+                  <p id="smallp">{this.state.info.school_name}</p>
+                  <p id="smallp">{this.state.info.school_street}</p>
+                  <p id="smallp">{this.state.info.school_city}, {this.state.info.school_state}  {this.state.school_zip}</p>
+                </div>          
               </div>
             </div>
           </div>
