@@ -1,9 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-import InvoiceHistory from "../Hybrid/InvoiceHistory";
-
-
-
 
 class UserInfoList extends Component {
   constructor(s) {
