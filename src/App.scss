@@ -56,6 +56,11 @@ button {
   height: 125px;
   margin-right: 25px;
 }
+#Icon3 {
+  width: 50px;
+  height: 50px;
+  margin-right: 5px;
+}
 #white {
   color: white
 }
@@ -1553,6 +1558,10 @@ h3{
   display: flex;
   justify-content: flex-start;
 }
+.Split2 {
+  display: flex;
+  justify-content: flex-start;
+}
 .Split-Between {
   display: flex;
   justify-content: space-evenly;
@@ -1578,6 +1587,11 @@ h3{
     width: 100px;
     height: 100px;
     margin-right: 25px;
+  }
+  .Split {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
   }
   .TextContainer2 {
     width: 100vw;

@@ -203,16 +203,18 @@ class UserDash extends Component {
     }
     if (this.state.confirmed === true) {
       return (
-        <div className="General-Content">
+        <div className="App">
           <div className="Title-Bar">
-            <h2>Your Director has confirmed your orders!</h2>
+            <h2>Your orders were confirmed!</h2>
           </div>
           <div class="Split">
+            <br></br>
             <div class="A-Box2">
               <h2>Please review <br></br>"Your Final Orders"</h2>
               <p>If there are any errors, contact your director and have them "Un-Confirm" your orders so you can make corrections. </p>
 
             </div>
+            <br></br>
             <div class="A-Box2">
               <h2>Other<br></br>Information</h2>
               <p>Your director will not be able to "Un-confirm" any orders once they have placed the final order for your school.</p>

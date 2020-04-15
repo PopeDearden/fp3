@@ -92,6 +92,8 @@ class DirectorDash extends Component {
                   </p>
                 </div>
               </div>
+              <br></br>
+              <br></br>
               <div className="A-Box2">
                 <h2>Other Info</h2>
                 <div className="B-Box">
