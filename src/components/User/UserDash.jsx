@@ -119,8 +119,8 @@ class UserDash extends Component {
 
 
   render() {
-    function sampleTotal(light, puc) {
-      let total = light * 15 + puc * (35 / 2)
+    function sampleTotal(light, light2, puc) {
+      let total = light * 15 + light2 * 15 + puc * (35 / 2)
       return total.toFixed(2)
     }
     if (this.state.confirmed === false) {
@@ -229,7 +229,7 @@ class UserDash extends Component {
             <br></br>
             <div className="A-Box">
               <p>
-                You are responsible for payment of ${sampleTotal(this.state.sample_light_black, this.state.sample_puc_yellow)} at the end of the fundraiser deadline. This will be subtracted from your total earnings.
+                You are responsible for payment of ${sampleTotal(this.state.sample_light_black,this.state.sample_light_yellow, this.state.sample_puc_yellow)} at the end of the fundraiser deadline. This will be subtracted from your total earnings.
           </p>
 
             </div>
