@@ -226,6 +226,7 @@ class UserDash extends Component {
               </table>
               <p id="smallp">(These prices are student prices, not customer prices!)</p>
             </div>
+            <br></br>
             <div className="A-Box">
               <p>
                 You are responsible for payment of ${sampleTotal(this.state.sample_light_black, this.state.sample_puc_yellow)} at the end of the fundraiser deadline. This will be subtracted from your total earnings.
