@@ -162,7 +162,7 @@ class OrdersCollected extends Component{
           </div>
         </div>
         <input class="Search" placeholder={"Search by student first name"} onChange={e => this.setState({ searchInput3: e.target.value })} />    <i class="fas fa-search"></i>
-        <input class="Search" placeholder={"Search by student last initial"} onChange={e => this.setState({ searchInput2: e.target.value })} />    <i class="fas fa-search"></i>
+        <input class="Search" placeholder={"Search by student last name"} onChange={e => this.setState({ searchInput2: e.target.value })} />    <i class="fas fa-search"></i>
         <input class="Search" placeholder={"Search by customer name"} onChange={e => this.setState({ searchInput: e.target.value })} />    <i class="fas fa-search"></i>
         <div class="TableContainer">
           {student.map(student => (
