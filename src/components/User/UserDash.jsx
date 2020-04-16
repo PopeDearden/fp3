@@ -126,8 +126,8 @@ class UserDash extends Component {
     if (this.state.confirmed === false) {
 
       return (
-        <div className="App" >
-          <div className="Title-Bar-Dash"><h2>Student Dashboard: Welcome {this.state.name}!</h2></div>
+        <div className="General-Content" >
+          <div className="Title-Bar"><h2>Student Dashboard: Welcome {this.state.name}!</h2></div>
           <div className="TopCards">
             <div class="TopCard3">
               <div class="TopCard1Bar">
@@ -184,19 +184,55 @@ class UserDash extends Component {
               </h3>
             </div>
           </div>
-          <div class="Title-Bar-Collected">Samples information</div>
-          <h2 id="SampleInfo">Our records show that you have been given:
-          <br></br>
-            {this.state.sample_light_black} sample (black) flashlights ($15.00 each - student price)
-          <br></br>
-            {this.state.sample_light_yellow} sample (yellow) flashlights ($15.00 each - student price )
-          <br></br>
-            {this.state.sample_puc_yellow} sample (yellow) lanterns ($17.50 each - student price)
-          <br></br>
-            {/* {this.state.sample_puc_black} sample (black) lanterns ($35 each) */}
-            <br></br>
+          <div className="Split">
 
-          You are responsible for payment of ${sampleTotal(this.state.sample_light_black, this.state.sample_puc_yellow)} at the end of the fundraiser deadline. This will be subtracted from your total earnings.</h2>
+            <div className="A-Box">
+              <h2>Our records show that you have been given:</h2>
+              <br></br>
+              <table className="Finalize">
+                <tr>
+                  <th>
+                    Black Flashlight
+                </th>
+                  <th>
+                    Yellow Flashlight
+                </th>
+                  <th>
+                    Yellow Lantern
+                </th>
+                </tr>
+                <tr>
+                  <td id="white">
+                    {this.state.sample_light_black}
+                  </td>
+                  <td id="white">
+                    {this.state.sample_light_yellow}
+                  </td>
+                  <td id="white">
+                    {this.state.sample_puc_yellow}
+                  </td>
+                </tr>
+                <tr>
+                  <td id="white">
+                    $15.00 ea.
+                </td>
+                  <td id="white">
+                    $15.00 ea.
+                </td>
+                  <td id="white">
+                    $17.50 ea.
+                </td>
+                </tr>
+              </table>
+              <p id="smallp">(These prices are student prices, not customer prices!)</p>
+            </div>
+            <div className="A-Box">
+              <p>
+                You are responsible for payment of ${sampleTotal(this.state.sample_light_black, this.state.sample_puc_yellow)} at the end of the fundraiser deadline. This will be subtracted from your total earnings.
+          </p>
+
+            </div>
+          </div>
           <div className="Footer"></div>
         </div>
       )
