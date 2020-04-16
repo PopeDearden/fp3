@@ -898,7 +898,7 @@ color: black;
 .InProgressTable {
   font-family: 'Roboto Condensed', sans-serif;
   width: 80vw;
-  margin-left: 50px;
+  margin-left: 0px;
   background-color: white;
   color: black;
 
@@ -999,7 +999,7 @@ td{
   width: 50px;
 }
 .TopCard1{
-  margin-left:50px;
+  margin-left:0px;
   width: 12vw;
   height:130px;
   background-color: #555555;
@@ -1008,7 +1008,7 @@ td{
   h3{
     color: white;
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2rem;
     padding-top:5px;
     font-family: 'Roboto Condensed', sans-serif;
   }
@@ -1043,9 +1043,12 @@ td{
   justify-content: space-between;
   // max-width: 60vw;
   margin-bottom: 20px;
+  h2 {
+    font-size: 1.1rem;
+  }
 }
 .TopCard2{
-  margin-left:50px;
+  margin-left:0px;
   width: 10vw;
   height:130px;
   background-color: #555555;
@@ -1116,15 +1119,17 @@ td{
   }
 }
 .Title-Bar {
-  background-image: linear-gradient(to right, turquoise, rgb(3, 53, 82));
-  color: black;
+  background-image: linear-gradient(to left, turquoise, rgb(3, 53, 82));
+  color: white;
   font-weight: bold;
   width: inherit;
   height: 20px;
-  
   padding: 10px;
-  border-bottom: solid 2px black;
+  border-bottom: solid 2px turquoise;
   margin-bottom: 10px;
+  h2{
+    color: white;
+  }
 }
 .Title-Bar-Confirm {
   // margin-left: 50px;
@@ -1143,7 +1148,7 @@ td{
   font-weight: bold;
   width: 80vw;
   height: 20px;
-  margin-left: 50px;
+  margin-left: 0px;
   padding: 10px;
   border-bottom: solid 2px black;
   margin-bottom: 10px;
@@ -1155,7 +1160,7 @@ td{
   font-weight: bold;
   width: 80vw;
   height: 20px;
-  margin-left: 50px;
+  margin-left: 0px;
   padding: 10px;
   border-bottom: solid 2px black;
   margin-bottom: 10px;
@@ -1829,7 +1834,7 @@ h3{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     // max-width: 60vw;
     margin-bottom: 0px;
   }

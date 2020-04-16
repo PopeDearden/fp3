@@ -62,7 +62,7 @@ class Collected extends Component {
             return element.first_name_cust.toLowerCase().includes(this.state.searchInput.toLowerCase()) || element.last_name_cust.toLowerCase().includes(this.state.searchInput.toLowerCase())
         })
         return (
-            <div className="App" >
+            <div className="General-Content" >
                 <h2 class="Title-Bar-Collected"><i class="fas fa-money-check-alt"></i>   Orders w/ money collected  </h2>
                 <div class="TopCards">
                     <div class="TopCard2">
