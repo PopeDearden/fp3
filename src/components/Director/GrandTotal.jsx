@@ -38,7 +38,7 @@ class GrandTotal extends Component {
                             <th>Yellow Flashlight Sales</th>
                             <th>Yellow Lantern Sales</th>
                             <th>Total Collected</th>
-                            <th>School Cost</th>
+                            <th>School Cost for sales</th>
                             <th>Samples</th>
                             <th>Total Sample Cost</th>
                             <th>Student's Earning Balance</th>
