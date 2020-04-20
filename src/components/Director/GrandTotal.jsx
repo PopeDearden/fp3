@@ -31,7 +31,7 @@ class GrandTotal extends Component {
             <div className="General-Content" >
                 <div className="SpreadSheet">
                     <h2 className="">Student's with sales</h2>
-                    <table className="">
+                    <table className="SpreadSheet">
                         <tr>
                             <th>Student</th>
                             <th>Black Flashlight Sales</th>
