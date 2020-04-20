@@ -129,6 +129,22 @@ button {
     margin-left: 10px;
   }
 }
+.SpreadSheet {
+  h2 {
+    margin: 50px;
+  }
+  width: 100%;
+  td {
+    padding: 5px;
+  }
+  th {
+    padding: 5px;
+  }
+  tr {
+    margin-top: 5px;
+    border-bottom: solid 1px black;
+  }
+}
 
 .page-title {
   display: none;

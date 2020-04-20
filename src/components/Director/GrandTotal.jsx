@@ -28,10 +28,10 @@ class GrandTotal extends Component {
 
     render() {
         return (
-            <div className="App" >
-                <div className="General-Content">
-                    <h2>Student's with sales</h2>
-                    <table className="SpreadSheet">
+            <div className="General-Content" >
+                <div className="SpreadSheet">
+                    <h2 className="">Student's with sales</h2>
+                    <table className="">
                         <tr>
                             <th>Student</th>
                             <th>Black Flashlight Sales</th>
@@ -86,7 +86,7 @@ class GrandTotal extends Component {
                                     Yellow Lantern: ({student.sample_puc_yellow}) $-{student.yellow_puc_cost}
                                 </td>
                                 <td>$-{student.total_sample_cost}</td>
-                                <td><b id="bold">{student.total_sample_cost}</b></td>
+                                <td><b id="bold">$-{student.total_sample_cost}</b></td>
                             </tr>
                         ))}
                     </table>
