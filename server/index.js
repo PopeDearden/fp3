@@ -54,6 +54,7 @@ app.get('/api/director/samples', directorController.getDirectorSamples)
 app.get('/api/student/collected', studentController.getStudentCollectedOrders)
 app.get('/api/student/confirmed', studentController.getStudentConfirmedOrders)
 app.get('/api/admin/summaries', managerController.getSummary)
+app.get('/api/director/grand-total', directorController.getGrandTotalInfo)
 
 app.get('/api/hybrid/sample-order', hybridController.getSampleOrders)
 app.get('/api/hybrid/invoices', hybridController.getInvoices)

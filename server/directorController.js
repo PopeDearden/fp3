@@ -191,6 +191,14 @@ module.exports = {
         const remaining = await db.get_remaining_samples_director([tag])
         res.status(200).send(remaining)
     },
+    getGrandTotalInfo: async (req, res) => {
+        const db = req.app.get('db')
+        const tag = req.session.director[0].tag
+        const with_sales = await db.get_director_grand_info([tag])
+        const all = await db.get_director_grand_info2([tag])
+        const with_no_sales = all.filter((element) => { return element.confirmed === null })
+        res.status(200).send({with_sales, with_no_sales})
+    },
     logOut: (req, res) => {
         req.session.destroy()
         // console.log(req.session.director)
