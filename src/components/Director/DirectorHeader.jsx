@@ -48,7 +48,6 @@ class DirectorHeader extends Component {
     render() {
         if (this.state.stage === 'registered') {
             return (
-
                 <div class="Header">
                     <div class="Header-Menu">
                         <div class="Split2">

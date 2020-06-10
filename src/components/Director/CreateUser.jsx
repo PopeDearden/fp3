@@ -103,7 +103,7 @@ class CreateUser extends Component {
                   </br><br></br>
                     <h3>
                       <b id="bold">
-                        {this.state.first_name}{this.state.last_name}{this.state.info.tag}
+                        {this.state.first_name}{this.state.last_name}-{this.state.info.tag}
                         </b>
                       </h3>
                     <br></br>
