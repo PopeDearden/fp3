@@ -29,8 +29,9 @@ class GrandTotal extends Component {
     render() {
         return (
             <div className="General-Content" >
+                <div className="Title-Bar"><h1>Student Balances</h1></div>
                 <div className="SpreadSheet">
-                    <h2 className="">Student's with sales</h2>
+                    <h2 className="">Students with sales</h2>
                     <table className="SpreadSheet">
                         <tr>
                             <th>Student</th>
@@ -60,7 +61,7 @@ class GrandTotal extends Component {
                             </tr>
                         ))}
                     </table>
-                    <h2>Student's with no sales</h2>
+                    <h2>Students with no sales</h2>
                     <table className="SpreadSheet">
                         <tr>
                             <th>Student</th>

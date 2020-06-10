@@ -127,12 +127,13 @@ class DirectorHeader extends Component {
    </div> */}
 
                     <div class="Header-Link" onClick={() => this.props.history.push('/print/director-placed-print')}>
-                        <p>Final Order Info</p>
+                        <p>All Student Orders</p>
                         <i class="fas fa-user-edit"></i>
                     </div>
-
-
-
+                    <div class="Header-Link" onClick={() => this.props.history.push('/print/director-balances')}>
+                        <p>Student Balances</p>
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
                     <div class="Header-Link" onClick={() => this.props.history.push('/director/user-info-listV2')}>
                         <p>All student<br></br>account info</p>
                         <i class="fas fa-users"></i>
