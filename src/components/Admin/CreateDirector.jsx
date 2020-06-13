@@ -100,7 +100,7 @@ class CreateDirector extends Component {
               <input value={this.state.school_zip} onChange={e => this.setState({ school_zip: e.target.value })} />
             </div>
             <div class="Form-Box-Right">
-              <h2>Data Tagging and password</h2>
+              <h2>Tag and password</h2>
               <br></br>
               <h3 id="bold">Director's tag will be used for directors to login.</h3>
               <h3 id="bad">This tag will be permanent and cannot be changed. Do not use spaces. Make sure there are no spaces after the tag too!</h3>

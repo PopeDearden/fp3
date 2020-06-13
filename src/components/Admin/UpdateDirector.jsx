@@ -208,12 +208,11 @@ class UpdateDirector extends Component {
             <div class="Form-Box-Left">
               <h2>Director Info</h2>
               <br></br>
-              <h3>First Name</h3>
+              <h3>First Name:</h3>
               <input value={this.state.first_name} onChange={e => this.setState({ first_name: e.target.value })} />
-              <h3>Last Name</h3>
+              <h3>Last Name:</h3>
               <input value={this.state.last_name} onChange={e => this.setState({ last_name: e.target.value })} />
               <h3>Email:</h3>
-              <h3>(Director's Email will be used for login)</h3>
               <input value={this.state.email} onChange={e => this.setState({ email: e.target.value })} />
               <h3>Phone please format:</h3>
               <h3>(xxx) xxx-xxxx</h3>
@@ -234,10 +233,11 @@ class UpdateDirector extends Component {
               <input value={this.state.school_zip} onChange={e => this.setState({ school_zip: e.target.value })} />
             </div>
             <div class="Form-Box-Right">
-              <h2>Data Tagging and password</h2>
+              <h2>Tag and password</h2>
               <br></br>
+              <h3 id="bold">Director's tag will be used for directors to login.</h3>
               <h3 id="warning">Tag cannot be changed!</h3>
-              <h3>Director's TAG</h3>
+              <h3>Director's Tag </h3>
               <input value={this.state.tag} />
               <h3>Password</h3>
               <input value={this.state.password} onChange={e => this.setState({ password: e.target.value })} />
