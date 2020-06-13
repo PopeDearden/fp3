@@ -14,7 +14,7 @@ class DirectorLogin extends Component {
   constructor(s) {
     super()
     this.state = {
-      email: '',
+      tag: '',
       password: '',
       approved: false,
       first_name: '',
@@ -44,8 +44,6 @@ class DirectorLogin extends Component {
 
           })
           console.log(res.data[0])
-          // alert(res.data[0].email + ' is logged in with tag '+ res.data[0].tag )
-          // this.props.history.push('/admin')
         }
 
       }
@@ -62,7 +60,7 @@ class DirectorLogin extends Component {
               icon: 'error',
               title: 'Oops...',
               text: 'Wrong Login Information!',
-              footer: 'Make sure your email and password are correct'
+              footer: 'Make sure your tag and password are correct'
             })
           )
         } else {
@@ -106,8 +104,8 @@ class DirectorLogin extends Component {
               <h1 id="Fancy-Title">Director Login</h1>
               <div class="GradientLine"></div>
               <div>
-                <h2>Email:</h2>
-                <input value={this.state.email} onChange={e => this.setState({ email: e.target.value.toLowerCase() })} />
+                <h2>Director Tag:</h2>
+                <input value={this.state.tag} onChange={e => this.setState({ tag: e.target.value })} />
               </div>
               <div>
                 <h2>Password:</h2>

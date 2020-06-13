@@ -15,10 +15,10 @@ module.exports = {
     },
     getDirector: async (req, res) => {
         const db = req.app.get('db')
-        const { email, password } = req.body
-        console.log('looking for ' + email)
+        const { tag, password } = req.body
+        console.log('looking for ' + tag)
         console.log('looking for ' + password)
-        const directorInfo = await db.find_director([email, password])
+        const directorInfo = await db.find_director([tag, password])
         console.log(directorInfo)
         req.session.director = directorInfo
         console.log(req.session.director)
