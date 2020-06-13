@@ -76,7 +76,6 @@ class CreateOrder extends Component {
             }
             else if (collected === true || collected === "true")
                 return collectedIcon
-
         }
         return (
             <div class="General-Page" >

@@ -71,7 +71,7 @@ class DirectorDash extends Component {
     if(this.state.director.stage === 'registered'){
 
       return (
-        <div className="App" >
+        <div className="General-Page" >
           <div className="General-Content">
             <div className="Title-Bar">
               <h2>Director Dashboard</h2>
