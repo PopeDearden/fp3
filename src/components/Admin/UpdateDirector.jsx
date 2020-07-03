@@ -236,7 +236,7 @@ class UpdateDirector extends Component {
               <h2>Tag and password</h2>
               <br></br>
               <h3 id="bold">Director's tag will be used for directors to login.</h3>
-              <h3 id="warning">Tag cannot be changed!</h3>
+              <h3 id="warning">Tag cannot be changed! Contact Taylor if you absolutely need to change the tag.</h3>
               <h3>Director's Tag </h3>
               <input value={this.state.tag} />
               <h3>Password</h3>

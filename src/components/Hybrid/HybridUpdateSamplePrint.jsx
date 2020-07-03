@@ -14,11 +14,11 @@ class UpdateSample extends Component {
             history: [],
         }
     }
-    componentDidMount() {
+    componentDidMount () {
         this.getInfo()
     }
-    getInfo = () => {
-        axios.put(`/api/hybrid/get-one-sample/${this.props.match.params.id}`)
+    getInfo = async () => {
+        await axios.put(`/api/hybrid/get-one-sample/${this.props.match.params.id}`)
             .then(res => {
                 console.log(res.data)
                 this.setState({
@@ -26,35 +26,7 @@ class UpdateSample extends Component {
                     history: res.data.history
                 })
             })
-    }
-    fulfill = () => {
-        Swal.fire({
-            html: `<h2>To mark this order as fulfilled, paste a url to your invoice document:</h2>`,
-            input: 'url',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Mark as fulfilled',
-            inputValidator: async (value) => {
-                this.setState({
-                    url: value
-                })
-                if (!value) {
-                    return 'You need to add a link to your invoice!'
-                }
-                else {
-                    await this.setState({
-                        url: value
-                    })
-                    await axios.put(`/api/hybrid/invoice`, [this.state.url, this.state.order.tag]).then(res => {
-                        Swal.fire('The order was updated and marked as fulfilled.')
-                        this.props.history.push('/hybridlight/invoice/history')
-                    })
-
-                }
-            }
-
-        })
+            window.print()
     }
 
     render() {
@@ -66,7 +38,7 @@ class UpdateSample extends Component {
                         <div>
                             <h2>Requested samples for <b>{order.school_name}</b>
                             </h2>
-                            {/* <button  onClick={() => window.print()} id="GeneratePrint">Print</button> */}
+                            <button  onClick={() => this.props.history.push('/hybridlight/samples-request')} id="GeneratePrint">Go Back</button>
                             <br></br>
                             <div className="Split">
                                 <div>
@@ -76,12 +48,6 @@ class UpdateSample extends Component {
                                     <br></br>
                                     <p>{order.phone}</p>
                                     <p>{order.email}</p>
-                                </div>
-                                <div id="ButtonHelp">
-                                <button onClick={() => this.fulfill()} id="medium">Mark As Fulfilled</button>
-                                </div>
-                                <div id="ButtonHelp">
-                                <button onClick={() => this.props.history.push(`/print/hybridlight/sample/${this.props.match.params.id}`)} id="medium">Print Report</button>
                                 </div>
                             </div>
                             <h3>Sample Request History</h3>

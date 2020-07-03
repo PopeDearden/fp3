@@ -23,38 +23,8 @@ class HybridFinalUpdate extends Component {
                 order: res.data[0]
             })
         })
+        window.print()
     }
-
-    updateFinal = () => {
-        Swal.fire({
-            html: `<h2>To mark this order as fulfilled, paste a url to your invoice document, this will replace the previous invoice link for the samples:</h2>`,
-            input: 'url',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Mark as fulfilled',
-            inputValidator: async (value) => {
-                this.setState({
-                    url: value,
-                })
-                if (!value) {
-                    return 'You need to add a link to your invoice!'
-                }
-                else {
-                   await this.setState({
-                        url: value
-                    })
-                   await axios.put(`/api/final/update/${this.props.match.params.id}`, [this.state.url]).then(res => {
-                        Swal.fire('The order was updated and marked as fulfilled.')
-                        this.props.history.push('/hybridlight/invoice/history')
-                    })
-
-                }
-            }
-
-        })
-    }
-
 
     // order_sent_id: 7
     // yellow_pucs: 47
@@ -92,6 +62,7 @@ class HybridFinalUpdate extends Component {
                     <div class="Form-Split">
                     <div class="Print-Split">
                         <div>
+                        <button  onClick={() => this.props.history.push(`/hybridlight/final/${this.props.match.params.id}`)} id="GeneratePrint">Go Back</button>
                             <h2>Final order for <b> {order.school_name}</b> </h2>
                             <br></br>
                             <p>{order.first_name} {order.last_name}</p>
@@ -101,11 +72,8 @@ class HybridFinalUpdate extends Component {
                             <p>{order.phone}</p>
                             <p>{order.email}</p>
                         </div>
+                        {/* <button  onClick={() => window.print()} id="GeneratePrint">Print</button> */}
                     </div>
-                       <br></br>
-                       <br></br>
-                                <button onClick={() => this.props.history.push(`/print/hybridlight/final/${this.props.match.params.id}`)} id="medium">Print Report</button>
-                             
               
                     </div>
 
@@ -156,8 +124,7 @@ class HybridFinalUpdate extends Component {
                         </tr>
                     </table>
                     <br></br>
-                        
-                        <button id="medium" onClick={() => this.updateFinal()}>Mark as fulfilled</button>
+              
                 
                 </div>
             </div>
