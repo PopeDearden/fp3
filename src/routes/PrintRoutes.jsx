@@ -1,14 +1,14 @@
-import {Switch, Route} from 'react-router-dom'
 import React from 'react'
-
-import OrdersCollectedPrint from '../components/Director/OrdersCollectedPrint'
-import OrdersPlacedPrint from '../components/Director/OrdersPlacedPrint'
-import BasePrint from '../components/Landing/BasePrint'
-import OrdersConfirmedList from '../components/Director/OrdersConfirmedList'
-import FinalOrder from '../components/User/FinalOrder'
+import { Route, Switch } from 'react-router-dom'
 import GrandTotal from '../components/Director/GrandTotal'
-import Sample from '../components/Hybrid/HybridUpdateSamplePrint'
+import OrdersCollectedPrint from '../components/Director/OrdersCollectedPrint'
+import OrdersConfirmedList from '../components/Director/OrdersConfirmedList'
+import OrdersPlacedPrint from '../components/Director/OrdersPlacedPrint'
 import Final from '../components/Hybrid/HybridUpdateFinalPrint'
+import Sample from '../components/Hybrid/HybridUpdateSamplePrint'
+import BasePrint from '../components/Landing/BasePrint'
+import FinalOrder from '../components/User/FinalOrder'
+
 
 export default ( 
     <Switch>

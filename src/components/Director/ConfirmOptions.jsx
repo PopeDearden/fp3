@@ -93,7 +93,7 @@ class ConfirmOptions extends Component {
             <div className="App" >
                 <div class="General-Content">
                     <h2 class="Title-Bar-Confirm">  <i class="fas fa-comments-dollar"></i> Confirm student's collected $</h2>
-                    <button id="GeneratePrint" onClick={()=>this.props.history.push('/print/director-confirmed-list')}>PDF of Confirmed Orders</button>
+                    {/* <button id="GeneratePrint" onClick={()=>this.props.history.push('/print/director-confirmed-list')}>PDF of Confirmed Orders</button> */}
                     
                     {/* <div class="Form-Box">
                         <div class="Form-Box-Left">

@@ -1343,7 +1343,7 @@ td{
   // border: solid 5px;
   width: inherit;
   line-height: 1.6;
-  max-height: 100vh;
+  min-height: 100vh;
   overflow: auto;
   h1{
     font-size: 2rem;
@@ -1439,8 +1439,8 @@ td{
   display: none;
 }
   #Individual {
-    padding: 10px;
-    width: 6.5in;
+    padding: 0px;
+    width: 100%;
     border: solid black 2px;
     margin-bottom: 10px;
   }

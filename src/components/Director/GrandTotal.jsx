@@ -30,6 +30,7 @@ class GrandTotal extends Component {
         return (
             <div className="General-Content" >
                 <div className="Title-Bar"><h1>Student Balances</h1></div>
+                <button id="GeneratePrint" onClick={() => window.print()}>Generate PDF</button>
                 <div className="SpreadSheet">
                     <h2 className="">Students with sales</h2>
                     <table className="SpreadSheet">
@@ -92,7 +93,6 @@ class GrandTotal extends Component {
                         ))}
                     </table>
                 </div>
-
             </div>
         )
 
